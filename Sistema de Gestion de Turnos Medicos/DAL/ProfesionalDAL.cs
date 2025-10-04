@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class ProfesionalesDAL
+    public class ProfesionalDAL
     {
 
         public static int AgregarProfesional(ProfesionalBE profesional)

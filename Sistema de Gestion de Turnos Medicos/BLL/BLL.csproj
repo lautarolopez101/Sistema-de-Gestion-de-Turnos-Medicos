@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IPacienteRepository.cs" />
+    <Compile Include="PacienteRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,9 +50,9 @@
       <Project>{042a855f-0bf6-4d7e-8e7d-62c8e56fa2c1}</Project>
       <Name>BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MPP\MPP.csproj">
-      <Project>{c46dcac1-5bb5-4543-8e09-2894776f1480}</Project>
-      <Name>MPP</Name>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{a98c4d4b-260c-4c08-8787-5b51db6b58d9}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

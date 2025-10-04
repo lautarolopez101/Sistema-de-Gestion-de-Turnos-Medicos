@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace Sistema_de_Gestion_de_Turnos_Medicos
 {
@@ -15,6 +17,11 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         public FRMABMPacientes()
         {
             InitializeComponent();
+        }
+
+        private void FRMABMPacientes_Load(object sender, EventArgs e)
+        {
+            DGVPacientes.DataSource = IPacienteRepository.ObtenerPacientesBD();
         }
     }
 }
