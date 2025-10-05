@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FRMABMPacientes());
+
+            IPacienteService service = AppBootstrap.BuildPacienteService();
+            Application.Run(new FRMABMPacientes(service));
         }
     }
 }

@@ -15,7 +15,7 @@ namespace BLL
     public interface IPacienteRepository
     {
 
-        List<PacienteBE> ObtenerPacientesBD();
+        List<PacienteBE> ObtenerTodos();
 
     }
 }

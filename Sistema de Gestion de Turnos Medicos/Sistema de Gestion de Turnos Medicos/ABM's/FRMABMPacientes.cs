@@ -14,14 +14,16 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 {
     public partial class FRMABMPacientes : Form
     {
-        public FRMABMPacientes()
+        private readonly IPacienteService _pacienteservice;
+        public FRMABMPacientes(IPacienteService pacienteservice)
         {
             InitializeComponent();
+            _pacienteservice = pacienteservice;
         }
 
         private void FRMABMPacientes_Load(object sender, EventArgs e)
         {
-            DGVPacientes.DataSource = IPacienteRepository.ObtenerPacientesBD();
+            DGVPacientes.DataSource = _pacienteservice.ListarPacientes();
         }
     }
 }

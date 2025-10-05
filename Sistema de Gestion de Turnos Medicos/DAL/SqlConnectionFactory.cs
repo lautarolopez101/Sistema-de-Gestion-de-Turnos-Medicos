@@ -9,6 +9,17 @@ namespace DAL
 {
     public class SqlConnectionFactory
     {
+        /* Que hace esta clase?
+         *  -Lee una cadena de conexion (con el servidor, base, usuario, clave)
+         *  -Crear y abrir una conexion a SQL Server
+         *  -Devolver lista para que tus repos la usen
+         *  -Si algo falla, lanza una excepcion clara
+         *
+         */
+
+
+
+
         //Creo un notepad y lo guardo en el escritorio con el nombre .udl
         // alli dentro lo abro y pego la base de datos que quiero usar
         // luego copio la cadena de conexion que me da y la pego en el string de abajo
