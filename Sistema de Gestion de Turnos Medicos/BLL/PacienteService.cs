@@ -1,5 +1,6 @@
 ﻿using BE;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,17 @@ namespace BLL
         {
             _repo = repo;
         }
+        public int ModificarPaciente(PacienteBE paciente)
+        {
+            var retorna = _repo.ModificarPaciente(paciente);
+            return retorna;
+        }
+
+        public int EliminarPaciente(int id)
+        {
+            var retorna = _repo.EliminarPaciente(id);
+            return retorna;
+        }
 
         public List<PacienteBE> ListarPacientes()
         {
@@ -24,5 +36,11 @@ namespace BLL
             // pacientes = pacientes.where(p => p.Activo).ToList();
             return pacientes;
         }
+        public int RegistrarPaciente(PacienteBE paciente)
+        {
+            var retorna = _repo.AgregarPaciente(paciente);
+            return retorna;
+        }
+
     }
 }

@@ -7,3 +7,12 @@ C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de G
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.dll
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.pdb
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\bin\Debug\DAL.dll
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\bin\Debug\DAL.pdb
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\bin\Debug\BE.dll
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\bin\Debug\BE.pdb
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.dll
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\DAL\obj\Debug\DAL.pdb

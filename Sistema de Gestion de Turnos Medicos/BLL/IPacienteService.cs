@@ -9,6 +9,9 @@ namespace BLL
 {
     public interface IPacienteService
     {
+        int RegistrarPaciente(PacienteBE paciente);
+        int EliminarPaciente(int id);
+        int ModificarPaciente(PacienteBE paciente);
         List<PacienteBE> ListarPacientes();
     }
 }

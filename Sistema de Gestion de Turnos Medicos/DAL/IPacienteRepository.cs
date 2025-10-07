@@ -14,7 +14,9 @@ namespace BLL
      */
     public interface IPacienteRepository
     {
-
+        int AgregarPaciente(PacienteBE paciente);
+        int EliminarPaciente(int id);  
+        int ModificarPaciente(PacienteBE paciente);
         List<PacienteBE> ObtenerTodos();
 
     }

@@ -4,3 +4,9 @@ C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de G
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\obj\Debug\BE.dll
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\obj\Debug\BE.pdb
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\bin\Debug\BE.dll
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\bin\Debug\BE.pdb
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\obj\Debug\BE.dll
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\BE\obj\Debug\BE.pdb

@@ -10,6 +10,24 @@ namespace BLL
 {
     public class PacienteRepository : IPacienteRepository
     {
+        public int AgregarPaciente(PacienteBE paciente)
+        {
+            var retorna = PacienteDAL.AgregarPaciente(paciente);
+
+            return retorna;
+
+        }
+        public int EliminarPaciente(int id)
+        {
+            var retorna = PacienteDAL.EliminarPaciente(id);
+            return retorna;
+        }
+
+        public int ModificarPaciente(PacienteBE paciente)
+        {
+            var retorna = PacienteDAL.ModificarPaciente(paciente);
+            return retorna;
+        }
         public List<PacienteBE> ObtenerTodos()
         {
             // Logica de acceso a la BD
@@ -17,5 +35,7 @@ namespace BLL
             // Si devuelve lista la convierte a una Lista de entidades de los pacientes para ya tenerlos como objetos
             return lista ?? new List<PacienteBE>();
         }
+
+
     }
 }
