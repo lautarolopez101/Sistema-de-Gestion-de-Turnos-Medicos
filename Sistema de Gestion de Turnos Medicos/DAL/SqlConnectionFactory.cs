@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration; // Lo agregue para poder que elija la opcion de si usa la primera opcion o la segunda
+//lo tuve que agregar como referencia 
 
 namespace DAL
 {
@@ -23,16 +26,51 @@ namespace DAL
         //Creo un notepad y lo guardo en el escritorio con el nombre .udl
         // alli dentro lo abro y pego la base de datos que quiero usar
         // luego copio la cadena de conexion que me da y la pego en el string de abajo
+
+        /* 
+         public static SqlConnection ObtenerConexion()
+{
+    // creo una instancia de sqlconnection y alli dentro agrego el string de conexion
+    SqlConnection conexion = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Sistema de Gestion de Turnos Medicos;Data Source=LAPTOP-0NQ7LDJD");
+    // abro la conexion
+    conexion.Open();
+    // retorno la conexion abierta
+    return conexion;
+}
+         */
+
         public static SqlConnection ObtenerConexion()
         {
-            // creo una instancia de sqlconnection y alli dentro agrego el string de conexion
-            SqlConnection conexion = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Sistema de Gestion de Turnos Medicos;Data Source=LAPTOP-0NQ7LDJD");
-            // abro la conexion
-            conexion.Open();
-            // retorno la conexion abierta
-            return conexion;
-        }
+            // 👉 Esto NO usa ConfigurationManager todavía, así evitamos que
+            // el depurador culpe a GetHostName si el config está roto.
+            string equipo = Dns.GetHostName();
+            string nombreCadena = equipo.Equals("LAPTOP-0NQ7LDJD", StringComparison.OrdinalIgnoreCase)
+                                  ? "ConexionLaptop" : "ConexionPC";
 
+            string cadena;
+
+            try
+            {
+                // Fuerzo la carga del config para obtener error detallado si está mal
+                var cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                var cs = ConfigurationManager.ConnectionStrings[nombreCadena];
+                if (cs == null || string.IsNullOrWhiteSpace(cs.ConnectionString))
+                    throw new InvalidOperationException($"No encontré la cadena '{nombreCadena}' en App.config de la UI.");
+
+                cadena = cs.ConnectionString;
+            }
+            catch (ConfigurationErrorsException ex)
+            {
+                // 🆘 Diagnóstico claro (archivo y línea si aplica)
+                string archivo = ex.Filename ?? "(desconocido)";
+                throw new Exception($"App.config inválido: {ex.Message}\nArchivo: {archivo}\nRevisá que haya UNA sola sección <connectionStrings>.", ex);
+            }
+
+            var cn = new SqlConnection(cadena);
+            cn.Open();
+            return cn;
+        }
 
     }
 }

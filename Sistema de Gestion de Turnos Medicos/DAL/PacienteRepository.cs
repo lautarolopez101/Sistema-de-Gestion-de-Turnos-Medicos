@@ -17,9 +17,9 @@ namespace BLL
             return retorna;
 
         }
-        public int EliminarPaciente(int id)
+        public int EliminarPaciente(PacienteBE paciente)
         {
-            var retorna = PacienteDAL.EliminarPaciente(id);
+            var retorna = PacienteDAL.EliminarPaciente(paciente);
             return retorna;
         }
 
@@ -32,6 +32,14 @@ namespace BLL
         {
             // Logica de acceso a la BD
             var lista = PacienteDAL.ListarPacientes(); // el metodo que ejecuta el SQL 
+            // Si devuelve lista la convierte a una Lista de entidades de los pacientes para ya tenerlos como objetos
+            return lista ?? new List<PacienteBE>();
+        }
+
+        public List<PacienteBE> ObtenerTodosDesactivados()
+        {
+            // Logica de acceso a la BD
+            var lista = PacienteDAL.ListarPacientesDesactivados(); // el metodo que ejecuta el SQL 
             // Si devuelve lista la convierte a una Lista de entidades de los pacientes para ya tenerlos como objetos
             return lista ?? new List<PacienteBE>();
         }

@@ -20,6 +20,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         public FRMABMPacientes(IPacienteService pacienteservice)
         {
             InitializeComponent();
+            RDBActivo.AutoCheck = true;
             _pacienteservice = pacienteservice;
         }
 
@@ -28,7 +29,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private void FRMABMPacientes_Load(object sender, EventArgs e)
         {
             // llamo al metodo para cargar los datos
-            DGVPacientes.DataSource = _pacienteservice.ListarPacientes();
+          //  DGVPacientes.DataSource = _pacienteservice.ListarPacientes();
         }
 
         // Evento para cuando selecciono un objeto en el DGV
@@ -171,18 +172,42 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
         private void btnBaja_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(lblid.Text);
-            if(id> 0)
+            PacienteBE paciente = new PacienteBE();
+            paciente.ID_Paciente = Convert.ToInt32(lblid.Text);
+            paciente.DNI = txtDNI.Text;
+            paciente.Nombre = txtNombre.Text;
+            paciente.Apellido = txtApellido.Text;
+            paciente.Email = txtEmail.Text;
+            paciente.Telefono = txtTelefono.Text;
+            paciente.FechaNacimiento = DTPFechaNacimiento.Value; 
+            if (paciente.ID_Paciente> 0)
             {
-                _pacienteservice.EliminarPaciente(id);
-                DGVPacientes.DataSource = _pacienteservice.ListarPacientes();
-                MessageBox.Show("Paciente eliminado con exito");
+                _pacienteservice.EliminarPaciente(paciente);
+                if (RDBActivo.Checked)
+                {
+                    DGVPacientes.DataSource = _pacienteservice.ListarPacientes();
+                }
+                else
+                {
+                    DGVPacientes.DataSource = _pacienteservice.ListarPacientesDesactivados();
+                }
+                    MessageBox.Show("Paciente eliminado con exito");
             }
             else
             {
                 MessageBox.Show("Error al eliminar el paciente");
             }
 
+        }
+
+        private void RDBActivo_Click(object sender, EventArgs e)
+        {
+            DGVPacientes.DataSource = _pacienteservice.ListarPacientes();
+        }
+
+        private void RDBDesactivado_Click(object sender, EventArgs e)
+        {
+            DGVPacientes.DataSource = _pacienteservice.ListarPacientesDesactivados();
         }
     }
 }

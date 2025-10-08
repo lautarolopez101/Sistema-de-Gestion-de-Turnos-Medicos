@@ -33,3 +33,4 @@ C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\UI.csproj.Up2Date
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.exe
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.pdb
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.exe.config

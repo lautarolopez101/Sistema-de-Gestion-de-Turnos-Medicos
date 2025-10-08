@@ -22,9 +22,9 @@ namespace BLL
             return retorna;
         }
 
-        public int EliminarPaciente(int id)
+        public int EliminarPaciente(PacienteBE paciente)
         {
-            var retorna = _repo.EliminarPaciente(id);
+            var retorna = _repo.EliminarPaciente(paciente);
             return retorna;
         }
 
@@ -41,6 +41,13 @@ namespace BLL
             var retorna = _repo.AgregarPaciente(paciente);
             return retorna;
         }
-
+        public List<PacienteBE> ListarPacientesDesactivados()
+        {
+            // Aqui van  las reglas de negocio, validaciones, filtros, etc.
+            var pacientes = _repo.ObtenerTodosDesactivados();
+            // Ejemplo: filtrar los pacientes inactivos
+            // pacientes = pacientes.where(p => p.Activo).ToList();
+            return pacientes;
+        }
     }
 }
