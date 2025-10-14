@@ -14,14 +14,10 @@ namespace DAL
     {
         /* Que hace esta clase?
          *  -Lee una cadena de conexion (con el servidor, base, usuario, clave)
-         *  -Crear y abrir una conexion a SQL Server
-         *  -Devolver lista para que tus repos la usen
+         *  -Crear y abrir una conexion a SQL Server para poder conectarla al proyecto
          *  -Si algo falla, lanza una excepcion clara
          *
          */
-
-
-
 
         //Creo un notepad y lo guardo en el escritorio con el nombre .udl
         // alli dentro lo abro y pego la base de datos que quiero usar
@@ -43,6 +39,11 @@ namespace DAL
         {
             // 👉 Esto NO usa ConfigurationManager todavía, así evitamos que
             // el depurador culpe a GetHostName si el config está roto.
+
+            /* Lo que hace este DNS.GetHostName es obtener el nombre de la computadora, cuando estoy desde la laptop usa el 
+            Laptop-0NQ7LDJD y si estoy desde la pc usa 
+             
+             */
             string equipo = Dns.GetHostName();
             string nombreCadena = equipo.Equals("LAPTOP-0NQ7LDJD", StringComparison.OrdinalIgnoreCase)
                                   ? "ConexionLaptop" : "ConexionPC";
@@ -54,10 +55,13 @@ namespace DAL
                 // Fuerzo la carga del config para obtener error detallado si está mal
                 var cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
+                //Verifica si la cadena de conexion existe y no esta vacia
                 var cs = ConfigurationManager.ConnectionStrings[nombreCadena];
+                // Lanza una excepcion clara si no la encuentra
                 if (cs == null || string.IsNullOrWhiteSpace(cs.ConnectionString))
                     throw new InvalidOperationException($"No encontré la cadena '{nombreCadena}' en App.config de la UI.");
 
+                // La tengo, la uso
                 cadena = cs.ConnectionString;
             }
             catch (ConfigurationErrorsException ex)

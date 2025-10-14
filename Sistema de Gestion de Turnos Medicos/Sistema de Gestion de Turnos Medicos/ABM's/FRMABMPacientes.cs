@@ -24,6 +24,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             _pacienteservice = pacienteservice;
         }
 
+
         // Cuando en el formulario hay un pequenio cambio 
         // usa este evento para cargar los datos
         private void FRMABMPacientes_Load(object sender, EventArgs e)
@@ -56,6 +57,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         // Evento de boton para registrar un paciente nuevo
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+
+            // Tengo que pasar todo lo de paciente a la BLL 
+
             // Creamos un nuevo paciente para poder agregarlo
             PacienteBE paciente = new PacienteBE();
                // Hacemos un tipo de verificacion para ver que necesita y poder manejar otras excepciones
@@ -208,6 +212,11 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private void RDBDesactivado_Click(object sender, EventArgs e)
         {
             DGVPacientes.DataSource = _pacienteservice.ListarPacientesDesactivados();
+        }
+
+        private void RDBActivo_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
