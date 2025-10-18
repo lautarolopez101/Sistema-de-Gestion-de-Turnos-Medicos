@@ -9,11 +9,10 @@ namespace BLL
 {
     public interface IPacienteService
     {
-        int RegistrarPaciente(PacienteBE paciente);
-        int EliminarPaciente(PacienteBE paciente);
-        int ModificarPaciente(PacienteBE paciente);
-        List<PacienteBE> ListarPacientes();
-        List<PacienteBE> ListarPacientesDesactivados();
-
+        int AltaPaciente(string dni, string nombre, string apellido, string email, string telefono, DateTime fechanacimiento, string estado);
+        int BajaPaciente(int id,string dni, string nombre, string apellido, string email, string telefono, DateTime fechanacimiento, string estado);
+        int ModificarPaciente(int id,string dni, string nombre, string apellido, string email, string telefono, DateTime fechanacimiento, string estado);
+        int ActivarPaciente(int id, string dni, string nombre, string apellido , string email, string telefono , DateTime fechanacimiento,string estado);
+        List<PacienteBE> ListarPacientes(string cual);
     }
 }

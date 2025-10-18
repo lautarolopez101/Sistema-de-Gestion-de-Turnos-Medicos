@@ -14,11 +14,11 @@ namespace BLL
      */
     public interface IPacienteRepository
     {
-        int AgregarPaciente(PacienteBE paciente);
-        int EliminarPaciente(PacienteBE paciente);  
+        int AltaPaciente(PacienteBE paciente);
+        int BajaPaciente(PacienteBE paciente);  
         int ModificarPaciente(PacienteBE paciente);
-        List<PacienteBE> ObtenerTodos();
-        List<PacienteBE> ObtenerTodosDesactivados();
-
+        int DesactivarPaciente(PacienteBE paciente);
+        int ActivarPaciente(PacienteBE paciente);
+        List<PacienteBE> ObtenerTodos(string cual);
     }
 }
