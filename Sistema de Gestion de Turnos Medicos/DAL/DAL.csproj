@@ -164,9 +164,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD\EspecialidadDAL.cs" />
+    <Compile Include="CRUD\FamiliaDAL.cs" />
     <Compile Include="CRUD\HistorialDAL.cs" />
+    <Compile Include="CRUD\PatenteDAL.cs" />
+    <Compile Include="CRUD\UsuarioDAL.cs" />
+    <Compile Include="Interfaces\IFamiliaRepository.cs" />
     <Compile Include="Interfaces\IPacienteRepository.cs" />
     <Compile Include="CRUD\PacienteDAL.cs" />
+    <Compile Include="Interfaces\IUsuarioRepository.cs" />
     <Compile Include="Repository\PacienteRepository.cs" />
     <Compile Include="CRUD\ProfesionalDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -174,11 +179,6 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Sistema_de_Gestion_de_Turnos_MedicosDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Sistema_de_Gestion_de_Turnos_MedicosDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlConnectionFactory.cs" />
     <Compile Include="CRUD\TurnoDAL.cs" />
@@ -195,17 +195,6 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Sistema_de_Gestion_de_Turnos_MedicosDataSet.xsc">
-      <DependentUpon>Sistema_de_Gestion_de_Turnos_MedicosDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Sistema_de_Gestion_de_Turnos_MedicosDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Sistema_de_Gestion_de_Turnos_MedicosDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Sistema_de_Gestion_de_Turnos_MedicosDataSet.xss">
-      <DependentUpon>Sistema_de_Gestion_de_Turnos_MedicosDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
