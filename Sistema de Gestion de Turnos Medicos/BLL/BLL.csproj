@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBootstrap.cs" />
+    <Compile Include="EspecialidadService.cs" />
+    <Compile Include="IEspecialidadService.cs" />
     <Compile Include="IPacienteService.cs" />
     <Compile Include="PacienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

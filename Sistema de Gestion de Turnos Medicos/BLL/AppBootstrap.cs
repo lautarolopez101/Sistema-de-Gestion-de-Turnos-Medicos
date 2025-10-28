@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,13 @@ namespace BLL
         {
             var repo = new PacienteRepository();
             var service = new PacienteService(repo);
+            return service;
+        }
+
+        public static IEspecialidadService BuildEspecialidadService()
+        {
+            var repo = new EspecialidadRepository();
+            var service = new EspecialidadService(repo);
             return service;
         }
     }

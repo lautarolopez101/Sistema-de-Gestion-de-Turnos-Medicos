@@ -163,17 +163,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CRUD\EspecialidadDAL.cs" />
-    <Compile Include="CRUD\FamiliaDAL.cs" />
-    <Compile Include="CRUD\HistorialDAL.cs" />
-    <Compile Include="CRUD\PatenteDAL.cs" />
-    <Compile Include="CRUD\UsuarioDAL.cs" />
-    <Compile Include="Interfaces\IFamiliaRepository.cs" />
-    <Compile Include="Interfaces\IPacienteRepository.cs" />
-    <Compile Include="CRUD\PacienteDAL.cs" />
-    <Compile Include="Interfaces\IUsuarioRepository.cs" />
-    <Compile Include="Repository\PacienteRepository.cs" />
-    <Compile Include="CRUD\ProfesionalDAL.cs" />
+    <Compile Include="EspecialidadDAL.cs" />
+    <Compile Include="FamiliaDAL.cs" />
+    <Compile Include="HistorialDAL.cs" />
+    <Compile Include="PacienteRepository.cs" />
+    <Compile Include="PatenteDAL.cs" />
+    <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="IEspecialidadRepository.cs" />
+    <Compile Include="IFamiliaRepository.cs" />
+    <Compile Include="IPacienteRepository.cs" />
+    <Compile Include="PacienteDAL.cs" />
+    <Compile Include="IUsuarioRepository.cs" />
+    <Compile Include="EspecialidadRepository.cs" />
+    <Compile Include="ProfesionalDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -181,7 +183,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SqlConnectionFactory.cs" />
-    <Compile Include="CRUD\TurnoDAL.cs" />
+    <Compile Include="TurnoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

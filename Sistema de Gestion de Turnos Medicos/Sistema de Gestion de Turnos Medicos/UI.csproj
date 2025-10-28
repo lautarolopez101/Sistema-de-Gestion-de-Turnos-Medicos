@@ -48,33 +48,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABM%27s\FRMABMEspecialidades.cs">
+    <Compile Include="FRMABMEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM%27s\FRMABMEspecialidades.Designer.cs">
+    <Compile Include="FRMABMEspecialidades.Designer.cs">
       <DependentUpon>FRMABMEspecialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM%27s\FRMABMPacientes.cs">
+    <Compile Include="FRMABMPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM%27s\FRMABMPacientes.Designer.cs">
+    <Compile Include="FRMABMPacientes.Designer.cs">
       <DependentUpon>FRMABMPacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM%27s\FRMABMProfesionales.cs">
+    <Compile Include="FRMABMProfesionales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM%27s\FRMABMProfesionales.Designer.cs">
+    <Compile Include="FRMABMProfesionales.Designer.cs">
       <DependentUpon>FRMABMProfesionales.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM%27s\FRMABMTurnos.cs">
+    <Compile Include="FRMABMTurnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM%27s\FRMABMTurnos.Designer.cs">
+    <Compile Include="FRMABMTurnos.Designer.cs">
       <DependentUpon>FRMABMTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ABM%27s\FRMABMPacientes.resx">
+    <EmbeddedResource Include="FRMABMEspecialidades.resx">
+      <DependentUpon>FRMABMEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMABMPacientes.resx">
       <DependentUpon>FRMABMPacientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Sistema_de_Gestion_de_Turnos_Medicos.ABM_s;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            IPacienteService service = AppBootstrap.BuildPacienteService();
-            Application.Run(new FRMABMPacientes(service));
+            IPacienteService pacienteservice = AppBootstrap.BuildPacienteService();
+            IEspecialidadService especialidadService = AppBootstrap.BuildEspecialidadService();
+            Application.Run(new FRMABMEspecialidades(especialidadService));
         }
     }
 }

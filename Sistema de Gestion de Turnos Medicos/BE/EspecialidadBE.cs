@@ -18,12 +18,17 @@ namespace BE
             //Constructor para uso de prueba para cuando se crea el objeto
 
         }
+        public EspecialidadBE(int id, string especialidad, string descripcion)
+        {
+            ID_Especialidad = id;
+            Especialidad = especialidad;
+            Descripcion = descripcion;
+        }
 
         public EspecialidadBE(string especialidad, string descripcion)
         {
             Especialidad = especialidad;
             Descripcion = descripcion;
-            
         }
     }
 }
