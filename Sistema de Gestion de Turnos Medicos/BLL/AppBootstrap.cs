@@ -16,6 +16,12 @@ namespace BLL
             var service = new PacienteService(repo);
             return service;
         }
+        public static IProfesionalService BuildProfesionalService()
+        {
+            var repo = new ProfesionalRepository();
+            var service = new ProfesionalService(repo);
+            return service;
+        }
 
         public static IEspecialidadService BuildEspecialidadService()
         {

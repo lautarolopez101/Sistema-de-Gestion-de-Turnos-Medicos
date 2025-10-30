@@ -45,7 +45,7 @@ namespace DAL
                 string query = "update dbo.Especialidades set " +
                     "Especialidad = '" + especialidad.Especialidad + "', " +
                     "Descripcion = '" + especialidad.Descripcion + "' " +
-                    "where ID_Especialidad = " + especialidad.ID_Especialidad + "";
+                    "where ID_Especialidad = " + especialidad.ID_Especialidad;
                 // Creamos el comando con el query y la conexion
                 SqlCommand comand = new SqlCommand(query, conexion);
                 // Si se efectuo el comando nos va a devolver un entero X>0 o sino se pudo un X=0
@@ -67,7 +67,7 @@ namespace DAL
                 // Creamos el query necesario para luego ejecutarlo
                 // Le damos el valor del entero ID_Especialidad que nos llega por parametro
                 // para poder eliminar la especialidad correspondiente
-                string query = "delete from dbo.Especialidades where ID_specialidad = " + especialidad.ID_Especialidad + "";
+                string query = "delete from dbo.Especialidades where ID_Especialidad = " + especialidad.ID_Especialidad ;
                 // Creamos el comando con el query y la conexion
                 SqlCommand comand = new SqlCommand(query, conexion);
                 // Si se efectuo el comando nos va a devolver un entero X>0 o sino se pudo un X=0
@@ -98,7 +98,7 @@ namespace DAL
                 {
                     // Creamos un nuevo objeto de EspecialidadBE y le asignamos los valores que leemos de la base de datos
                     EspecialidadBE especialidad = new EspecialidadBE();
-                    especialidad.ID_Especialidad = Convert.ToInt16(reader["ID_Especialidad"]);
+                    especialidad.ID_Especialidad = Convert.ToInt32(reader["ID_Especialidad"]);
                     especialidad.Especialidad = reader["Especialidad"].ToString();
                     especialidad.Descripcion = reader["Descripcion"].ToString();
                     especialidades.Add(especialidad);

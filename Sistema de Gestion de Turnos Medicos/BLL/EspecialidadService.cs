@@ -18,16 +18,8 @@ namespace BLL
             _repo = repo;
         }
 
-        public int AgregarEspecialidad(int id,string especialidad,string descripcion)
-        {
-            // Creamos si el usuario limpio los campos para poder crear uno nuevo o no
-            bool buscarid = listaespecialidades.Any(e => e.ID_Especialidad == id);
-            if(buscarid)
-            {
-                // El ID ya existe, no se agrega
-                return 0;
-            }
-
+        public int AgregarEspecialidad(string especialidad,string descripcion)
+        {           
             EspecialidadBE espe = new EspecialidadBE();
             espe.Especialidad = especialidad;
             espe.Descripcion = descripcion;

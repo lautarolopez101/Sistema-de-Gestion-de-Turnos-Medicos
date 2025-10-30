@@ -45,7 +45,9 @@
     <Compile Include="EspecialidadService.cs" />
     <Compile Include="IEspecialidadService.cs" />
     <Compile Include="IPacienteService.cs" />
+    <Compile Include="IProfesionalService.cs" />
     <Compile Include="PacienteService.cs" />
+    <Compile Include="ProfesionalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

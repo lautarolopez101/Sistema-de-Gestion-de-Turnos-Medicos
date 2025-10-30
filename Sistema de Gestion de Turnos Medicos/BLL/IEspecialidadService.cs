@@ -9,7 +9,7 @@ namespace BLL
 {
     public interface IEspecialidadService
     {
-        int AgregarEspecialidad(int id,string especialidad,string descripcion);
+        int AgregarEspecialidad(string especialidad,string descripcion);
         int ModificarEspecialidad(int id,string especialidad, string descripcion);
         int EliminarEspecialidad(int id,string especialidad, string descripcion);
         List<EspecialidadBE> ListarEspecialidades();

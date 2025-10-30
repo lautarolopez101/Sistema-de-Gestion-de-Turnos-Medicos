@@ -24,16 +24,34 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             label4.Visible = true;
         }
 
+        private void DGVEspecialidades_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                lblid.Text = DGVEspecialidades.CurrentRow.Cells["ID_Especialidad"].Value.ToString();
+                txtEspecialidad.Text = DGVEspecialidades.CurrentRow.Cells["Especialidad"].Value.ToString();
+                txtDescripcion.Text = DGVEspecialidades.CurrentRow.Cells["Descripcion"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al seleccionar la especialidad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FRMABMEspecialidades_Load(object sender, EventArgs e)
+        {
+            DGVEspecialidades.DataSource = _especialidadservice.ListarEspecialidades();
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
-                int id  = int.Parse(lblid.Text); // Lo paso para ver si limpio los campos antes
                 string descripcion = txtDescripcion.Text;// Es necesario?
                 string especialidad = txtEspecialidad.Text;// SI ES NECESARIO
                 if (!string.IsNullOrEmpty(especialidad))
                 {
-                    int retorna = _especialidadservice.AgregarEspecialidad(id,especialidad, descripcion);
+                    int retorna = _especialidadservice.AgregarEspecialidad(especialidad, descripcion);
                     if (retorna > 0)
                     {
                         MessageBox.Show("Especialidad agregada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -47,6 +65,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
                 {
                     MessageBox.Show("El campo especialidad no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                DGVEspecialidades.DataSource = _especialidadservice.ListarEspecialidades();
             }
             catch(Exception ex)
             {
@@ -58,11 +77,23 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
         {
             try
             {
-
+                int id = int.Parse(lblid.Text); // Lo paso para ver si limpio los campos antes
+                string descripcion = txtDescripcion.Text;// Es necesario?
+                string especialidad = txtEspecialidad.Text;// SI ES NECESARIO
+                int retorna = _especialidadservice.ModificarEspecialidad(id,especialidad,descripcion);
+                if (retorna > 0)
+                {
+                    MessageBox.Show("Especialidad Modificada correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo modificar la especialidad","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                DGVEspecialidades.DataSource = _especialidadservice.ListarEspecialidades();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar la especialidad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al Modificar la especialidad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -70,11 +101,25 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
         {
             try
             {
+                int id = int.Parse(lblid.Text); // Lo paso para ver si limpio los campos antes
+                string descripcion = txtDescripcion.Text;// Es necesario?
+                string especialidad = txtEspecialidad.Text;// SI ES NECESARIO
 
+                int retorna = _especialidadservice.EliminarEspecialidad(id,especialidad, descripcion);
+                if (retorna > 0)
+                {
+                    MessageBox.Show("Especialidad Eliminada Correctamente","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar la especialidad", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                DGVEspecialidades.DataSource = _especialidadservice.ListarEspecialidades();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar la especialidad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al Eliminar la especialidad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -85,30 +130,12 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
                 lblid.Text = null;
                 txtDescripcion.Clear();
                 txtEspecialidad.Clear();
+                txtEspecialidad.Focus();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar la especialidad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al limpiar los campos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void DGVEspecialidades_SelectionChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                lblid.Text = DGVEspecialidades.CurrentRow.Cells["ID_Especialidad"].Value.ToString();
-                txtEspecialidad.Text = DGVEspecialidades.CurrentRow.Cells["Especialidad"].Value.ToString();
-                txtDescripcion.Text = DGVEspecialidades.CurrentRow.Cells["Descripcion"].Value.ToString();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar la especialidad: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void FRMABMEspecialidades_Load(object sender, EventArgs e)
-        {
-            DGVEspecialidades.DataSource = _especialidadservice.ListarEspecialidades();
         }
     }
 }

@@ -37,7 +37,7 @@ namespace DAL
 
         public static SqlConnection ObtenerConexion()
         {
-            // 👉 Esto NO usa ConfigurationManager todavía, así evitamos que
+            //  Esto NO usa ConfigurationManager todavía, así evitamos que
             // el depurador culpe a GetHostName si el config está roto.
 
             /* Lo que hace este DNS.GetHostName es obtener el nombre de la computadora, cuando estoy desde la laptop usa el 
@@ -66,9 +66,9 @@ namespace DAL
             }
             catch (ConfigurationErrorsException ex)
             {
-                // 🆘 Diagnóstico claro (archivo y línea si aplica)
+                //  Diagnóstico claro (archivo y línea si aplica)
                 string archivo = ex.Filename ?? "(desconocido)";
-                throw new Exception($"App.config inválido: {ex.Message}\nArchivo: {archivo}\nRevisá que haya UNA sola sección <connectionStrings>.", ex);
+                throw new Exception($"App.config inválido: {ex.Message} Archivo: {archivo} Revisá que haya UNA sola sección <connectionStrings>.", ex);
             }
 
             var cn = new SqlConnection(cadena);
