@@ -19,7 +19,7 @@ namespace DAL
             int retorna = 0;
             using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                string query = "insert into Profesionales (Matricula,Nombre,Apellido,Telefono,Email,Activo) values ('" + profesional.Matricula + "','"+profesional.Nombre+"','"+profesional.Apellido+",'"+profesional.Telefono+"','"+profesional.Email+"')";
+                string query = "insert into Profesionales (Matricula,Nombre,Apellido,Telefono,Email) values ('" + profesional.Matricula + "','"+profesional.Nombre+"','"+profesional.Apellido+"','"+profesional.Telefono+"','"+profesional.Email+"')";
                 SqlCommand comand = new SqlCommand(query, conexion);
                 retorna = comand.ExecuteNonQuery();
                 conexion.Close();

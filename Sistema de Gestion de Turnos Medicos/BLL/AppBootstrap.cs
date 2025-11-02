@@ -10,6 +10,12 @@ namespace BLL
 {
     public static class AppBootstrap
     {
+        public static IProfesional_EspecialidadService BuildProfesionalEspecialidadService()
+        {
+            var repo = new Profesionales_EspecialidadesRepository();
+            var service = new Profesional_EspecialidadService(repo);
+            return service;
+        }
         public static IPacienteService BuildPacienteService()
         {
             var repo = new PacienteRepository();
@@ -18,8 +24,10 @@ namespace BLL
         }
         public static IProfesionalService BuildProfesionalService()
         {
-            var repo = new ProfesionalRepository();
-            var service = new ProfesionalService(repo);
+            var profesionalrepository = new ProfesionalRepository();
+            var especialidadrepository  = new EspecialidadRepository();
+            var profesional_especialidadrespository = new Profesionales_EspecialidadesRepository();
+            var service = new ProfesionalService(profesionalrepository,especialidadrepository,profesional_especialidadrespository);
             return service;
         }
 

@@ -14,5 +14,6 @@ namespace DAL
         int AgregarProfesionalesEspecialidades(Profesionales_EspecialidadesBE nodo);
         int ModificarProfesionalesEspecialidades(Profesionales_EspecialidadesBE nodo);
         int EliminarProfesionalesEspecialidades(Profesionales_EspecialidadesBE nodo);
+        int EliminarProfesional(int idprofesional);
     }
 }

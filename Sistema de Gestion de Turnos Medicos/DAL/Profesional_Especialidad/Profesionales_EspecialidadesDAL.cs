@@ -26,6 +26,8 @@ namespace DAL
             return retorna;
         }
 
+        
+        // Logicamente no tiene sentido lo de modificar la especialidad en teoria seria mas sencillo el Agregar o Eliminar en ves de modificar
         public static int ModificarProfesional_Especialidad(Profesionales_EspecialidadesBE nodo)
         {
             int retorna = 0;
@@ -45,6 +47,19 @@ namespace DAL
             using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
                 string query = "delete from dbo.Profesionales_Especialidades  where ID_Especialidad = " + nodo.ID_Especialidad + " AND  ID_Profesional = " + nodo.ID_Profesional;
+                SqlCommand comand = new SqlCommand(query, conexion);
+                retorna = comand.ExecuteNonQuery();
+                conexion.Close();
+            }
+            return retorna;
+        }
+
+        public static int EliminarProfesional(int idprofesional)
+        {
+            int retorna = 0;
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "delete from dbo.Profesionales_Especialidades  where ID_Especialidad = " + idprofesional;
                 SqlCommand comand = new SqlCommand(query, conexion);
                 retorna = comand.ExecuteNonQuery();
                 conexion.Close();

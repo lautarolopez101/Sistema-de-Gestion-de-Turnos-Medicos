@@ -28,6 +28,9 @@ namespace DAL
         {
             return Profesionales_EspecialidadesDAL.EliminarProfesional_Especialidad(nodo);
         }
-
+        public int EliminarProfesional(int idprofesional)
+        {
+            return Profesionales_EspecialidadesDAL.EliminarProfesional(idprofesional);
+        }
     }
 }

@@ -56,6 +56,10 @@
             this.lblIDEspecialidades = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lblespecialidad = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnAgregarEspecialidad = new System.Windows.Forms.Button();
+            this.btnEliminarEspecialidad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGVProfesionales)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEspecialidades)).BeginInit();
@@ -65,20 +69,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(84, 122);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(63, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 25);
+            this.label1.Size = new System.Drawing.Size(58, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Matricula";
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(450, 159);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregar.Location = new System.Drawing.Point(204, 122);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(168, 63);
+            this.btnAgregar.Size = new System.Drawing.Size(126, 51);
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -87,32 +89,29 @@
             // DGVProfesionales
             // 
             this.DGVProfesionales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVProfesionales.Location = new System.Drawing.Point(661, 16);
-            this.DGVProfesionales.Margin = new System.Windows.Forms.Padding(4);
+            this.DGVProfesionales.Location = new System.Drawing.Point(627, 15);
             this.DGVProfesionales.Name = "DGVProfesionales";
             this.DGVProfesionales.RowHeadersWidth = 51;
-            this.DGVProfesionales.Size = new System.Drawing.Size(693, 726);
-            this.DGVProfesionales.TabIndex = 11;
+            this.DGVProfesionales.Size = new System.Drawing.Size(520, 590);
+            this.DGVProfesionales.TabIndex = 13;
             this.DGVProfesionales.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DGVProfesionales_DataBindingComplete);
             this.DGVProfesionales.SelectionChanged += new System.EventHandler(this.DGVProfesionales_SelectionChanged);
             // 
             // txtMatricula
             // 
             this.txtMatricula.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatricula.Location = new System.Drawing.Point(89, 150);
-            this.txtMatricula.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatricula.Location = new System.Drawing.Point(67, 122);
             this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(132, 34);
+            this.txtMatricula.Size = new System.Drawing.Size(100, 28);
             this.txtMatricula.TabIndex = 0;
             // 
             // RBActivo
             // 
             this.RBActivo.AutoSize = true;
             this.RBActivo.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBActivo.Location = new System.Drawing.Point(16, 18);
-            this.RBActivo.Margin = new System.Windows.Forms.Padding(4);
+            this.RBActivo.Location = new System.Drawing.Point(27, 15);
             this.RBActivo.Name = "RBActivo";
-            this.RBActivo.Size = new System.Drawing.Size(76, 29);
+            this.RBActivo.Size = new System.Drawing.Size(60, 24);
             this.RBActivo.TabIndex = 0;
             this.RBActivo.TabStop = true;
             this.RBActivo.Text = "Activo";
@@ -122,10 +121,9 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(450, 247);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModificar.Location = new System.Drawing.Point(204, 189);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(168, 63);
+            this.btnModificar.Size = new System.Drawing.Size(126, 51);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -134,10 +132,9 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(450, 330);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(204, 256);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(168, 63);
+            this.btnEliminar.Size = new System.Drawing.Size(126, 51);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -146,11 +143,10 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(450, 424);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLimpiar.Location = new System.Drawing.Point(384, 256);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(168, 63);
-            this.btnLimpiar.TabIndex = 10;
+            this.btnLimpiar.Size = new System.Drawing.Size(126, 51);
+            this.btnLimpiar.TabIndex = 11;
             this.btnLimpiar.Text = "Limpiar Campos";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
@@ -158,80 +154,72 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(89, 247);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(67, 201);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(132, 34);
+            this.txtNombre.Size = new System.Drawing.Size(100, 28);
             this.txtNombre.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(84, 219);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(63, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre";
             // 
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(89, 330);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtApellido.Location = new System.Drawing.Point(67, 268);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(132, 34);
+            this.txtApellido.Size = new System.Drawing.Size(100, 28);
             this.txtApellido.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(84, 302);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(63, 245);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 25);
+            this.label3.Size = new System.Drawing.Size(53, 20);
             this.label3.TabIndex = 10;
             this.label3.Text = "Apellido";
             // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(89, 433);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefono.Location = new System.Drawing.Point(67, 352);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(132, 34);
+            this.txtTelefono.Size = new System.Drawing.Size(100, 28);
             this.txtTelefono.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(84, 405);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(63, 329);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 25);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Telefono";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(89, 535);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Location = new System.Drawing.Point(67, 435);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(132, 34);
+            this.txtEmail.Size = new System.Drawing.Size(100, 28);
             this.txtEmail.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(84, 507);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(63, 412);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 25);
+            this.label5.Size = new System.Drawing.Size(37, 20);
             this.label5.TabIndex = 14;
             this.label5.Text = "Email";
             // 
@@ -239,10 +227,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(43, 74);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(32, 60);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 25);
+            this.label6.Size = new System.Drawing.Size(104, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "ID Profesionales= ";
             // 
@@ -250,10 +237,9 @@
             // 
             this.lblIDProfesionales.AutoSize = true;
             this.lblIDProfesionales.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDProfesionales.Location = new System.Drawing.Point(176, 74);
-            this.lblIDProfesionales.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIDProfesionales.Location = new System.Drawing.Point(132, 60);
             this.lblIDProfesionales.Name = "lblIDProfesionales";
-            this.lblIDProfesionales.Size = new System.Drawing.Size(77, 25);
+            this.lblIDProfesionales.Size = new System.Drawing.Size(59, 20);
             this.lblIDProfesionales.TabIndex = 18;
             this.lblIDProfesionales.Text = "Modificar";
             // 
@@ -261,10 +247,9 @@
             // 
             this.RBDesactivo.AutoSize = true;
             this.RBDesactivo.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBDesactivo.Location = new System.Drawing.Point(100, 18);
-            this.RBDesactivo.Margin = new System.Windows.Forms.Padding(4);
+            this.RBDesactivo.Location = new System.Drawing.Point(104, 15);
             this.RBDesactivo.Name = "RBDesactivo";
-            this.RBDesactivo.Size = new System.Drawing.Size(98, 29);
+            this.RBDesactivo.Size = new System.Drawing.Size(77, 24);
             this.RBDesactivo.TabIndex = 1;
             this.RBDesactivo.TabStop = true;
             this.RBDesactivo.Text = "Desactivo";
@@ -277,19 +262,19 @@
             this.panel1.Controls.Add(this.RBActivo);
             this.panel1.Controls.Add(this.RBDesactivo);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(279, 47);
+            this.panel1.Location = new System.Drawing.Point(264, 38);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 20;
+            this.panel1.Size = new System.Drawing.Size(208, 42);
+            this.panel1.TabIndex = 14;
             // 
             // RBEstadoActivo
             // 
             this.RBEstadoActivo.AutoSize = true;
             this.RBEstadoActivo.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBEstadoActivo.Location = new System.Drawing.Point(97, 607);
-            this.RBEstadoActivo.Margin = new System.Windows.Forms.Padding(4);
+            this.RBEstadoActivo.Location = new System.Drawing.Point(73, 493);
             this.RBEstadoActivo.Name = "RBEstadoActivo";
-            this.RBEstadoActivo.Size = new System.Drawing.Size(76, 29);
+            this.RBEstadoActivo.Size = new System.Drawing.Size(60, 24);
             this.RBEstadoActivo.TabIndex = 5;
             this.RBEstadoActivo.TabStop = true;
             this.RBEstadoActivo.Text = "Activo";
@@ -299,10 +284,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Myanmar Text", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(305, 9);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(298, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 32);
+            this.label7.Size = new System.Drawing.Size(70, 27);
             this.label7.TabIndex = 22;
             this.label7.Text = "Lista de:";
             // 
@@ -310,10 +294,9 @@
             // 
             this.RBEstadoDesactivo.AutoSize = true;
             this.RBEstadoDesactivo.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBEstadoDesactivo.Location = new System.Drawing.Point(97, 632);
-            this.RBEstadoDesactivo.Margin = new System.Windows.Forms.Padding(4);
+            this.RBEstadoDesactivo.Location = new System.Drawing.Point(73, 514);
             this.RBEstadoDesactivo.Name = "RBEstadoDesactivo";
-            this.RBEstadoDesactivo.Size = new System.Drawing.Size(98, 29);
+            this.RBEstadoDesactivo.Size = new System.Drawing.Size(77, 24);
             this.RBEstadoDesactivo.TabIndex = 6;
             this.RBEstadoDesactivo.TabStop = true;
             this.RBEstadoDesactivo.Text = "Desactivo";
@@ -323,32 +306,31 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(92, 578);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(69, 470);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 25);
+            this.label8.Size = new System.Drawing.Size(44, 20);
             this.label8.TabIndex = 24;
             this.label8.Text = "Estado";
             // 
             // DGVEspecialidades
             // 
             this.DGVEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVEspecialidades.Location = new System.Drawing.Point(252, 595);
+            this.DGVEspecialidades.Location = new System.Drawing.Point(234, 356);
+            this.DGVEspecialidades.Margin = new System.Windows.Forms.Padding(2);
             this.DGVEspecialidades.Name = "DGVEspecialidades";
             this.DGVEspecialidades.RowHeadersWidth = 51;
             this.DGVEspecialidades.RowTemplate.Height = 24;
-            this.DGVEspecialidades.Size = new System.Drawing.Size(402, 150);
-            this.DGVEspecialidades.TabIndex = 25;
+            this.DGVEspecialidades.Size = new System.Drawing.Size(388, 249);
+            this.DGVEspecialidades.TabIndex = 12;
             this.DGVEspecialidades.SelectionChanged += new System.EventHandler(this.DGVEspecialidades_SelectionChanged);
             // 
             // lblIDEspecialidades
             // 
             this.lblIDEspecialidades.AutoSize = true;
             this.lblIDEspecialidades.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDEspecialidades.Location = new System.Drawing.Point(168, 665);
-            this.lblIDEspecialidades.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIDEspecialidades.Location = new System.Drawing.Point(132, 540);
             this.lblIDEspecialidades.Name = "lblIDEspecialidades";
-            this.lblIDEspecialidades.Size = new System.Drawing.Size(77, 25);
+            this.lblIDEspecialidades.Size = new System.Drawing.Size(59, 20);
             this.lblIDEspecialidades.TabIndex = 27;
             this.lblIDEspecialidades.Text = "Modificar";
             // 
@@ -356,10 +338,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(32, 665);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(24, 540);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(141, 25);
+            this.label10.Size = new System.Drawing.Size(109, 20);
             this.label10.TabIndex = 26;
             this.label10.Text = "ID Especialidades= ";
             // 
@@ -367,18 +348,63 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(395, 544);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(379, 329);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 30);
+            this.label9.Size = new System.Drawing.Size(109, 25);
             this.label9.TabIndex = 28;
             this.label9.Text = "Especialidades";
             // 
+            // lblespecialidad
+            // 
+            this.lblespecialidad.AutoSize = true;
+            this.lblespecialidad.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblespecialidad.Location = new System.Drawing.Point(132, 560);
+            this.lblespecialidad.Name = "lblespecialidad";
+            this.lblespecialidad.Size = new System.Drawing.Size(59, 20);
+            this.lblespecialidad.TabIndex = 30;
+            this.lblespecialidad.Text = "Modificar";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(27, 560);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(84, 20);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Especialidad =";
+            // 
+            // btnAgregarEspecialidad
+            // 
+            this.btnAgregarEspecialidad.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(384, 122);
+            this.btnAgregarEspecialidad.Name = "btnAgregarEspecialidad";
+            this.btnAgregarEspecialidad.Size = new System.Drawing.Size(126, 51);
+            this.btnAgregarEspecialidad.TabIndex = 10;
+            this.btnAgregarEspecialidad.Text = "Agregar Especialidad";
+            this.btnAgregarEspecialidad.UseVisualStyleBackColor = true;
+            this.btnAgregarEspecialidad.Click += new System.EventHandler(this.btnAgregarEspecialidad_Click);
+            // 
+            // btnEliminarEspecialidad
+            // 
+            this.btnEliminarEspecialidad.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarEspecialidad.Location = new System.Drawing.Point(384, 189);
+            this.btnEliminarEspecialidad.Name = "btnEliminarEspecialidad";
+            this.btnEliminarEspecialidad.Size = new System.Drawing.Size(126, 51);
+            this.btnEliminarEspecialidad.TabIndex = 31;
+            this.btnEliminarEspecialidad.Text = "Eliminar Especialidad";
+            this.btnEliminarEspecialidad.UseVisualStyleBackColor = true;
+            this.btnEliminarEspecialidad.Click += new System.EventHandler(this.btnEliminarEspecialidad_Click);
+            // 
             // FRMABMProfesionales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 757);
+            this.ClientSize = new System.Drawing.Size(1159, 612);
+            this.Controls.Add(this.btnEliminarEspecialidad);
+            this.Controls.Add(this.btnAgregarEspecialidad);
+            this.Controls.Add(this.lblespecialidad);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lblIDEspecialidades);
             this.Controls.Add(this.label10);
@@ -405,7 +431,6 @@
             this.Controls.Add(this.DGVProfesionales);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMABMProfesionales";
             this.Load += new System.EventHandler(this.FRMABMProfesionales_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVProfesionales)).EndInit();
@@ -447,5 +472,9 @@
         private System.Windows.Forms.Label lblIDEspecialidades;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblespecialidad;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnAgregarEspecialidad;
+        private System.Windows.Forms.Button btnEliminarEspecialidad;
     }
 }

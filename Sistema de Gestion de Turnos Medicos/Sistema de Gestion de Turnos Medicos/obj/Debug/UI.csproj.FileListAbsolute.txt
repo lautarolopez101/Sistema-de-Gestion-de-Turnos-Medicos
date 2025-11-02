@@ -44,3 +44,6 @@ C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de G
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.ABM_s.FRMABMProfesionales.resources
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.LOGIN.resources
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.ABM_s.FRMABMTurnos.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.ABM_s.FRMABMTurnos.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.LOGIN.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.FRMAgregarEspecialidad.resources

@@ -48,22 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FRMABMEspecialidades.cs">
+    <Compile Include="ABM\FRMABMEspecialidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMABMEspecialidades.Designer.cs">
+    <Compile Include="ABM\FRMABMEspecialidades.Designer.cs">
       <DependentUpon>FRMABMEspecialidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMABMPacientes.cs">
+    <Compile Include="ABM\FRMABMPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMABMPacientes.Designer.cs">
+    <Compile Include="ABM\FRMABMPacientes.Designer.cs">
       <DependentUpon>FRMABMPacientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMABMProfesionales.cs">
+    <Compile Include="ABM\FRMABMProfesionales.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMABMProfesionales.Designer.cs">
+    <Compile Include="ABM\FRMABMProfesionales.Designer.cs">
       <DependentUpon>FRMABMProfesionales.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMABMTurnos.cs">
@@ -71,6 +71,12 @@
     </Compile>
     <Compile Include="FRMABMTurnos.Designer.cs">
       <DependentUpon>FRMABMTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM\FRMAgregarEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\FRMAgregarEspecialidad.Designer.cs">
+      <DependentUpon>FRMAgregarEspecialidad.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGIN.cs">
       <SubType>Form</SubType>
@@ -80,17 +86,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FRMABMEspecialidades.resx">
+    <EmbeddedResource Include="ABM\FRMABMEspecialidades.resx">
       <DependentUpon>FRMABMEspecialidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMABMPacientes.resx">
+    <EmbeddedResource Include="ABM\FRMABMPacientes.resx">
       <DependentUpon>FRMABMPacientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMABMProfesionales.resx">
+    <EmbeddedResource Include="ABM\FRMABMProfesionales.resx">
       <DependentUpon>FRMABMProfesionales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMABMTurnos.resx">
       <DependentUpon>FRMABMTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM\FRMAgregarEspecialidad.resx">
+      <DependentUpon>FRMAgregarEspecialidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
       <DependentUpon>LOGIN.cs</DependentUpon>
