@@ -37,7 +37,7 @@ namespace DAL
                     "Apellido = '" + profesional.Apellido + "', " +
                     "Telefono = '" + profesional.Telefono + "'," +
                     "Email = '" + profesional.Email + "'," +
-                    "Activo = '" + profesional.Activo + "'," +
+                    "Activo = '" + profesional.Activo + "'" +
                     "Where ID_Profesional = " + profesional.ID_Profesional;
                 SqlCommand comand = new SqlCommand(query, conexion);   
                 retorna = comand.ExecuteNonQuery();

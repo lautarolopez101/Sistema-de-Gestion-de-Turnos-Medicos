@@ -46,9 +46,11 @@
     <Compile Include="IEspecialidadService.cs" />
     <Compile Include="IPacienteService.cs" />
     <Compile Include="IProfesionalService.cs" />
+    <Compile Include="ITurnoService.cs" />
     <Compile Include="PacienteService.cs" />
     <Compile Include="ProfesionalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TurnoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

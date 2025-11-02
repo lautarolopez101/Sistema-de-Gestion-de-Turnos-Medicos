@@ -22,7 +22,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             IPacienteService pacienteservice = AppBootstrap.BuildPacienteService();
             IEspecialidadService especialidadService = AppBootstrap.BuildEspecialidadService();
             IProfesionalService profesionalService = AppBootstrap.BuildProfesionalService();
-            Application.Run(new FRMABMProfesionales(profesionalService));
+            Application.Run(new FRMABMProfesionales(profesionalService,especialidadService));
         }
     }
 }

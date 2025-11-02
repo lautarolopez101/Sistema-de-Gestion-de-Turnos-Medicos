@@ -166,10 +166,15 @@
     <Compile Include="Especialidad\EspecialidadDAL.cs" />
     <Compile Include="FamiliaDAL.cs" />
     <Compile Include="HistorialDAL.cs" />
+    <Compile Include="Profesional_Especialidad\IProfesionales_EspecialidadesRepository.cs" />
+    <Compile Include="Profesional_Especialidad\Profesionales_EspecialidadesDAL.cs" />
+    <Compile Include="Profesional_Especialidad\Profesionales_EspecialidadesRepository.cs" />
+    <Compile Include="Turno\ITurnoRepository.cs" />
     <Compile Include="Profesional\IProfesionalRepository.cs" />
     <Compile Include="Paciente\PacienteRepository.cs" />
     <Compile Include="PatenteDAL.cs" />
     <Compile Include="Profesional\ProfesionalRepository.cs" />
+    <Compile Include="Turno\TurnoRepository.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Especialidad\IEspecialidadRepository.cs" />
     <Compile Include="IFamiliaRepository.cs" />
@@ -185,7 +190,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="SqlConnectionFactory.cs" />
-    <Compile Include="TurnoDAL.cs" />
+    <Compile Include="Turno\TurnoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

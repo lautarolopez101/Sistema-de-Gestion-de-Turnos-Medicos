@@ -9,7 +9,6 @@ namespace BE
     public class ProfesionalBE
     {
         public int ID_Profesional { get; set; }
-        public int ID_Especialidad { get; set; }
         public string Matricula { get; set; }
         public string Apellido { get; set; }
 

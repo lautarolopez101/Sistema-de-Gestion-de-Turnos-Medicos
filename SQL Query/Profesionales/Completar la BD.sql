@@ -1,5 +1,5 @@
 
-DBCC CHECKIDENT	('Profesionales',RESEED,0)
+DBCC CHECKIDENT	('dbo.Profesionales',RESEED,0)
 
 /* ============================================================
    INSERCIÓN DE REGISTROS PROFESIONALES

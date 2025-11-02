@@ -15,6 +15,8 @@ namespace BE
         public DateTime FechaHora { get; set; }
         public string Observaciones { get; set; }
         public string Estado { get; set; }
+        public DateTime CreatedAtUtc { get; set; }
+        public DateTime UpdateAtUtc { get; set; }
 
         public TurnoBE()
         {

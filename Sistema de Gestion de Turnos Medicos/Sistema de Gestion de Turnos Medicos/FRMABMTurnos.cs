@@ -16,5 +16,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
         {
             InitializeComponent();
         }
+
+        
     }
 }
