@@ -10,6 +10,13 @@ namespace BLL
 {
     public static class AppBootstrap
     {
+        public static ITurnoService BuildTurnoService()
+        {
+            var repo = new TurnoRepository();
+            var profesionalrepository = new TurnoRepository();
+            var service = new TurnoService(repo);
+            return service;
+        }
         public static IProfesional_EspecialidadService BuildProfesionalEspecialidadService()
         {
             var repo = new Profesionales_EspecialidadesRepository();

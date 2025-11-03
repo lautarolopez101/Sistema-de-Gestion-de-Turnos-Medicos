@@ -19,11 +19,12 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            ITurnoService turnoservice = AppBootstrap.BuildTurnoService();
             IProfesional_EspecialidadService profesional_service = AppBootstrap.BuildProfesionalEspecialidadService();
             IPacienteService pacienteservice = AppBootstrap.BuildPacienteService();
             IEspecialidadService especialidadService = AppBootstrap.BuildEspecialidadService();
             IProfesionalService profesionalService = AppBootstrap.BuildProfesionalService();
-            Application.Run(new FRMABMProfesionales(profesionalService,especialidadService,profesional_service));
+            Application.Run(new FRMABMTurnos(turnoservice,pacienteservice,profesionalService));
         }
     }
 }
