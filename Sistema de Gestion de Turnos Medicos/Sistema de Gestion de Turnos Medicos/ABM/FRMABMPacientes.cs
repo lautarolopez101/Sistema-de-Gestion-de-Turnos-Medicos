@@ -26,37 +26,14 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             label8.Hide();
         }
 
-        public string CUAL()
-        {
-            var activo = RDBActivo.Checked;
-            var desactivado = RDBDesactivados.Checked;
-
-            if (((activo == true) && (desactivado == false)) || ((activo == false) && (desactivado == true)))
-            {
-                if (activo == true)
-                {
-                    string a = "Activo";
-                    return a;
-                }
-                else if (desactivado == true)
-                {
-                    string r = "Desactivado";
-                    return r;
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se pudo cargar ninguna lista en el DGV");
-            }
-            return "Empty";
-        }
+      
 
         // Cuando en el formulario hay un pequenio cambio 
         // usa este evento para cargar los datos
         private void FRMABMPacientes_Load(object sender, EventArgs e)
         {
             // llamo al metodo para cargar los datos
-            DGVPacientes.DataSource = _pacienteservice.ListarPacientes(CUAL());
+            DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
         }
 
         // Evento para cuando selecciono un objeto en el DGV
@@ -109,7 +86,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                             if (retorna > 0)
                             {
                                 MessageBox.Show("Paciente registrado con exito");
-                                DGVPacientes.DataSource = _pacienteservice.ListarPacientes(CUAL());
+                                DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
                             }
                             // si no se hizo bien el alta tira un mensaje de error
                             else
@@ -175,7 +152,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                             if (retorna > 0)
                             {
                                 MessageBox.Show("Paciente Modificado con exito");
-                                DGVPacientes.DataSource = _pacienteservice.ListarPacientes(CUAL());
+                                DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
                             }
                             else
                             {
@@ -218,7 +195,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             {
                 MessageBox.Show("Error al eliminar el paciente");
             }
-            DGVPacientes.DataSource = _pacienteservice.ListarPacientes(CUAL());
+            DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
         }
 
 
@@ -241,7 +218,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 _pacienteservice.ActivarPaciente(id, dni, nombre, apellido, email, telefono, fecha, estado);
                 MessageBox.Show("Se volvio a Activar el Paciente " + id);
             }
-            DGVPacientes.DataSource = _pacienteservice.ListarPacientes(CUAL());
+            DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
         }
 
 
@@ -287,7 +264,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 label6.BackColor = Color.Green;
                 label7.BackColor = Color.Green;
                 label8.BackColor = Color.Green;
-                DGVPacientes.DataSource = _pacienteservice.ListarPacientes(CUAL());
+                DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
             }
         }
 
@@ -331,7 +308,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 label6.ForeColor = Color.White;
                 label7.ForeColor = Color.White;
                 label8.ForeColor = Color.White;
-                DGVPacientes.DataSource = _pacienteservice.ListarPacientes(CUAL());
+                DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
             }
         }
 
@@ -366,6 +343,29 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             // Ponemos por default que arranque con Activo
             CMBLista.SelectedIndex = 0;
         }
+        public string CUAL()
+        {
+            var activo = RDBActivo.Checked;
+            var desactivado = RDBDesactivados.Checked;
 
+            if (((activo == true) && (desactivado == false)) || ((activo == false) && (desactivado == true)))
+            {
+                if (activo == true)
+                {
+                    string a = "Activo";
+                    return a;
+                }
+                else if (desactivado == true)
+                {
+                    string r = "Desactivado";
+                    return r;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se pudo cargar ninguna lista en el DGV");
+            }
+            return "Empty";
+        }
     }
 }

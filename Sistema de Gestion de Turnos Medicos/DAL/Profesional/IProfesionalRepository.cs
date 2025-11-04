@@ -12,6 +12,8 @@ namespace DAL
         int AgregarProfesional(ProfesionalBE profesional);
         int ModificarProfesional(ProfesionalBE profesional);
         int EliminarProfesional(ProfesionalBE profesional);
+        List<ProfesionalBE> ObtenerProfesionales();
+
         List<ProfesionalBE> ListarProfesionales(bool cual);
     }
 }

@@ -13,7 +13,8 @@ namespace BLL
         public static ITurnoService BuildTurnoService()
         {
             var repo = new TurnoRepository();
-            var profesionalrepository = new TurnoRepository();
+            var profesionalrepository = new ProfesionalRepository();
+            var pacienterepository = new PacienteRepository();
             var service = new TurnoService(repo);
             return service;
         }

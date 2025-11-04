@@ -198,28 +198,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
                     MessageBox.Show("NO se ha Modificado el Profesional Correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 DGVProfesionales.DataSource = _profesionalService.ListarProfesionales(CUAL());
-
-                // Pasamos el contenido del label a un entero para mejor manejo
-                int idespecialidad = Convert.ToInt32(lblIDEspecialidades.Text);
-                
-                // Llamamos el metodo para ver si ya existe o no (Esta explicado paso a paso y el porque)
-                bool existe= Verificar(idespecialidad, idprofesional);
-
-                if(existe)
-                {
-                    if(idespecialidad> 0)
-                    {
-                        int reto = _profesionalespecialidadService.AgregarProfesional_Especialidad(idespecialidad, idprofesional);
-                        if (reto > 0)
-                        {
-                            MessageBox.Show("Se ha Modificado una Especialidad al Profesional Correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("NO se ha podido modificar o ya existe el vinculo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception ex)
             {

@@ -97,7 +97,7 @@ namespace DAL
             return retorna;
         }
         // Usamos el metodo para poder agregar los pacientes en el DGV
-        public static List<PacienteBE> ListarPacientes(string cual)
+        public static List<PacienteBE> ListarPacientesEstado(string cual)
         {
             // Creamos una lista de pacientes que va a estar vacia
             List<PacienteBE> lista = new List<PacienteBE>();
@@ -142,7 +142,51 @@ namespace DAL
             // Devolvemos la lista pedida
             return lista;
         }
-
+        public static List<PacienteBE> ObtenerTodos()
+        {
+            // Creamos una lista de pacientes que va a estar vacia
+            List<PacienteBE> lista = new List<PacienteBE>();
+            // Usando la conexion "TAL"
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                // Hacemos un query para seleccionar la tabla de pacientes donde vemos el estado que nos pide para hacer un filtro
+                string query = "SELECT * FROM Pacientes";
+                // Creamos un comando que le vamos a dar el query necesario en la conexion "TAL"
+                SqlCommand comand = new SqlCommand(query, conexion);
+                // Vamos a leer el comando cuando nos ejecuta 
+                SqlDataReader reader = comand.ExecuteReader();
+                // Mientras lee el comando 
+                while (reader.Read())
+                {
+                    // Creamos un nuevo paciente y le damos los datos dependiendo la columna
+                    PacienteBE paciente = new PacienteBE();
+                    paciente.ID_Paciente = reader.GetInt32(0);
+                    paciente.DNI = reader.GetString(1);
+                    paciente.Nombre = reader.GetString(2);
+                    paciente.Apellido = reader.GetString(3);
+                    // Si la columna 4 no esta vacia entonces 
+                    if (!reader.IsDBNull(4))
+                        // Agregamos la fecha de nacimiento al paciente "X"
+                        paciente.FechaNacimiento = reader.GetDateTime(4);
+                    else
+                        //Sino ponemos un valor por defecto y listo 
+                        paciente.FechaNacimiento = default; // un valor por defecto
+                    paciente.Telefono = reader.GetString(5);
+                    paciente.Email = reader.GetString(6);
+                    paciente.Estado = reader.GetString(7);
+                    paciente.CreatedAtUtc = reader.GetDateTime(8);
+                    paciente.UpdatedAtUtc = reader.IsDBNull(9)
+                        ? default(DateTime)
+                        : reader.GetDateTime(9);
+                    // agregamos el paciente a la dicha lista
+                    lista.Add(paciente);
+                }
+                //Cerramos la conexion porque ya no va a ser necesaria
+                conexion.Close();
+            }
+            // Devolvemos la lista pedida
+            return lista;
+        }
 
         // Funcionalidades del Paciente pero que no son ABM
 

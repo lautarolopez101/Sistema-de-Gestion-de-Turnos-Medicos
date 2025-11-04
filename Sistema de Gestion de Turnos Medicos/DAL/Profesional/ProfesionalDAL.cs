@@ -81,5 +81,29 @@ namespace DAL
             }
             return profesionales;
         }
+        public static List<ProfesionalBE> ObtenerProfesionales()
+        {
+            List<ProfesionalBE> profesionales = new List<ProfesionalBE>();
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "select * from Profesionales";
+                SqlCommand comand = new SqlCommand(query, conexion);
+                SqlDataReader reader = comand.ExecuteReader();
+                while (reader.Read())
+                {
+                    ProfesionalBE profesional = new ProfesionalBE();
+                    profesional.ID_Profesional = Convert.ToInt32(reader["ID_Profesional"].ToString());
+                    profesional.Matricula = reader["Matricula"].ToString();
+                    profesional.Nombre = reader["Nombre"].ToString();
+                    profesional.Apellido = reader["Apellido"].ToString();
+                    profesional.Telefono = reader["Telefono"].ToString();
+                    profesional.Email = reader["Email"].ToString();
+                    profesional.Activo = Convert.ToBoolean(reader["Activo"].ToString());
+                    profesionales.Add(profesional);
+                }
+                conexion.Close();
+            }
+            return profesionales;
+        }
     }
 }

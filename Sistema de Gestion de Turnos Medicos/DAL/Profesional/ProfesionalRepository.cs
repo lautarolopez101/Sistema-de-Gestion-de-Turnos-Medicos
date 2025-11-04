@@ -21,6 +21,10 @@ namespace DAL
         {
             return ProfesionalDAL.ModificarProfesional(profesional);
         }
+        public List<ProfesionalBE> ObtenerProfesionales()
+        {
+            return ProfesionalDAL.ObtenerProfesionales();
+        }
         public List<ProfesionalBE> ListarProfesionales(bool cual)
         {
             return ProfesionalDAL.ListarProfesionales(cual);

@@ -49,14 +49,23 @@ namespace BLL
             return retorna;
         }
 
-        public List<PacienteBE> ListarPacientes(string cual)
+        public List<PacienteBE> ListarPacientesEstado(string cual)
         {
             // Aqui van  las reglas de negocio, validaciones, filtros, etc.
-            var pacientes = _repo.ObtenerTodos(cual);
+            var pacientes = _repo.ListarPacientesEstado(cual);
             // Ejemplo: filtrar los pacientes inactivos
             // pacientes = pacientes.where(p => p.Activo).ToList();
             return pacientes;
         }
+        public List<PacienteBE> ObtenerTodos()
+        {
+            // Aqui van  las reglas de negocio, validaciones, filtros, etc.
+            var pacientes = _repo.ObtenerTodos();
+            // Ejemplo: filtrar los pacientes inactivos
+            // pacientes = pacientes.where(p => p.Activo).ToList();
+            return pacientes;
+        }
+
         public int AltaPaciente(string dni, string nombre, string apellido, string email, string telefono, DateTime fechanacimiento, string estado)
         {
             PacienteBE paciente = new PacienteBE();
