@@ -19,6 +19,7 @@ namespace DAL
         int ModificarPaciente(PacienteBE paciente);
         int DesactivarPaciente(PacienteBE paciente);
         int ActivarPaciente(PacienteBE paciente);
+        PacienteBE ObtenerPaciente(int idpaciente);
         List<PacienteBE> ObtenerTodos();
         List<PacienteBE> ListarPacientesEstado(string cual);
     }

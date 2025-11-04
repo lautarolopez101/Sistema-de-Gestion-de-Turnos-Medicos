@@ -64,6 +64,13 @@ namespace BLL
             listaprofesionales = _profesional.ListarProfesionales(cual);
             return listaprofesionales;
         }
+        public List<ProfesionalBE> ObtenerProfesional(int idprofesional)
+        {
+            ProfesionalBE profesional = _profesional.ObtenerProfesional(idprofesional);
+            List<ProfesionalBE> lista = new List<ProfesionalBE>();  
+            lista.Add(profesional);
+            return lista;
+        }
         public List<ProfesionalBE> ObtenerProfesionales()
         {
             listaprofesionales = _profesional.ObtenerProfesionales();

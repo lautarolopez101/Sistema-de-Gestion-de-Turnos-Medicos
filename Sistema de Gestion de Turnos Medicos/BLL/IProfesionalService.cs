@@ -14,7 +14,7 @@ namespace BLL
         int ModificarProfesional(int id, string matricula, string nombre, string apellido, string telefono, string email,bool activo);
         List<ProfesionalBE> ListarProfesionales(bool cual);
         List<ProfesionalBE> ObtenerProfesionales();
-
+        List<ProfesionalBE> ObtenerProfesional(int idprofesional);
         List<EspecialidadBE> ListarEspecialidadesdelProfesional(int idprofesional);
     }
 }

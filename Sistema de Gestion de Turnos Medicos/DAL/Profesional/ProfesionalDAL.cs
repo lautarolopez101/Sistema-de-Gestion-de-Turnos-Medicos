@@ -60,9 +60,9 @@ namespace DAL
         public static List<ProfesionalBE> ListarProfesionales(bool cual)
         {
             List<ProfesionalBE> profesionales = new List<ProfesionalBE>();
-            using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                string query = "select * from Profesionales where Activo = '" +cual + "'";
+                string query = "select * from Profesionales where Activo = '" + cual + "'";
                 SqlCommand comand = new SqlCommand(query, conexion);
                 SqlDataReader reader = comand.ExecuteReader();
                 while (reader.Read())
@@ -81,6 +81,36 @@ namespace DAL
             }
             return profesionales;
         }
+
+        public static ProfesionalBE ObtenerProfesional(int idprofesional)
+        {
+            ProfesionalBE profesional = new ProfesionalBE();
+
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "select * from Profesionales where ID_Profesional = " + idprofesional;
+                SqlCommand comand = new SqlCommand(query, conexion);
+                SqlDataReader reader = comand.ExecuteReader();
+                if(reader.Read())
+                {
+                    profesional.ID_Profesional = Convert.ToInt32(reader["ID_Profesional"].ToString());
+                    profesional.Matricula = reader["Matricula"].ToString();
+                    profesional.Nombre = reader["Nombre"].ToString();
+                    profesional.Apellido = reader["Apellido"].ToString();
+                    profesional.Telefono = reader["Telefono"].ToString();
+                    profesional.Email = reader["Email"].ToString();
+                    profesional.Activo = Convert.ToBoolean(reader["Activo"].ToString());
+                    profesional.CreatedAtUtc = reader.GetDateTime(7);
+                    if (!reader.IsDBNull(8))
+                    {
+                        profesional.UpdatedAtUtc = reader.GetDateTime(8);
+                    }
+                }
+                conexion.Close();
+            }
+            return profesional;
+        }
+
         public static List<ProfesionalBE> ObtenerProfesionales()
         {
             List<ProfesionalBE> profesionales = new List<ProfesionalBE>();

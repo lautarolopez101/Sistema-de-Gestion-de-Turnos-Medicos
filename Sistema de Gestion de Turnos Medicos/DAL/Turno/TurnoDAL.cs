@@ -33,7 +33,7 @@ namespace DAL
                     "ID_Paciente = '" + turno.ID_Paciente + "'," +
                     "Motivo = '" + turno.Motivo + "'," +
                     "FechaHora = '" + turno.FechaHora + "'," +
-                    "Observaciones = '" + turno.Motivo + "',"+ 
+                    "Observaciones = '" + turno.Observaciones + "',"+ 
                     "Estado = '"+ turno.Estado + "'" +
                     "Where ID_Turno = '" + turno.ID_Turno + "'";
                 SqlCommand comand = new SqlCommand(query, conexion);
@@ -70,10 +70,27 @@ namespace DAL
                     turno.Estado = reader.GetString(3);
                     turno.FechaHora = reader.GetDateTime(4);
                     turno.Motivo = reader.GetString(5);
-                 //   turno.Observaciones = reader.GetString(6);
-                    turno.CreatedAtUtc = reader.GetDateTime(7);
-                   // turno.UpdateAtUtc = reader.GetDateTime(8);
-                   listaturnos.Add(turno);
+                    
+                    // Tenemos que hacer una verificacion para ver si hay una observacion o no de parte 
+                    // Si en la posicion 6 del reader no esta vacio entonces .........
+                    if(!reader.IsDBNull(6))
+                    {
+                        turno.Observaciones = reader.GetString(6);
+                    }
+                    else
+                    {
+                        turno.Observaciones =null;
+                    }
+                        turno.CreatedAtUtc = reader.GetDateTime(7);
+                    if (!reader.IsDBNull(8))
+                    {
+                        turno.UpdateAtUtc = reader.GetDateTime(8);
+                    }
+                    else
+                    {
+                        turno.UpdateAtUtc = DateTime.Today;
+                    }
+                        listaturnos.Add(turno);
                 }
                 conexion.Close();
             }

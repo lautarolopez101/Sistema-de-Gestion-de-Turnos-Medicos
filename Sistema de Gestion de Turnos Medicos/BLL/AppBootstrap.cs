@@ -15,7 +15,7 @@ namespace BLL
             var repo = new TurnoRepository();
             var profesionalrepository = new ProfesionalRepository();
             var pacienterepository = new PacienteRepository();
-            var service = new TurnoService(repo);
+            var service = new TurnoService(repo,pacienterepository,profesionalrepository);
             return service;
         }
         public static IProfesional_EspecialidadService BuildProfesionalEspecialidadService()

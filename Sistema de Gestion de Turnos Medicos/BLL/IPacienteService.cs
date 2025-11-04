@@ -14,6 +14,7 @@ namespace BLL
         int ModificarPaciente(int id,string dni, string nombre, string apellido, string email, string telefono, DateTime fechanacimiento, string estado);
         int ActivarPaciente(int id, string dni, string nombre, string apellido , string email, string telefono , DateTime fechanacimiento,string estado);
         List<PacienteBE> ObtenerTodos();
+        List<PacienteBE> ObtenerPaciente(int idpaciente);
         List<PacienteBE> ListarPacientesEstado(string cual);
     }
 }

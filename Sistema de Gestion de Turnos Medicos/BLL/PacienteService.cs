@@ -66,6 +66,14 @@ namespace BLL
             return pacientes;
         }
 
+        public List<PacienteBE> ObtenerPaciente(int idpaciente)
+        {
+            PacienteBE paciente = _repo.ObtenerPaciente(idpaciente);
+            List<PacienteBE> lista = new List<PacienteBE>();
+            lista.Add(paciente);
+            return lista;
+        }
+
         public int AltaPaciente(string dni, string nombre, string apellido, string email, string telefono, DateTime fechanacimiento, string estado)
         {
             PacienteBE paciente = new PacienteBE();

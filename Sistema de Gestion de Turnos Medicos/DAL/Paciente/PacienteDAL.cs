@@ -1,4 +1,5 @@
 ﻿using BE;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -142,6 +143,36 @@ namespace DAL
             // Devolvemos la lista pedida
             return lista;
         }
+
+        public static PacienteBE ObtenerPaciente(int idpaciente)
+        {
+            PacienteBE paciente = new PacienteBE();
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "Select * from Pacientes where ID_Paciente = " + idpaciente;
+                SqlCommand comand = new SqlCommand(query, conexion);
+                SqlDataReader reader = comand.ExecuteReader();
+                if (reader.Read())
+                {
+                    paciente.ID_Paciente = Convert.ToInt32(reader["ID_Paciente"].ToString());
+                    paciente.DNI = reader.GetString(1);
+                    paciente.Nombre = reader.GetString(2);
+                    paciente.Apellido = reader.GetString(3);
+                    paciente.FechaNacimiento = reader.GetDateTime(4);
+                    paciente.Telefono = reader.GetString(5);
+                    paciente.Email = reader.GetString(6);
+                    paciente.Estado = reader.GetString(7);
+                    paciente.CreatedAtUtc = reader.GetDateTime(8);
+                    if (!reader.IsDBNull(9))
+                    {
+                        paciente.UpdatedAtUtc = reader.GetDateTime(9);
+                    }
+                }
+                conexion.Close();
+            }
+            return paciente;
+        }
+
         public static List<PacienteBE> ObtenerTodos()
         {
             // Creamos una lista de pacientes que va a estar vacia

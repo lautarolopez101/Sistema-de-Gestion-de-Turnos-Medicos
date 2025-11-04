@@ -11,9 +11,13 @@ namespace BLL
     public class TurnoService : ITurnoService
     {
         private readonly ITurnoRepository _repo;
-        public TurnoService(ITurnoRepository repository)
+        private readonly IPacienteRepository _pacienterepository;
+        private readonly IProfesionalRepository _profesionalrepository;
+        public TurnoService(ITurnoRepository repository, IPacienteRepository pacienterepository, IProfesionalRepository profesionalrepository)
         {
             _repo = repository;
+            _pacienterepository = pacienterepository;
+            _profesionalrepository = profesionalrepository;
         }
         public int AgregarTurno(int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
         {
@@ -26,9 +30,10 @@ namespace BLL
             turno.FechaHora = fecha;
             return _repo.AgregarTurno(turno);
         }
-        public int ModificarTurno(int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
+        public int ModificarTurno(int idturno, int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
         {
             TurnoBE turno = new TurnoBE();
+            turno.ID_Turno = idturno;
             turno.ID_Paciente = idpaciente;
             turno.ID_Profesional = idprofesional;
             turno.Estado = estado;
@@ -37,9 +42,10 @@ namespace BLL
             turno.FechaHora = fecha;
             return _repo.ModificarTurno(turno);
         }
-        public int EliminarTurno(int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
+        public int EliminarTurno(int idturno, int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
         {
             TurnoBE turno = new TurnoBE();
+            turno.ID_Turno = idturno;
             turno.ID_Paciente = idpaciente;
             turno.ID_Profesional = idprofesional;
             turno.Estado = estado;
@@ -51,6 +57,27 @@ namespace BLL
         public List<TurnoBE> ObtenerTodos()
         {
             return _repo.ObtenerTodos();
+        }
+
+        // Necesitamos este metodo para poder verificar si ya existe un turno hecho 
+        public List<TurnoBE> VerificoDuplicado(int idprofesional, int idpaciente)
+        {
+            // Hacemos una lista de turnos porque pueden haber mas de un turno con un mismo profesional y paciente
+            List<TurnoBE> listaturnos = new List<TurnoBE>();
+            // Obtenemos todos los turnos hechos para poder luego
+            listaturnos = _repo.ObtenerTodos();
+            // Con un LINQ buscamos los que coincidan con las variables del parametro
+            var resultantes = listaturnos.Where(e => e.ID_Profesional == idprofesional && e.ID_Paciente == idpaciente).ToList();
+            // Devolvemos la lista con todos los resultados que veriquen lo anterior
+            return resultantes;
+        }
+
+        public List<TurnoBE> Verifico(int idturno)
+        {
+            List<TurnoBE> listaturnos = new List<TurnoBE>();
+            listaturnos = _repo.ObtenerTodos();
+            var existe = listaturnos.Where(e => e.ID_Turno == idturno).ToList();
+            return existe;
         }
     }
 }

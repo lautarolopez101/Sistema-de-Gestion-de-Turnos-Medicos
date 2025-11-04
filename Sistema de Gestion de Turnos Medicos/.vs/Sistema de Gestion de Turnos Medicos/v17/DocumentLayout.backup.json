@@ -1,42 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\sistema de gestion de turnos medicos\\frmabmturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|solutionrelative:sistema de gestion de turnos medicos\\frmabmturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\sistema de gestion de turnos medicos\\frmabmturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|solutionrelative:sistema de gestion de turnos medicos\\frmabmturnos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\sistema de gestion de turnos medicos\\abm\\frmabmpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|solutionrelative:sistema de gestion de turnos medicos\\abm\\frmabmpacientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|c:\\users\\lautaro\\desktop\\sistema-de-gestion-de-turnos-medicos\\sistema de gestion de turnos medicos\\sistema de gestion de turnos medicos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\sistema de gestion de turnos medicos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|solutionrelative:sistema de gestion de turnos medicos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{769C8766-E778-4A83-A121-C9CFA871F4EB}|BLL\\BLL.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\bll\\appbootstrap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{769C8766-E778-4A83-A121-C9CFA871F4EB}|BLL\\BLL.csproj|C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\bll\\appbootstrap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{769C8766-E778-4A83-A121-C9CFA871F4EB}|BLL\\BLL.csproj|solutionrelative:bll\\appbootstrap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{769C8766-E778-4A83-A121-C9CFA871F4EB}|BLL\\BLL.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\bll\\profesionalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{769C8766-E778-4A83-A121-C9CFA871F4EB}|BLL\\BLL.csproj|solutionrelative:bll\\profesionalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\dal\\profesional\\iprofesionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|solutionrelative:dal\\profesional\\iprofesionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{769C8766-E778-4A83-A121-C9CFA871F4EB}|BLL\\BLL.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\bll\\iprofesionalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{769C8766-E778-4A83-A121-C9CFA871F4EB}|BLL\\BLL.csproj|solutionrelative:bll\\iprofesionalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\dal\\profesional\\profesionaldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|solutionrelative:dal\\profesional\\profesionaldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,17 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\Program.cs",
               "RelativeDocumentMoniker": "Sistema de Gestion de Turnos Medicos\\Program.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\Program.cs",
               "RelativeToolTip": "Sistema de Gestion de Turnos Medicos\\Program.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABYAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T03:43:21.228Z",
               "IsPinned": true,
@@ -64,105 +36,17 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "AppBootstrap.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\AppBootstrap.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\AppBootstrap.cs",
               "RelativeDocumentMoniker": "BLL\\AppBootstrap.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\AppBootstrap.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\AppBootstrap.cs",
               "RelativeToolTip": "BLL\\AppBootstrap.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAUwA8AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-03T01:33:01.062Z",
               "IsPinned": true,
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FRMABMTurnos.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs [Design]",
-              "RelativeToolTip": "Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T15:57:52.332Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FRMABMTurnos.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs",
-              "RelativeToolTip": "Sistema de Gestion de Turnos Medicos\\FRMABMTurnos.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAuwM4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T15:57:55.186Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FRMABMPacientes.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\ABM\\FRMABMPacientes.cs",
-              "RelativeDocumentMoniker": "Sistema de Gestion de Turnos Medicos\\ABM\\FRMABMPacientes.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\ABM\\FRMABMPacientes.cs",
-              "RelativeToolTip": "Sistema de Gestion de Turnos Medicos\\ABM\\FRMABMPacientes.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAtwEgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T16:15:00.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProfesionalService.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\ProfesionalService.cs",
-              "RelativeDocumentMoniker": "BLL\\ProfesionalService.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\ProfesionalService.cs",
-              "RelativeToolTip": "BLL\\ProfesionalService.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAawEQAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T16:13:39.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IProfesionalRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\Profesional\\IProfesionalRepository.cs",
-              "RelativeDocumentMoniker": "DAL\\Profesional\\IProfesionalRepository.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\Profesional\\IProfesionalRepository.cs",
-              "RelativeToolTip": "DAL\\Profesional\\IProfesionalRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T16:12:53.095Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IProfesionalService.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\IProfesionalService.cs",
-              "RelativeDocumentMoniker": "BLL\\IProfesionalService.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\IProfesionalService.cs",
-              "RelativeToolTip": "BLL\\IProfesionalService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T16:13:22.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProfesionalDAL.cs",
-              "DocumentMoniker": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\Profesional\\ProfesionalDAL.cs",
-              "RelativeDocumentMoniker": "DAL\\Profesional\\ProfesionalDAL.cs",
-              "ToolTip": "C:\\Users\\Lautaro\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\Profesional\\ProfesionalDAL.cs",
-              "RelativeToolTip": "DAL\\Profesional\\ProfesionalDAL.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAADwv1gAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-03T16:11:52.267Z"
             }
           ]
         }

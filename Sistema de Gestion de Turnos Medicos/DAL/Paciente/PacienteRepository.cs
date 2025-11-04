@@ -35,6 +35,10 @@ namespace DAL
             }
             return retorna;
         }
+        public PacienteBE ObtenerPaciente(int idpaciente)
+        {
+            return PacienteDAL.ObtenerPaciente(idpaciente);
+        }
         public List<PacienteBE> ListarPacientesEstado(string cual)
         {
             // Logica de acceso a la BD

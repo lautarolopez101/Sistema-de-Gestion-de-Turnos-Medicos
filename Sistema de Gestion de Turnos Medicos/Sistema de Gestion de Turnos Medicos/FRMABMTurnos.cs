@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
        
         
         // Constructor para cuando inicializa el formulario
+        // Necesitamos las interface de paciente y profesional para poder reutilizar el codigo de ellos para mostrar las listas enteras y llamar alguna que otra funcion que necesitemos
         public FRMABMTurnos(ITurnoService turnoService, IPacienteService pacienteservice, IProfesionalService profesionalservice)
         {
             InitializeComponent();
@@ -41,10 +43,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             {
                 // Cargo los datos del paciente y profesional seleccionado
             }
-
-
-            DGVPacientes.DataSource = _pacienteservice.ObtenerTodos();
-            DGVProfesionales.DataSource = _profesionalservice.ObtenerProfesionales();
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -53,9 +51,10 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
                 // Verificamos que los campos necesarios no esten vacios
                 if (!string.IsNullOrEmpty(DTPFechaHora.Text) && !string.IsNullOrEmpty(LBLID_Paciente.Text) && !string.IsNullOrEmpty(txtMotivo.Text) && !string.IsNullOrEmpty(LBLID_Profesional.Text))
                 {
-                    // Pasamos los valores a unas variables para poder tener un mejor manejo
+                    // Verificamos que se hayan limpiado correctamtente los labels para poder seguir
                     if(LBLID_Paciente.Text != "0" && LBLID_Profesional.Text != "0")
                     {
+                    // Pasamos los valores a unas variables para poder tener un mejor manejo
                         int idprofesional = Convert.ToInt32(LBLID_Profesional.Text);
                         int idpaciente  = Convert.ToInt32(LBLID_Paciente.Text);
                         string motivo = txtMotivo.Text;
@@ -63,16 +62,41 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
                         string estado = RBConfirmado.Checked ? "Confirmado" : "Pendiente";
                         string observaciones = txtObservaciones.Text;
 
+                        // AGREGAR UN METODO PARA VERIFICAR SI YA EXISTE UNA RELACION PARECIDA O NO Y QUE LA MUESTRE
+                        // Y SI EL USUARIO AUN ASI LA QUIERE AGREGAR IGUAL QUE LO HAGA, PERO NOSOTROS LE ADVERTIMOS
+                        List<TurnoBE> verificados = _turnoService.VerificoDuplicado(idprofesional, idpaciente);
+                        // Vemos cuantos turnos similares hay y si hay mas de 0 entonces ....
+                        if(verificados.Count > 0)
+                        {
+                            // Creamos una variable tipo "string" y ponemos un texto referenciando a cuantos turnos habria en tal caso
+                            var texto = $"⚠️ Ya existen {verificados.Count} turno(s) para este paciente/profesional.\n" +  $"¿Querés agregar otro de todos modos?";
+
+                            // Ahora hacemos un Message Box y le agregamos el texto y tambien el posible duplicado y los botones de si y no
+                            var rta = MessageBox.Show(
+                                texto,
+                                "Posible duplicado de turno",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Warning,
+                                MessageBoxDefaultButton.Button2);
+                            // si la respuesta del Message Box es no entonces
+                            if (rta == DialogResult.No)
+                                return; // ⟵ no agregamos y salimos del handler
+
+                        }
+                        // Creamos una variable para ver si se pudo agregar el turno nuevamente
                         int retorna = _turnoService.AgregarTurno(idpaciente, idprofesional, estado, fechahora, motivo, observaciones);
+                        // Si el entero es mayor a 0 entonces se pudo agregar con exito el turno 
                         if (retorna > 0)
                         {
                             MessageBox.Show("Turno agregado con exito");
+                            // Cargamos a todos los turnos nuevamente
                             DGVTurnos.DataSource = _turnoService.ObtenerTodos();
+                            // Limpiamos los campos para ver si quiere agregar de vuelta otro turno
                             LimpiarCampos();
                         }
                         else
                         {
-                            MessageBox.Show("Error al agregar el turno");
+                            MessageBox.Show("No se pudo Agregarse el Turno.");
                         }
                     }
                     else
@@ -87,7 +111,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar el turno: " + ex.Message);
+                MessageBox.Show("Error al Agregar el turno: " + ex.Message);
             }
         }
 
@@ -99,7 +123,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar el turno: " + ex.Message);
+                MessageBox.Show("Error al Limpiar los Campos: " + ex.Message);
             }
         }
 
@@ -108,10 +132,38 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             try
             {
 
+                // Pasamos los valores a unas variables para poder tener un mejor manejo
+                int idturno = Convert.ToInt32(LBLID_Turno.Text);
+                int idprofesional = Convert.ToInt32(LBLID_Profesional.Text);
+                int idpaciente = Convert.ToInt32(LBLID_Paciente.Text);
+                string motivo = txtMotivo.Text;
+                DateTime fechahora = DTPFechaHora.Value;
+                string estado = RBConfirmado.Checked ? "Confirmado" : "Pendiente";
+                string observaciones = txtObservaciones.Text;
+
+                var buscamos = _turnoService.Verifico(idturno);
+                if(buscamos.Count == 1)
+                {
+                    int retorna = _turnoService.ModificarTurno(idturno,idpaciente, idprofesional, estado, fechahora, motivo, observaciones);
+                    if(retorna > 0)
+                    {
+                        MessageBox.Show("Exito al Modificar el Turno");
+                        DGVTurnos.DataSource = _turnoService.ObtenerTodos();
+                        LimpiarCampos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar modificar el turno");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No existe ningun turno");
+                }
             }
             catch (Exception ex)
-            {
-                MessageBox.Show("Error al agregar el turno: " + ex.Message);
+                {
+                    MessageBox.Show("Error al Modificar el turno: " + ex.Message);
             }
         }
 
@@ -119,15 +171,46 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
         {
             try
             {
+                // Verificamos que los campos necesarios no esten vacios
+                if (!string.IsNullOrEmpty(DTPFechaHora.Text) && !string.IsNullOrEmpty(LBLID_Paciente.Text) && !string.IsNullOrEmpty(txtMotivo.Text) && !string.IsNullOrEmpty(LBLID_Profesional.Text))
+                {
+                        // Pasamos los valores a unas variables para poder tener un mejor manejo
+                        int idturno = Convert.ToInt32(LBLID_Turno.Text);
+                        int idprofesional = Convert.ToInt32(LBLID_Profesional.Text);
+                        int idpaciente = Convert.ToInt32(LBLID_Paciente.Text);
+                        string motivo = txtMotivo.Text;
+                        DateTime fechahora = DTPFechaHora.Value;
+                        string estado = RBConfirmado.Checked ? "Confirmado" : "Pendiente";
+                        string observaciones = txtObservaciones.Text;
 
+                        // Creamos una variable para ver si se pudo agregar el turno nuevamente
+                        int retorna = _turnoService.EliminarTurno(idturno,idpaciente, idprofesional, estado, fechahora, motivo, observaciones);
+                        // Si el entero es mayor a 0 entonces se pudo agregar con exito el turno 
+                        if (retorna > 0)
+                        {
+                            MessageBox.Show("Turno Eliminado con exito");
+                            // Cargamos a todos los turnos nuevamente
+                            DGVTurnos.DataSource = _turnoService.ObtenerTodos();
+                            // Limpiamos los campos para ver si quiere agregar de vuelta otro turno
+                            LimpiarCampos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo Eliminar el Turno.");
+                        }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor Seleccione un Turno para poder Eliminarlo.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar el turno: " + ex.Message);
+                MessageBox.Show("Error al Eliminar el turno: " + ex.Message);
             }
         }
 
-        //Area de Seleccion de Datagrids
+        // -------------------------------------------- AREA DE SELECCION DE DATAGRIDVIEW --------------------------------------------------
 
 
         // DGV Principal Turnos
@@ -139,8 +222,15 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
                 LBLID_Profesional.Text = DGVTurnos.CurrentRow.Cells["ID_Profesional"].Value.ToString();
                 LBLID_Paciente.Text = DGVTurnos.CurrentRow.Cells["ID_Paciente"].Value.ToString();
                 txtMotivo.Text = DGVTurnos.CurrentRow.Cells["Motivo"].Value.ToString();
-
-                DTPFechaHora.Text = DGVTurnos.CurrentRow.Cells["FechaHora"].Value.ToString();
+                if (DGVTurnos.CurrentRow.Cells["Observaciones"].Value != null )
+                {
+                    txtObservaciones.Text = DGVTurnos.CurrentRow.Cells["Observaciones"].Value.ToString();
+                }
+                else
+                {
+                    txtObservaciones.Text = null;
+                }
+                    DTPFechaHora.Text = DGVTurnos.CurrentRow.Cells["FechaHora"].Value.ToString();
                 string estado = DGVTurnos.CurrentRow.Cells["Estado"].Value.ToString();
                 if (estado == "Confirmado")
                 {
@@ -153,10 +243,25 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
                     RBPendiente.Checked = true;
                 }
 
+                // Cuando selecciono un turno tendria que mostrar en los DGV Paciente y Profesional, los involucrados en el turno para que pueda ver a simple vista los datos de ellos
+
+                int idprofesional = Convert.ToInt32(LBLID_Profesional.Text);
+                int idpaciente = Convert.ToInt32(LBLID_Paciente.Text);
+
+                if(idprofesional >0)
+                {
+                    DGVProfesionales.DataSource = _profesionalservice.ObtenerProfesional(idprofesional);
+                }
+                if(idpaciente >0)
+                {
+                    DGVPacientes.DataSource = _pacienteservice.ObtenerPaciente(idpaciente);
+                }
+                
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar el turno: " + ex.Message);
+                MessageBox.Show("Error al Seleccionar el turno: " + ex.Message);
             }
         }
 
@@ -169,15 +274,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar el turno: " + ex.Message);
+                MessageBox.Show("Error al Seleccionar el Paciente: " + ex.Message);
             }
         }
-        // Evento para cuando se cambia la fuente de datos del DGV
-        private void DGVPacientes_DataSourceChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void DGVProfesionales_SelectionChanged(object sender, EventArgs e)
         {
             try
@@ -186,24 +285,31 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar el turno: " + ex.Message);
+                MessageBox.Show("Error al Seleccionar el Profesional: " + ex.Message);
             }
         }
 
 
 
+        // -------------------------------------------- AREA DE FUNCIONES QUE NECESITAMOS DENTRO DE LA MISMA CLASE --------------------------------------------------
 
-        // Funciones Externas para poder usarlas dentro del formulario
         private void LimpiarCampos()
         {
+            // Ponemos la listas primeros para que no nos afecte en los labels
+            // La idea de cargar a todos es para que pueda seleccionar por si quiere agregar a alguien
+            DGVPacientes.DataSource = _pacienteservice.ObtenerTodos();
+            DGVProfesionales.DataSource = _profesionalservice.ObtenerProfesionales();
+
             //Limpiamos todos los campos para poder "AGREGAR" un nuevo turno en el ABM
             LBLID_Turno.Text = "0";
             LBLID_Profesional.Text = "0";
             LBLID_Paciente.Text = "0";
-            txtMotivo.Text = "0";
-            DTPFechaHora.Value = DateTime.Now;
+            txtMotivo.Text = null;
+            txtObservaciones.Text = null;
+            DTPFechaHora.Value = DateTime.Today;
             RBConfirmado.Checked = false;
             RBPendiente.Checked = false;
+            txtMotivo.Focus();
         }
     }
 }
