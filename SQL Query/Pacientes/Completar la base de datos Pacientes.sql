@@ -6,6 +6,7 @@ DELETE FROM dbo.Pacientes;
  0 otra vez
 */
 DBCC CHECKIDENT ('dbo.Pacientes', RESEED, 0);
+DBCC CHECKIDENT ('dbo.HistorialCambiosEstadoPacientes', RESEED, 0); /* la idea tambien es borrar todo el historial porque para que hayan los cambios y coincida con el estado actual de los pacientes */
 GO
 
 /* =========================================================

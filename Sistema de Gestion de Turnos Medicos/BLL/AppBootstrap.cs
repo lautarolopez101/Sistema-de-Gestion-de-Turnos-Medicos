@@ -10,6 +10,14 @@ namespace BLL
 {
     public static class AppBootstrap
     {
+        public static IUsuarioService BuildUsuarioService()
+        {
+            var repo = new UsuarioRepository();
+            var password = new PasswordService();
+            var paciente = new PacienteRepository();
+            var service = new UsuarioService(repo,password,paciente);
+            return service;
+        }
         public static ITurnoService BuildTurnoService()
         {
             var repo = new TurnoRepository();

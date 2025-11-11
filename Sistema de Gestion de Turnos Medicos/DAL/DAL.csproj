@@ -175,12 +175,12 @@
     <Compile Include="PatenteDAL.cs" />
     <Compile Include="Profesional\ProfesionalRepository.cs" />
     <Compile Include="Turno\TurnoRepository.cs" />
-    <Compile Include="UsuarioDAL.cs" />
+    <Compile Include="Usuario\UsuarioDAL.cs" />
     <Compile Include="Especialidad\IEspecialidadRepository.cs" />
     <Compile Include="IFamiliaRepository.cs" />
     <Compile Include="Paciente\IPacienteRepository.cs" />
     <Compile Include="Paciente\PacienteDAL.cs" />
-    <Compile Include="IUsuarioRepository.cs" />
+    <Compile Include="Usuario\IUsuarioRepository.cs" />
     <Compile Include="Especialidad\EspecialidadRepository.cs" />
     <Compile Include="Profesional\ProfesionalDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -191,6 +191,7 @@
     </Compile>
     <Compile Include="SqlConnectionFactory.cs" />
     <Compile Include="Turno\TurnoDAL.cs" />
+    <Compile Include="Usuario\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">

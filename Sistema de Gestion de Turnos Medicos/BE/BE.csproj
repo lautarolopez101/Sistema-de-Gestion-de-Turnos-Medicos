@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthResultBE.cs" />
     <Compile Include="EspecialidadBE.cs" />
     <Compile Include="FamiliaBE.cs" />
     <Compile Include="HistorialBE.cs" />

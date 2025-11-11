@@ -39,6 +39,10 @@ namespace DAL
         {
             return PacienteDAL.ObtenerPaciente(idpaciente);
         }
+        public PacienteBE ObtenerPacienteEmail(string email)
+        {
+            return PacienteDAL.ObtenerPacienteEmail(email);
+        }
         public List<PacienteBE> ListarPacientesEstado(string cual)
         {
             // Logica de acceso a la BD

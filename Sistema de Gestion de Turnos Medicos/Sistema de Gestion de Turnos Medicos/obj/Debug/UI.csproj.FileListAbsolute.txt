@@ -15,7 +15,6 @@ C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de G
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\UI.csproj.Up2Date
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.exe
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.pdb
-C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.exe.config
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\BLL.dll.config
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\DAL.dll.config
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\UI.csproj.AssemblyReference.cache
@@ -45,6 +44,24 @@ C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.LOGIN.resources
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.ABM_s.FRMABMTurnos.resources
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.ABM_s.FRMABMTurnos.resources
-C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.LOGIN.resources
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.FRMAgregarEspecialidad.resources
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.FRMAgregarEspecialidad.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.Main.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.LOGIN.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\FontAwesome.WPF.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\Krypton.Toolkit.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\MaterialSkin.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\FontAwesome.WPF.xml
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\Krypton.Toolkit.xml
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.exe.config
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.Register.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.Complete.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\MaterialDesignColors.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\bin\Debug\Microsoft.Xaml.Behaviors.xml

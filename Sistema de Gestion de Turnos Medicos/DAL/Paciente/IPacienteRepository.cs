@@ -20,6 +20,7 @@ namespace DAL
         int DesactivarPaciente(PacienteBE paciente);
         int ActivarPaciente(PacienteBE paciente);
         PacienteBE ObtenerPaciente(int idpaciente);
+        PacienteBE ObtenerPacienteEmail(string email);
         List<PacienteBE> ObtenerTodos();
         List<PacienteBE> ListarPacientesEstado(string cual);
     }

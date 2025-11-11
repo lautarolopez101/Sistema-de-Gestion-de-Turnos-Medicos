@@ -17,21 +17,25 @@ namespace DAL
             using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
                 conexion.Open ();
-                string query = "SELECT p.ID_Patente, p.Nombre, p.Descripcion , p.Activo " +
-                    "FROM Familia_Patente fp " +
-                    "INNER JOIN Patentes p ON fp.ID_Patente = p.ID_Patente " +
-                    "WHERE fp.ID_Familia = " + idfamilia;
-                SqlCommand comand = new SqlCommand (query, conexion);
-                SqlDataReader reader = comand.ExecuteReader ();
-                while (reader.Read ())
+                string query = "SELECT p.ID_Patente, p.Nombre, p.Descripcion, p.Activo " +
+                                     "FROM Familia_Patente fp " +
+                                     "INNER JOIN Patentes p ON fp.ID_Patente = p.ID_Patente " +
+                                     "WHERE fp.ID_Familia = @id";
+
+                SqlCommand comand = new SqlCommand(query, conexion);
+                comand.Parameters.AddWithValue("@id", idfamilia);
+
+                SqlDataReader reader = comand.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    PatenteBE patente = new PatenteBE ();
+                    PatenteBE patente = new PatenteBE();
                     patente.ID_Patente = reader.GetInt32(0);
-                    patente.Nombre  = reader.GetString(1);
+                    patente.Nombre = reader.GetString(1);
                     patente.Descripcion = reader.GetString(2);
                     patente.Activo = reader.GetBoolean(3);
 
-                    lista.Add (patente);
+                    lista.Add(patente);
                 }
                 conexion.Close();
             }

@@ -364,64 +364,11 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
             //  DGVProfesionales.DataSource = _profesionalService.ListarProfesionales(false);
             DGVProfesionales.DataSource = _profesionalService.ListarProfesionales(CUAL());
            // RBDesactivo.Checked = true;
-
-            BackColor = Color.Red;
-
-            //Botones
-            btnAgregar.BackColor = Color.White;
-            btnLimpiar.BackColor = Color.White;
-            btnModificar.BackColor = Color.White;
-            btnAgregar.BackColor = Color.White;
-
-            // Labels Fore color
-            lblIDProfesionales.ForeColor = Color.White;
-            label1.ForeColor = Color.White;
-            label2.ForeColor = Color.White;
-            label3.ForeColor = Color.White;
-            label4.ForeColor = Color.White;
-            label5.ForeColor = Color.White;
-            label6.ForeColor = Color.White;
-            // Labels Back Color
-            lblIDProfesionales.BackColor = Color.Red;
-            label1.BackColor = Color.Red;
-            label2.BackColor = Color.Red;
-            label3.BackColor = Color.Red;
-            label4.BackColor = Color.Red;
-            label5.BackColor = Color.Red;
-            label6.BackColor = Color.Red;
-
         }
         private void RBActivo_CheckedChanged(object sender, EventArgs e)
         {
             //     DGVProfesionales.DataSource = _profesionalService.ListarProfesionales(true);
-            DGVProfesionales.DataSource = _profesionalService.ListarProfesionales(CUAL());
-            BackColor = Color.Green;
-
-                //Botones
-                btnAgregar.BackColor = Color.White;
-                btnLimpiar.BackColor = Color.White;
-                btnModificar.BackColor = Color.White;
-                btnAgregar.BackColor = Color.White;
-
-                // Labels Fore color
-                lblIDProfesionales.ForeColor = Color.White;
-                label1.ForeColor = Color.White;
-                label2.ForeColor = Color.White;
-                label3.ForeColor = Color.White;
-                label4.ForeColor = Color.White;
-                label5.ForeColor = Color.White;
-                label6.ForeColor = Color.White;
-                // Labels Back Color
-                lblIDProfesionales.BackColor = Color.Green;
-                label1.BackColor = Color.Green;
-                label2.BackColor = Color.Green;
-                label3.BackColor = Color.Green;
-                label4.BackColor = Color.Green;
-                label5.BackColor = Color.Green;
-                label6.BackColor = Color.Green;
-             //   DGVProfesionales.DataSource = _profesionalService.ListarProfesionales(CUAL());
-
-            
+            DGVProfesionales.DataSource = _profesionalService.ListarProfesionales(CUAL());            
         } 
       
 

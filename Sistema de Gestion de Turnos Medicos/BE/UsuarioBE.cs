@@ -12,7 +12,7 @@ namespace BE
         public string Username { get; set; }
         public string PasswordHash { get; set; }
         public string Email { get; set; }
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
         public DateTime LastLogin { get; set; }
         public int ID_Paciente { get; set; }
         public int ID_Profesional { get; set; }
@@ -34,7 +34,6 @@ namespace BE
             Username = username;
             PasswordHash = passwordhash;
             Email = email;
-            Estado = "Activo";
             LastLogin = DateTime.Now;
             CreatedAtUtc = DateTime.Now;
         }

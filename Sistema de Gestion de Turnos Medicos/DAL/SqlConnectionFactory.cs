@@ -44,7 +44,9 @@ namespace DAL
             Laptop-0NQ7LDJD y si estoy desde la pc usa 
              
              */
+            // Obtiene el dns de la maquina que tiene el programa
             string equipo = Dns.GetHostName();
+            // y hace una verificacion si es igual a la dns de la laptop y sino 
             string nombreCadena = equipo.Equals("LAPTOP-0NQ7LDJD", StringComparison.OrdinalIgnoreCase)
                                   ? "ConexionLaptop" : "ConexionPC";
 
@@ -72,7 +74,10 @@ namespace DAL
             }
 
             var cn = new SqlConnection(cadena);
-            cn.Open();
+
+            // Lo comentamos a la conexion abierta porque ultimamente me estaba tirando error de que la "ABRIA" dos veces, asi que prefiero abrirla en la dal para abrir y cerrar cuando haga una ejecucion
+
+           // cn.Open();
             return cn;
         }
 

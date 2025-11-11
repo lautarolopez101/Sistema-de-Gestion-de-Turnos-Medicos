@@ -18,7 +18,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         public FRMABMPacientes(IPacienteService pacienteservice)
         {
             InitializeComponent();
-            CargarComboEstados();
             _pacienteservice = pacienteservice;
             RDBActivo.Checked = true;
             btnAlta.Hide();
@@ -49,13 +48,23 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             if (!string.IsNullOrEmpty(DGVPacientes.CurrentRow.Cells["FechaNacimiento"].Value.ToString()))
             {
                 DTPFechaNacimiento.Value = Convert.ToDateTime(DGVPacientes.CurrentRow.Cells["FechaNacimiento"].Value.ToString());
-
             }
             else
             {
                 DTPFechaNacimiento.ResetText();
             }
-            CMBLista.SelectedText = DGVPacientes.CurrentRow.Cells["Estado"].Value.ToString();
+            string estado = DGVPacientes.CurrentRow.Cells["Estado"].Value.ToString();
+            // Nose porque el activo despues tiene un espacio, se debe crear solo por ahi con el query que tengo por default
+            // que tengo para crear los pacientes automaticamente que lo hice con chatgpt pero me fije en el query y no lo tiene con algun espacio
+            if(estado == "Activo         ")
+            {
+                RBEstadoActivo.Checked = true;
+            }
+            else if (estado == "Desactivado    ")
+            {
+                RBEstadoDesactivo.Checked = true;
+            }
+
         }
 
         // Evento de boton para registrar un paciente nuevo
@@ -74,44 +83,41 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 {
                     string telefono = txtTelefono.Text;
                     DateTime fecha = Convert.ToDateTime(DTPFechaNacimiento.Text.ToString());
-                    if (CMBLista.Items.Count > 0)
+
+
+                    string estado = "Activo";
+                    if (RBEstadoActivo.Checked == true)
                     {
-                        if (CMBLista.Text == "Activo")
-                        {
-                            string estado = CMBLista.Text;
-                            // Aca llamamos al altapaciente del servicio para que haga el alta
-                            // y creamos la devolucion del entero en retorna 
-                            int retorna = _pacienteservice.AltaPaciente(dni, nombre, apellido, email, telefono, fecha, estado);
-                            // si retorna es mayor a 0 quiere decir que se hizo bien el alta
-                            if (retorna > 0)
-                            {
-                                MessageBox.Show("Paciente registrado con exito");
-                                DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
-                            }
-                            // si no se hizo bien el alta tira un mensaje de error
-                            else
-                            {
-                                MessageBox.Show("Error al registrar el paciente");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Primeo se debe Crear el paciente para luego poder darlo de baja");
-                        }
+                        estado = "Activo";
+
+                    }
+                    else if (RBEstadoDesactivo.Checked == true)
+                    {
+                        estado = "Desactivado";
+                    }
+                    // Aca llamamos al altapaciente del servicio para que haga el alta
+                    // y creamos la devolucion del entero en retorna 
+                    int retorna = _pacienteservice.AltaPaciente(dni, nombre, apellido, email, telefono, fecha, estado);
+                    // si retorna es mayor a 0 quiere decir que se hizo bien el alta
+                    if (retorna > 0)
+                    {
+                        MessageBox.Show("Paciente registrado con exito", "EXITO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
                     }
                     else
                     {
-                        MessageBox.Show("Reinicia el programa porque salio un error que no hay ningun tipo de estado disponible para cargar");
+                        MessageBox.Show("No se pudo Registrar el Paciente", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Por favor completar todos los campos");
+                    MessageBox.Show("Reinicia el programa porque salio un error que no hay ningun tipo de estado disponible para cargar");
                 }
             }
-            // Hay que hacer excepciones para ver si tiene algunos datos necesarios y si no los tiene 
-            // dependiendo que datos tenga que instancia del constructor va a usar
-
+            else
+            {
+                MessageBox.Show("Por favor completar todos los campos");
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -122,8 +128,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             txtDNI.Clear();
             txtEmail.Clear();
             txtTelefono.Clear();
+            RBEstadoDesactivo.Checked = false;
+            RBEstadoActivo.Checked = false;
             DTPFechaNacimiento.ResetText();
-            CMBActivo();
             txtDNI.Focus();
 
         }
@@ -143,30 +150,26 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 {
                     string telefono = txtTelefono.Text;
                     DateTime fecha = Convert.ToDateTime(DTPFechaNacimiento.Text.ToString());
-                    if (CMBLista.Items.Count > 0)
+
+                    string estado = "Activo";
+                    if (RBEstadoActivo.Checked == true)
                     {
-                        if ((CMBLista.Text == "Activo") || (CMBLista.Text == "Desactivado"))
-                        {
-                            string estado = CMBLista.Text;
-                            int retorna = _pacienteservice.ModificarPaciente(id, dni, nombre, apellido, email, telefono, fecha, estado);
-                            if (retorna > 0)
-                            {
-                                MessageBox.Show("Paciente Modificado con exito");
-                                DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error al Modificar el paciente");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Por Favor Selecciona de vuelta el tipo de Estado del Paciente");
-                        }
+                        estado = "Activo";
+
+                    }
+                    else if(RBEstadoDesactivo.Checked == true)
+                    {
+                        estado = "Desactivado";
+                    }
+                    int retorna = _pacienteservice.ModificarPaciente(id, dni, nombre, apellido, email, telefono, fecha, estado);
+                    if (retorna > 0)
+                    {
+                        MessageBox.Show("Paciente Modificado con exito");
+                        DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
                     }
                     else
                     {
-                        MessageBox.Show("No hay ningun tipo de Estado disponible para elegir, por favor reinicia el programa");
+                        MessageBox.Show("Error al Modificar el paciente");
                     }
                 }
                 else
@@ -235,35 +238,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 btnRegistrar.Show();
                 btnBaja.Enabled = true;
                 btnModificar.Enabled = true;
-
-                BackColor = Color.Green;
-
-                //Botones
-                btnBaja.BackColor = Color.White;
-                btnLimpiar.BackColor = Color.White;
-                btnModificar.BackColor = Color.White;
-                btnRegistrar.BackColor = Color.White;
-
-                // Labels Fore color
-                lblid.ForeColor = Color.White;
-                label1.ForeColor = Color.White;
-                label2.ForeColor = Color.White;
-                label3.ForeColor = Color.White;
-                label4.ForeColor = Color.White;
-                label5.ForeColor = Color.White;
-                label6.ForeColor = Color.White;
-                label7.ForeColor = Color.White;
-                label8.ForeColor = Color.White;
-                // Labels Back Color
-                lblid.BackColor = Color.Green;
-                label1.BackColor = Color.Green;
-                label2.BackColor = Color.Green;
-                label3.BackColor = Color.Green;
-                label4.BackColor = Color.Green;
-                label5.BackColor = Color.Green;
-                label6.BackColor = Color.Green;
-                label7.BackColor = Color.Green;
-                label8.BackColor = Color.Green;
                 DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
             }
         }
@@ -279,70 +253,22 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 btnAlta.Show();
                 btnBaja.Enabled = false;
                 btnModificar.Enabled = false;
-
-                BackColor = Color.Red;
-
-                //Botones
-                btnBaja.BackColor = Color.White;
-                btnLimpiar.BackColor = Color.White;
-                btnModificar.BackColor = Color.White;
-                btnAlta.BackColor = Color.White;
-
-                // Labels
-                lblid.BackColor = Color.Red;
-                label1.BackColor = Color.Red;
-                label2.BackColor = Color.Red;
-                label3.BackColor = Color.Red;
-                label4.BackColor = Color.Red;
-                label5.BackColor = Color.Red;
-                label6.BackColor = Color.Red;
-                label7.BackColor = Color.Red;
-                label8.BackColor = Color.Red;
-                // Labels Fore color
-                lblid.ForeColor = Color.White;
-                label1.ForeColor = Color.White;
-                label2.ForeColor = Color.White;
-                label3.ForeColor = Color.White;
-                label4.ForeColor = Color.White;
-                label5.ForeColor = Color.White;
-                label6.ForeColor = Color.White;
-                label7.ForeColor = Color.White;
-                label8.ForeColor = Color.White;
                 DGVPacientes.DataSource = _pacienteservice.ListarPacientesEstado(CUAL());
             }
         }
 
-
-
-
-
-        // Metodos para poder limpiar y cargar de vuelta los Estados del Paciente Nuevo
-        public string CMBActivo()
+        private void RBEstadoActivo_CheckedChanged(object sender, EventArgs e)
         {
-            CargarComboEstados();
-            //Si hay algo seleccionado, lo devuelve como un string 
-            if (CMBLista.SelectedItem != null)
-            {
-                return CMBLista.SelectedIndex.ToString();
-            }
-            else
-            {
-                // Si no devuelve activo por defecto
-                return "Activo";
-            }
+
         }
-        public void CargarComboEstados()
+
+        private void RBEstadoDesactivo_CheckedChanged(object sender, EventArgs e)
         {
-            //Limpiamos el combobox
-            CMBLista.Items.Clear();
 
-            //Agregamos los items al combobox
-            CMBLista.Items.Add("Activo");
-            CMBLista.Items.Add("Desactivado");
-
-            // Ponemos por default que arranque con Activo
-            CMBLista.SelectedIndex = 0;
         }
+
+
+
         public string CUAL()
         {
             var activo = RDBActivo.Checked;
@@ -367,5 +293,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             }
             return "Empty";
         }
+
+       
     }
 }
