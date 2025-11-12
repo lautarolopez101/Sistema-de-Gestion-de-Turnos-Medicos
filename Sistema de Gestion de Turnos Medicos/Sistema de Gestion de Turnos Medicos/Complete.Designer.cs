@@ -85,7 +85,7 @@
             this.txtDNI.Multiline = true;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(323, 40);
-            this.txtDNI.TabIndex = 10;
+            this.txtDNI.TabIndex = 0;
             this.txtDNI.Enter += new System.EventHandler(this.txtDNI_Enter);
             this.txtDNI.Leave += new System.EventHandler(this.txtDNI_Leave);
             // 
@@ -110,7 +110,7 @@
             this.txtNombre.Multiline = true;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(323, 40);
-            this.txtNombre.TabIndex = 12;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.Enter += new System.EventHandler(this.txtNombre_Enter);
             this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
@@ -135,7 +135,7 @@
             this.txtApellido.Multiline = true;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(323, 40);
-            this.txtApellido.TabIndex = 14;
+            this.txtApellido.TabIndex = 0;
             this.txtApellido.Enter += new System.EventHandler(this.txtApellido_Enter);
             this.txtApellido.Leave += new System.EventHandler(this.txtApellido_Leave);
             // 
@@ -160,7 +160,7 @@
             this.txtTelefono.Multiline = true;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(323, 40);
-            this.txtTelefono.TabIndex = 16;
+            this.txtTelefono.TabIndex = 0;
             this.txtTelefono.Enter += new System.EventHandler(this.txtTelefono_Enter);
             this.txtTelefono.Leave += new System.EventHandler(this.txtTelefono_Leave);
             // 
@@ -180,7 +180,7 @@
             this.uiDatePicker1.SymbolDropDown = 61555;
             this.uiDatePicker1.SymbolNormal = 61555;
             this.uiDatePicker1.SymbolSize = 24;
-            this.uiDatePicker1.TabIndex = 19;
+            this.uiDatePicker1.TabIndex = 4;
             this.uiDatePicker1.Text = "2025-11-10";
             this.uiDatePicker1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.uiDatePicker1.Value = new System.DateTime(2025, 11, 10, 22, 2, 18, 975);
@@ -207,7 +207,7 @@
             this.btnLogin.Location = new System.Drawing.Point(540, 398);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(309, 64);
-            this.btnLogin.TabIndex = 21;
+            this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Completado";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -255,7 +255,7 @@
             this.panel1.Location = new System.Drawing.Point(80, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(361, 87);
-            this.panel1.TabIndex = 22;
+            this.panel1.TabIndex = 0;
             // 
             // lblDNI
             // 
@@ -301,7 +301,7 @@
             this.panel2.Location = new System.Drawing.Point(80, 107);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(361, 89);
-            this.panel2.TabIndex = 24;
+            this.panel2.TabIndex = 1;
             // 
             // TimerApellido
             // 
@@ -316,7 +316,7 @@
             this.panel3.Location = new System.Drawing.Point(80, 217);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(363, 80);
-            this.panel3.TabIndex = 25;
+            this.panel3.TabIndex = 2;
             // 
             // lblapellido
             // 
@@ -350,7 +350,7 @@
             this.panel4.Location = new System.Drawing.Point(80, 316);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(363, 86);
-            this.panel4.TabIndex = 27;
+            this.panel4.TabIndex = 3;
             // 
             // TimerTelefono
             // 

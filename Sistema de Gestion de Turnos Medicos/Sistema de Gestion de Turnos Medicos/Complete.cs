@@ -67,12 +67,15 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                     if(retorna > 0)
                     {
                         // Aca necesitariamos traer el paciente recientemente creado para poder ponerle el id paciente al usuario
+                        
+                        // Traemos todos los pacientes
+                        List<PacienteBE> lista = _pacienteservice.ObtenerTodos();
+                        // y ahora los ordenamos de mayor a menor por el id para que despues podamos sacar el id mas alto y de ahi agregarle un uno para insertarlo en el usuario
+                        List<PacienteBE> idmasalto= lista.OrderByDescending(x => x.ID_Paciente).ToList();
+                        // ahora seleccionamos al primer paciente de la lista ya ordenada y lo pasamos como pacientebe
+                        PacienteBE ultimopaciente= idmasalto.FirstOrDefault();
 
-
-                        // Otra alternativa seria obtener el id mas alto y como se va aagregar se le agrega al que sigue y ahi si puedo manipular el idpaciente
-
-                        PacienteBE paciente = _pacienteservice.ObtenerPacienteEmail(email);
-                        usuario.ID_Paciente = paciente.ID_Paciente;
+                        usuario.ID_Paciente = ultimopaciente.ID_Paciente;
 
                         // Ahora agregamos el id de paciente en usuario
                         int retornamos = _usuarioservice.AgregarIDPaciente(usuario);

@@ -16,7 +16,6 @@ namespace DAL.CRUD
             int retorna;
             using(SqlConnection conexion= SqlConnectionFactory.ObtenerConexion())
             {
-                conexion.Open();
                 string query = "Insert into Usuarios (Username,PasswordHash,Email)"
                     + "values ('" + usuario.Username + "','" + usuario.PasswordHash + "','" + usuario.Email + "')";
                 SqlCommand comand = new SqlCommand(query, conexion);   
@@ -31,7 +30,6 @@ namespace DAL.CRUD
             int retorna;
             using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                conexion.Open();
                 string query = "Update dbo.Usuarios set ID_Paciente = '" + usuario.ID_Paciente + "' Where ID_Usuario ="+ usuario.ID;
                 SqlCommand comand = new SqlCommand( query, conexion);
                 retorna = comand.ExecuteNonQuery();
@@ -45,7 +43,6 @@ namespace DAL.CRUD
             List<UsuarioBE> lista = new List<UsuarioBE>();
             using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                conexion.Open();
                 string query = "Select *From Usuarios";
                 SqlCommand comand = new SqlCommand(query,conexion);
                 SqlDataReader reader = comand.ExecuteReader();
@@ -83,7 +80,6 @@ namespace DAL.CRUD
             UsuarioBE usuario = null;
             using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                conexion.Open();
                 string query = "SELECT *FROM Usuarios WHERE Username = '" + username + "'";
                 SqlCommand comand =new SqlCommand(query, conexion);
                 SqlDataReader reader = comand.ExecuteReader();
@@ -121,7 +117,6 @@ namespace DAL.CRUD
             List<FamiliaBE> listafamilia = new List<FamiliaBE>();
             using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                conexion.Open();
 
                 string query = "SELECT f.ID_Familia, f.Nombre, f.Descripcion, f.Activo " +
                 "FROM Usuario_Familia uf " +
@@ -153,7 +148,6 @@ namespace DAL.CRUD
             List <PatenteBE> lista = new List<PatenteBE>();
             using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                conexion.Open();
                 
                 string query = "SELECT p.ID_Patente, p.Nombre, p.Descripcion, p.Activo " +
                 "FROM Usuario_Patente up " +

@@ -77,7 +77,7 @@ namespace DAL
 
             // Lo comentamos a la conexion abierta porque ultimamente me estaba tirando error de que la "ABRIA" dos veces, asi que prefiero abrirla en la dal para abrir y cerrar cuando haga una ejecucion
 
-           // cn.Open();
+            cn.Open();
             return cn;
         }
 

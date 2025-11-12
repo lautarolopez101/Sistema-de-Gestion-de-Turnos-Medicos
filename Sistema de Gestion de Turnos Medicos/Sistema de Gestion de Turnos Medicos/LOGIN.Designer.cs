@@ -288,7 +288,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LOGIN";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.93D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LOGIN_MouseDown);

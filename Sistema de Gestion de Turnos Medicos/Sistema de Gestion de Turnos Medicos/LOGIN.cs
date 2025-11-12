@@ -36,7 +36,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
