@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblusername = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -40,19 +39,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.LinkLabel();
-            this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblPassword = new System.Windows.Forms.Label();
             this.aintTimer = new System.Windows.Forms.Timer(this.components);
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,16 +66,6 @@
             this.panel1.Size = new System.Drawing.Size(292, 432);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Logo_de_Sistema_de_Gestion_de_Turnos_Medicos;
-            this.pictureBox1.Location = new System.Drawing.Point(-109, -22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblusername
             // 
             this.lblusername.AutoSize = true;
@@ -85,7 +75,7 @@
             this.lblusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lblusername.Location = new System.Drawing.Point(56, 27);
             this.lblusername.Name = "lblusername";
-            this.lblusername.Size = new System.Drawing.Size(88, 21);
+            this.lblusername.Size = new System.Drawing.Size(108, 23);
             this.lblusername.TabIndex = 11;
             this.lblusername.Text = "Username";
             this.lblusername.Click += new System.EventHandler(this.lblusername_Click);
@@ -143,7 +133,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(531, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 39);
+            this.label1.Size = new System.Drawing.Size(151, 49);
             this.label1.TabIndex = 4;
             this.label1.Text = "LOGIN";
             // 
@@ -155,9 +145,9 @@
             this.btnForgotPassword.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.btnForgotPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.btnForgotPassword.Location = new System.Drawing.Point(433, 380);
+            this.btnForgotPassword.Location = new System.Drawing.Point(378, 378);
             this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(172, 22);
+            this.btnForgotPassword.Size = new System.Drawing.Size(220, 30);
             this.btnForgotPassword.TabIndex = 3;
             this.btnForgotPassword.TabStop = true;
             this.btnForgotPassword.Text = "Forgot password?";
@@ -169,7 +159,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(51, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 17);
+            this.label2.Size = new System.Drawing.Size(433, 20);
             this.label2.TabIndex = 8;
             this.label2.Text = "_____________________________________________________";
             // 
@@ -179,7 +169,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label3.Location = new System.Drawing.Point(53, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(326, 17);
+            this.label3.Size = new System.Drawing.Size(433, 20);
             this.label3.TabIndex = 9;
             this.label3.Text = "_____________________________________________________";
             // 
@@ -191,37 +181,13 @@
             this.btnRegister.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
-            this.btnRegister.Location = new System.Drawing.Point(658, 380);
+            this.btnRegister.Location = new System.Drawing.Point(603, 378);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(187, 22);
+            this.btnRegister.Size = new System.Drawing.Size(237, 30);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.TabStop = true;
             this.btnRegister.Text = "Have an account?";
             this.btnRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnRegister_LinkClicked);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCerrar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(846, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(50, 50);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnCerrar.TabIndex = 7;
-            this.btnCerrar.TabStop = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMinimizar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.minimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(782, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(48, 48);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnMinimizar.TabIndex = 6;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // panel2
             // 
@@ -254,7 +220,7 @@
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lblPassword.Location = new System.Drawing.Point(52, 25);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(82, 21);
+            this.lblPassword.Size = new System.Drawing.Size(103, 23);
             this.lblPassword.TabIndex = 12;
             this.lblPassword.Text = "Password";
             this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
@@ -269,9 +235,43 @@
             this.Timer.Interval = 25;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCerrar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_close;
+            this.btnCerrar.Location = new System.Drawing.Point(868, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCerrar.TabIndex = 7;
+            this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMinimizar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_minimize;
+            this.btnMinimizar.Location = new System.Drawing.Point(810, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnMinimizar.TabIndex = 6;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Logo_de_Sistema_de_Gestion_de_Turnos_Medicos;
+            this.pictureBox1.Location = new System.Drawing.Point(-109, -22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // LOGIN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(910, 432);
@@ -294,13 +294,13 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LOGIN_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -70,7 +70,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label3.Location = new System.Drawing.Point(4, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(326, 17);
+            this.label3.Size = new System.Drawing.Size(433, 20);
             this.label3.TabIndex = 11;
             this.label3.Text = "_____________________________________________________";
             // 
@@ -95,7 +95,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(4, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 17);
+            this.label1.Size = new System.Drawing.Size(433, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "_____________________________________________________";
             // 
@@ -120,7 +120,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(4, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 17);
+            this.label2.Size = new System.Drawing.Size(433, 20);
             this.label2.TabIndex = 15;
             this.label2.Text = "_____________________________________________________";
             // 
@@ -145,7 +145,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label4.Location = new System.Drawing.Point(11, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(326, 17);
+            this.label4.Size = new System.Drawing.Size(433, 20);
             this.label4.TabIndex = 17;
             this.label4.Text = "_____________________________________________________";
             // 
@@ -192,7 +192,7 @@
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(90, 420);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 21);
+            this.label5.Size = new System.Drawing.Size(223, 23);
             this.label5.TabIndex = 20;
             this.label5.Text = "Fecha de Nacimiento";
             // 
@@ -215,11 +215,11 @@
             // btnCerrar
             // 
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCerrar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(938, 12);
+            this.btnCerrar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_close;
+            this.btnCerrar.Location = new System.Drawing.Point(958, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(50, 50);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 8;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -227,11 +227,11 @@
             // btnMinimizar
             // 
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMinimizar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.minimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(884, 12);
+            this.btnMinimizar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_minimize;
+            this.btnMinimizar.Location = new System.Drawing.Point(919, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(48, 48);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -239,7 +239,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Logo_de_Sistema_de_Gestion_de_Turnos_Medicos;
-            this.pictureBox1.Location = new System.Drawing.Point(447, -12);
+            this.pictureBox1.Location = new System.Drawing.Point(449, -12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(500, 500);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -265,7 +265,7 @@
             this.lblDNI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lblDNI.Location = new System.Drawing.Point(17, 41);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(39, 21);
+            this.lblDNI.Size = new System.Drawing.Size(45, 23);
             this.lblDNI.TabIndex = 0;
             this.lblDNI.Text = "DNI";
             this.lblDNI.Click += new System.EventHandler(this.lblDNI_Click);
@@ -283,7 +283,7 @@
             this.lblnombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lblnombre.Location = new System.Drawing.Point(9, 43);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(73, 21);
+            this.lblnombre.Size = new System.Drawing.Size(90, 23);
             this.lblnombre.TabIndex = 23;
             this.lblnombre.Text = "Nombre";
             this.lblnombre.Click += new System.EventHandler(this.lblnombre_Click);
@@ -325,7 +325,7 @@
             this.lblapellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lblapellido.Location = new System.Drawing.Point(10, 31);
             this.lblapellido.Name = "lblapellido";
-            this.lblapellido.Size = new System.Drawing.Size(74, 21);
+            this.lblapellido.Size = new System.Drawing.Size(92, 23);
             this.lblapellido.TabIndex = 26;
             this.lblapellido.Text = "Apellido";
             this.lblapellido.Click += new System.EventHandler(this.lblApellido_Click);
@@ -337,7 +337,7 @@
             this.lbltelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lbltelefono.Location = new System.Drawing.Point(24, 34);
             this.lbltelefono.Name = "lbltelefono";
-            this.lbltelefono.Size = new System.Drawing.Size(76, 21);
+            this.lbltelefono.Size = new System.Drawing.Size(93, 23);
             this.lbltelefono.TabIndex = 26;
             this.lbltelefono.Text = "Telefono";
             this.lbltelefono.Click += new System.EventHandler(this.label6_Click);
@@ -359,7 +359,7 @@
             // 
             // Complete
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1000, 500);

@@ -86,8 +86,11 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                             if(respuesta == DialogResult.Yes)
                             {
                                 // Si toco si entonces...
-                                MessageBox.Show("MOSTRAMOS FORM PACIENTE");
+                                this.Close();
+
                                 // Mostramos la vista de paciente
+                                MAINPaciente paciente = new MAINPaciente();
+                                paciente.ShowDialog();
                             }
                             else
                             {

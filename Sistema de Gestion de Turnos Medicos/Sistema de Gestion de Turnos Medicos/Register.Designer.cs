@@ -36,10 +36,10 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -52,7 +52,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(372, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(379, 17);
+            this.label2.Size = new System.Drawing.Size(487, 21);
             this.label2.TabIndex = 10;
             this.label2.Text = "_____________________________________________________";
             // 
@@ -76,7 +76,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(372, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 17);
+            this.label1.Size = new System.Drawing.Size(487, 21);
             this.label1.TabIndex = 12;
             this.label1.Text = "_____________________________________________________";
             // 
@@ -97,11 +97,11 @@
             // btnMinimizar
             // 
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMinimizar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.minimizar;
-            this.btnMinimizar.Location = new System.Drawing.Point(794, 14);
+            this.btnMinimizar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_minimize;
+            this.btnMinimizar.Location = new System.Drawing.Point(829, 12);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(48, 48);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnMinimizar.TabIndex = 13;
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -109,11 +109,11 @@
             // btnCerrar
             // 
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCerrar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Cerrar;
-            this.btnCerrar.Location = new System.Drawing.Point(848, 12);
+            this.btnCerrar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_close;
+            this.btnCerrar.Location = new System.Drawing.Point(868, 12);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(50, 50);
-            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnCerrar.Size = new System.Drawing.Size(30, 30);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnCerrar.TabIndex = 14;
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -125,7 +125,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label3.Location = new System.Drawing.Point(492, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(139, 39);
+            this.label3.Size = new System.Drawing.Size(176, 49);
             this.label3.TabIndex = 15;
             this.label3.Text = "Register";
             // 
@@ -139,13 +139,23 @@
             this.panel1.Size = new System.Drawing.Size(264, 432);
             this.panel1.TabIndex = 16;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Logo_de_Sistema_de_Gestion_de_Turnos_Medicos;
+            this.pictureBox1.Location = new System.Drawing.Point(-119, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label4.Location = new System.Drawing.Point(372, 298);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(379, 17);
+            this.label4.Size = new System.Drawing.Size(487, 21);
             this.label4.TabIndex = 18;
             this.label4.Text = "_____________________________________________________";
             // 
@@ -179,19 +189,9 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.Logo_de_Sistema_de_Gestion_de_Turnos_Medicos;
-            this.pictureBox1.Location = new System.Drawing.Point(-119, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(910, 432);
@@ -208,7 +208,7 @@
             this.Controls.Add(this.txtUsername);
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Register";
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

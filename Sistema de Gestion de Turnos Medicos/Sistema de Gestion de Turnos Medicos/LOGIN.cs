@@ -92,7 +92,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 int profesional = usuario.ID_Profesional;
 
                 // Si los id's tienen  0, osea no existe entonces me salta para seguir completando y crear el paciente "TAL"
-                if(profesional == 0 || paciente == 0)
+                if(profesional == 0 && paciente == 0)
                 {
                     // entonces nos abrira un form para poder completar los datos faltantes
                     Complete completar = new Complete(_paciente,_usuarioService);
@@ -101,7 +101,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 // y si ya tiene entonces me salta en el main
                 else if(profesional > 0 || paciente > 0)
                 {
-                    MessageBox.Show("MAIN");
                     if(profesional > 0)
                     {
                         // FORM Profesional
@@ -109,6 +108,8 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                     else if (paciente > 0)
                     {
                         // FORM Paciente
+                        MAINPaciente formpaciente = new MAINPaciente();
+                        formpaciente.ShowDialog();
                     }
                     // iremos directo dependiendo si es un paciente o un profesional a la vista main
                 }
