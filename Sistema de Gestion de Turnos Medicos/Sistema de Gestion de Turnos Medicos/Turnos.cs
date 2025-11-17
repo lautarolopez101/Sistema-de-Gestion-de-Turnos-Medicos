@@ -16,5 +16,25 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         {
             InitializeComponent();
         }
+
+        private void btnNuevoTurno_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvprofesionales_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvespecialidades_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

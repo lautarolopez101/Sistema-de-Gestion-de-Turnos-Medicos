@@ -58,14 +58,8 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             // Agrega un try...catch para que podamos ver cualquier error
             try
             {
-                // Esta línea nos confirma que el clic funciona
-                MessageBox.Show("1. Se detectó el clic. Cargando formulario...");
-
                 // Aquí llamas a la función que te pasé
                 CargarFormularioEnPanel(new Turnos());
-
-                // Esta línea nos confirma que no hubo error al cargar
-                MessageBox.Show("2. Formulario cargado.");
             }
             catch (Exception ex)
             {
@@ -93,6 +87,22 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
             // 4. Muestra el formulario
             formHijo.Show();
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            // Agrega un try...catch para que podamos ver cualquier error
+            try
+            {
+                // Aquí llamas a la función que te pasé
+                MessageBox.Show("MOSTRAMOS HISTORIAL");
+            }
+            catch (Exception ex)
+            {
+                // Si algo falla, ESTO nos dirá qué es
+                MessageBox.Show("¡ERROR! No se pudo cargar el formulario: \n\n" + ex.Message);
+            }
+
         }
     }
 }
