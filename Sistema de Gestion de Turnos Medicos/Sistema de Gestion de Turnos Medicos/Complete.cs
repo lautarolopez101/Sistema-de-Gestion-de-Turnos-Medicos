@@ -17,11 +17,15 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
     {
         private readonly IPacienteService _pacienteservice;
         private readonly IUsuarioService _usuarioservice;
-        public Complete(IPacienteService pacienteservice,IUsuarioService usuarioService)
+        private readonly IProfesionalService _profesionalservice;
+        private readonly IEspecialidadService _especialidadservice;
+        public Complete(IPacienteService pacienteservice,IUsuarioService usuarioService, IProfesionalService profesionalservice, IEspecialidadService especialidadservice)
         {
             InitializeComponent();
             _pacienteservice = pacienteservice;
             _usuarioservice = usuarioService;
+            _profesionalservice = profesionalservice;
+            _especialidadservice = especialidadservice;
         }
         [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -89,7 +93,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                                 this.Close();
 
                                 // Mostramos la vista de paciente
-                                MAINPaciente paciente = new MAINPaciente();
+                                MAINPaciente paciente = new MAINPaciente(_profesionalservice,_especialidadservice);
                                 paciente.ShowDialog();
                             }
                             else

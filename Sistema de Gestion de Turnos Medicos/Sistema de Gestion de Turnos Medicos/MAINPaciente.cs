@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,9 +14,15 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 {
     public partial class MAINPaciente : Form
     {
-        public MAINPaciente()
+        private readonly IProfesionalService _profesionalservice;
+        private readonly IEspecialidadService _especialidadservice;
+
+        public MAINPaciente(IProfesionalService profesionalservice, IEspecialidadService especialidadService)
         {
             InitializeComponent();
+            _profesionalservice = profesionalservice;
+            _especialidadservice = especialidadService;
+            lblusuario.Text = AppSession.Paciente.Nombre;
         }
 
 
@@ -59,7 +66,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             try
             {
                 // Aquí llamas a la función que te pasé
-                CargarFormularioEnPanel(new Turnos());
+                CargarFormularioEnPanel(new Turnos(_profesionalservice,_especialidadservice));
             }
             catch (Exception ex)
             {
@@ -87,22 +94,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
             // 4. Muestra el formulario
             formHijo.Show();
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-            // Agrega un try...catch para que podamos ver cualquier error
-            try
-            {
-                // Aquí llamas a la función que te pasé
-                MessageBox.Show("MOSTRAMOS HISTORIAL");
-            }
-            catch (Exception ex)
-            {
-                // Si algo falla, ESTO nos dirá qué es
-                MessageBox.Show("¡ERROR! No se pudo cargar el formulario: \n\n" + ex.Message);
-            }
-
         }
     }
 }

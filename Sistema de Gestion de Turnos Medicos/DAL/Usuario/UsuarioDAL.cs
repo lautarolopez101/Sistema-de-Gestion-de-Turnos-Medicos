@@ -112,6 +112,43 @@ namespace DAL.CRUD
             return usuario;
         }
 
+        public static UsuarioBE ObtenterPorID(int idusuario)
+        {
+            UsuarioBE usuario = null;
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "SELECT *FROM Usuarios WHERE ID_Usuario = '" + idusuario + "'";
+                SqlCommand comand = new SqlCommand(query, conexion);
+                SqlDataReader reader = comand.ExecuteReader();
+                if (reader.Read())
+                {
+                    usuario = new UsuarioBE();
+                    usuario.ID = reader.GetInt32(0);
+                    usuario.Username = reader.GetString(1);
+                    usuario.PasswordHash = reader.GetString(2);
+                    usuario.Estado = reader.GetBoolean(3);
+                    usuario.LastLogin = reader.GetDateTime(4);
+                    usuario.Email = reader.GetString(5);
+                    if (!reader.IsDBNull(6))
+                    {
+                        usuario.ID_Paciente = reader.GetInt32(6);
+                    }
+                    if (!reader.IsDBNull(7))
+                    {
+                        usuario.ID_Profesional = reader.GetInt32(7);
+                    }
+
+                    usuario.CreatedAtUtc = reader.GetDateTime(8);
+                    if (!reader.IsDBNull(9))
+                    {
+                        usuario.UpdatedAtUtc = reader.GetDateTime(9);
+                    }
+                }
+                conexion.Close();
+            }
+            return usuario;
+        }
+
         public static List<FamiliaBE> ListaFamiliasDelUsuario(int idusuario)
         {
             List<FamiliaBE> listafamilia = new List<FamiliaBE>();

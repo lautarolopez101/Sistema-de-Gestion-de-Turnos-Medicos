@@ -11,6 +11,7 @@ namespace BLL
     {
         int CrearUsuario(string username, string password, string email);
         UsuarioBE ObtenerUsuario(string user,string password);
+        PacienteBE GetByID(int idusuario);
         bool BuscarUsuario(string user);
         bool BuscarEmail(string email);
         PacienteBE ObtenerPacienteEmail(string email);

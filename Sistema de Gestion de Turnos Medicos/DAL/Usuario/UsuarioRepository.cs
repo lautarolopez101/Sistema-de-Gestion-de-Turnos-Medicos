@@ -32,6 +32,12 @@ namespace DAL
             usuario = UsuarioDAL.ObtenterPorUsername(username);
             return usuario;
         }
+        public UsuarioBE GetByID(int idusuario)
+        {
+            UsuarioBE usuario = new UsuarioBE();
+            usuario = UsuarioDAL.ObtenterPorID(idusuario);
+            return usuario;
+        }
         public List<FamiliaBE> GetFamiliasByUsuarioId(int usuarioId)
         {
             List<FamiliaBE> lista = new List<FamiliaBE>();

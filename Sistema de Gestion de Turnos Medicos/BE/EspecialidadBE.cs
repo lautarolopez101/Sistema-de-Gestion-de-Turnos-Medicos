@@ -24,7 +24,10 @@ namespace BE
             Especialidad = especialidad;
             Descripcion = descripcion;
         }
-
+        public EspecialidadBE(string especialidad)
+        {
+            Especialidad = especialidad;
+        }
         public EspecialidadBE(string especialidad, string descripcion)
         {
             Especialidad = especialidad;

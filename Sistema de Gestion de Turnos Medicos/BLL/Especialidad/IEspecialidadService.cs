@@ -13,5 +13,6 @@ namespace BLL
         int ModificarEspecialidad(int id,string especialidad, string descripcion);
         int EliminarEspecialidad(int id,string especialidad, string descripcion);
         List<EspecialidadBE> ListarEspecialidades();
+        List<string> ListarEspecialidadesNombres();
     }
 }

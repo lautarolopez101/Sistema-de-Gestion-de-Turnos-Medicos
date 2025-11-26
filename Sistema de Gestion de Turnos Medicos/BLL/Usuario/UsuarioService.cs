@@ -59,6 +59,16 @@ namespace BLL
                 return usuario;
         }
 
+        // Aca seria que por ID usuario podamos buscar al respecitvo paciente
+        public PacienteBE GetByID(int idusuario)
+        {
+            // Creamos al usuario y lo buscamos por el ID
+            UsuarioBE usuario = _usuariorepository.GetByID(idusuario);
+            // ahora le damos al entero del id paciente el valor del ID paciente del usuario
+            int idpaciente = usuario.ID_Paciente;
+            // y ahora devolvemos al paciente entero buscandolo por su ID_Paciente
+            return _pacienterepository.ObtenerPaciente(idpaciente);
+        }
         public bool BuscarUsuario(string user)
         {
             List<UsuarioBE> lista = new List<UsuarioBE>();

@@ -245,6 +245,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Complete_MouseDown);
             // 
             // panel1
             // 
@@ -256,6 +257,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(361, 87);
             this.panel1.TabIndex = 0;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Complete_MouseDown);
             // 
             // lblDNI
             // 

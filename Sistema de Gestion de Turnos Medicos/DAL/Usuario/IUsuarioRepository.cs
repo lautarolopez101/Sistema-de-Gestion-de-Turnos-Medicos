@@ -12,6 +12,7 @@ namespace DAL
         int CrearUsuario(UsuarioBE usuario);
         List<UsuarioBE> Buscar();
         UsuarioBE GetByUsername(string username);
+        UsuarioBE GetByID(int idusuario);
         List<FamiliaBE> GetFamiliasByUsuarioId (int usuarioId); 
         List<PatenteBE> GetPatentesDirectasByUsuarioId(int usuarioId);
         int AgregarIDPaciente(UsuarioBE usuario);
