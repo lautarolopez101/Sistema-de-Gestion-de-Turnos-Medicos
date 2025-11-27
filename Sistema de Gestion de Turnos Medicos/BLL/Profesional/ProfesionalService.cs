@@ -71,6 +71,11 @@ namespace BLL
             lista.Add(profesional);
             return lista;
         }
+        public ProfesionalBE ObtenerProfesionalPorMatricula(string Matricula)
+        {
+            ProfesionalBE profesional = _profesional.ObtenerProfesionalPorMatricula(Matricula);
+            return profesional;
+        }
         public List<ProfesionalBE> ObtenerProfesionales()
         {
             listaprofesionales = _profesional.ObtenerProfesionales();

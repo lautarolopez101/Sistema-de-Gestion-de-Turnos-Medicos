@@ -19,7 +19,7 @@ namespace BLL
             _pacienterepository = pacienterepository;
             _profesionalrepository = profesionalrepository;
         }
-        public int AgregarTurno(int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
+        public int AgregarTurnoCompleto(int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
         {
             TurnoBE turno = new TurnoBE();
             turno.ID_Paciente = idpaciente;
@@ -27,6 +27,16 @@ namespace BLL
             turno.Estado = estado;
             turno.Motivo = motivo;
             turno.Observaciones = observaciones;
+            turno.FechaHora = fecha;
+            return _repo.AgregarTurno(turno);
+        }
+        public int AgregarTurnoIncompleto(int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo)
+        {
+            TurnoBE turno = new TurnoBE();
+            turno.ID_Paciente = idpaciente;
+            turno.ID_Profesional = idprofesional;
+            turno.Estado = estado;
+            turno.Motivo = motivo;
             turno.FechaHora = fecha;
             return _repo.AgregarTurno(turno);
         }

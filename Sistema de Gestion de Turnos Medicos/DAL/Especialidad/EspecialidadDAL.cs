@@ -109,5 +109,32 @@ namespace DAL
             // Devolvemos la lista de especialidades
             return especialidades;
         }
+        public static EspecialidadBE BuscarPorNombre(string nombre)
+        {
+            EspecialidadBE especialidad = new EspecialidadBE();
+            // Usando la conexion "TAL" obtenida del SqlConnectionFactory
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                // Creamos el query necesario para luego ejecutarlo
+                string query = "select * from Especialidades where Especialidad = '" + nombre + "'";
+                // Creamos el comando con el query y la conexion para poder usarlos
+                SqlCommand comand = new SqlCommand(query, conexion);
+                // Leemos el comando ejecutado
+                SqlDataReader reader = comand.ExecuteReader();
+                // Mientras haya algo que leer seguimos leyendo
+                while (reader.Read())
+                {
+                    // Creamos un nuevo objeto de EspecialidadBE y le asignamos los valores que leemos de la base de datos
+                    
+                    especialidad.ID_Especialidad = Convert.ToInt32(reader["ID_Especialidad"]);
+                    especialidad.Especialidad = reader["Especialidad"].ToString();
+                    especialidad.Descripcion = reader["Descripcion"].ToString();
+                }
+                // Cerramos la conexion "TAL"
+                conexion.Close();
+            }
+            // Devolvemos la lista de especialidades
+            return especialidad;
+        }
     }
 }

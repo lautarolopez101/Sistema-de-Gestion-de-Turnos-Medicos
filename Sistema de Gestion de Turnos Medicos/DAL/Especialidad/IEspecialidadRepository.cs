@@ -18,5 +18,6 @@ namespace DAL
         int ModificarEspecialidad(EspecialidadBE especialidad);
         int EliminarEspecialidad(EspecialidadBE especialidad);
         List<EspecialidadBE> ObtenerTodas();
+        EspecialidadBE BuscarPorNombre(string nombre);
     }
 }

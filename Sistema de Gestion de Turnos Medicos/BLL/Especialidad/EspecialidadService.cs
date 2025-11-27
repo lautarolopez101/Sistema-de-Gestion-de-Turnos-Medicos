@@ -63,6 +63,9 @@ namespace BLL
             listaespecialidades = _repo.ObtenerTodas();
             return _repo.ObtenerTodas();
         }
-
+        public EspecialidadBE BuscarPorNombre(string nombre)
+        {
+            return _repo.BuscarPorNombre(nombre);
+        }
     }
 }

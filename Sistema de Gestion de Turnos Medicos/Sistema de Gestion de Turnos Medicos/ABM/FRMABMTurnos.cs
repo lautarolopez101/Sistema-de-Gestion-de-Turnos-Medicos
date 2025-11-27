@@ -84,7 +84,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
 
                         }
                         // Creamos una variable para ver si se pudo agregar el turno nuevamente
-                        int retorna = _turnoService.AgregarTurno(idpaciente, idprofesional, estado, fechahora, motivo, observaciones);
+                        int retorna = _turnoService.AgregarTurnoCompleto(idpaciente, idprofesional, estado, fechahora, motivo, observaciones);
                         // Si el entero es mayor a 0 entonces se pudo agregar con exito el turno 
                         if (retorna > 0)
                         {

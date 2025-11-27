@@ -19,15 +19,17 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private readonly IPacienteService _paciente;
         private readonly IProfesionalService _profesionalservice;
         private readonly IEspecialidadService _especialidadService;
+        private readonly ITurnoService _turnoservice;
 
         public static UsuarioBE _usuario = new UsuarioBE();
-        public LOGIN(IUsuarioService usuario, IPacienteService paciente, IProfesionalService profesionalservice, IEspecialidadService especialidadService)
+        public LOGIN(IUsuarioService usuario, IPacienteService paciente, IProfesionalService profesionalservice, IEspecialidadService especialidadService, ITurnoService turnoservice)
         {
             InitializeComponent();
             _usuarioService = usuario;
             _paciente = paciente;
             _profesionalservice = profesionalservice;
             _especialidadService = especialidadService;
+            _turnoservice = turnoservice;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -98,7 +100,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 if(profesional == 0 && paciente == 0)
                 {
                     // entonces nos abrira un form para poder completar los datos faltantes
-                    Complete completar = new Complete(_paciente,_usuarioService,_profesionalservice,_especialidadService);
+                    Complete completar = new Complete(_paciente,_usuarioService,_profesionalservice,_especialidadService,_turnoservice);
                     completar.ShowDialog();
                 }
                 // y si ya tiene entonces me salta en el main
@@ -116,7 +118,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                         AppSession.Login(usuario.ID, usuario.Username, usuario.ID_Paciente, usuario.ID_Profesional);
                         AppSession.Paciente = _usuarioService.GetByID(usuario.ID);
                         // FORM Paciente
-                        MAINPaciente formpaciente = new MAINPaciente(_profesionalservice,_especialidadService);
+                        MAINPaciente formpaciente = new MAINPaciente(_profesionalservice,_especialidadService, _turnoservice);
                         formpaciente.ShowDialog();
                     }
                     // iremos directo dependiendo si es un paciente o un profesional a la vista main

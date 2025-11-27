@@ -25,6 +25,10 @@ namespace DAL
         {
             return ProfesionalDAL.ObtenerProfesional(idprofesional);
         }
+        public ProfesionalBE ObtenerProfesionalPorMatricula(string Matricula)
+        {
+            return ProfesionalDAL.ObtenerProfesionalPorMatricula(Matricula);
+        }
         public List<ProfesionalBE> ObtenerProfesionales()
         {
             return ProfesionalDAL.ObtenerProfesionales();

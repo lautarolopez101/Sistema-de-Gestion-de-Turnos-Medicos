@@ -14,6 +14,7 @@ namespace DAL
         int EliminarProfesional(ProfesionalBE profesional);
         List<ProfesionalBE> ObtenerProfesionales();
         ProfesionalBE ObtenerProfesional(int idprofesional);
+        ProfesionalBE ObtenerProfesionalPorMatricula(string Matricula);
         List<ProfesionalBE> ListarProfesionales(bool cual);
     }
 }

@@ -16,13 +16,14 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
     {
         private readonly IProfesionalService _profesionalservice;
         private readonly IEspecialidadService _especialidadservice;
-
-        public MAINPaciente(IProfesionalService profesionalservice, IEspecialidadService especialidadService)
+        private readonly ITurnoService _turnoservice;
+        public MAINPaciente(IProfesionalService profesionalservice, IEspecialidadService especialidadService, ITurnoService turnoservice)
         {
             InitializeComponent();
             _profesionalservice = profesionalservice;
             _especialidadservice = especialidadService;
             lblusuario.Text = AppSession.Paciente.Nombre;
+            _turnoservice = turnoservice;
         }
 
 
@@ -66,7 +67,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             try
             {
                 // Aquí llamas a la función que te pasé
-                CargarFormularioEnPanel(new Turnos(_profesionalservice,_especialidadservice));
+                CargarFormularioEnPanel(new Turnos(_profesionalservice,_especialidadservice,_turnoservice));
             }
             catch (Exception ex)
             {

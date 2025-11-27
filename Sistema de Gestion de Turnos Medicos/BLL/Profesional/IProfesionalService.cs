@@ -15,6 +15,7 @@ namespace BLL
         List<ProfesionalBE> ListarProfesionales(bool cual);
         List<ProfesionalBE> ObtenerProfesionales();
         List<ProfesionalBE> ObtenerProfesional(int idprofesional);
+        ProfesionalBE ObtenerProfesionalPorMatricula(string Matricula);
         List<EspecialidadBE> ListarEspecialidadesdelProfesional(int idprofesional);
         List<ProfesionalBE> ListarProfesionalesDesdeEspecialidades(int idespecialidad);
     }

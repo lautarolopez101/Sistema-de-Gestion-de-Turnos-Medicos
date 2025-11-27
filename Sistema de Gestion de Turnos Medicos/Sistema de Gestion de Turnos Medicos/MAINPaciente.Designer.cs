@@ -230,9 +230,9 @@
             this.label4.Location = new System.Drawing.Point(63, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 21);
+            this.label4.Size = new System.Drawing.Size(91, 21);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Editar Turno";
+            this.label4.Text = "Mis Turnos";
             // 
             // pictureBox1
             // 
@@ -416,7 +416,6 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MAINPaciente";
-            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MAINPaciente";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAINPaciente_MouseDown);

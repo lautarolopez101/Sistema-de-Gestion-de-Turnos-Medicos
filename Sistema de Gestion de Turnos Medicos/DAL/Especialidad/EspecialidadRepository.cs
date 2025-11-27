@@ -29,5 +29,9 @@ namespace DAL
         {
             return EspecialidadDAL.ObtenerEspecialidades();
         }
+        public EspecialidadBE BuscarPorNombre(string nombre)
+        {
+            return EspecialidadDAL.BuscarPorNombre(nombre);
+        }
     }
 }

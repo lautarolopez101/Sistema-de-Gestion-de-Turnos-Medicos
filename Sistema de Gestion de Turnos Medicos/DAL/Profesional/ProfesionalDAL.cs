@@ -111,6 +111,34 @@ namespace DAL
             return profesional;
         }
 
+        public static ProfesionalBE ObtenerProfesionalPorMatricula(string matricula)
+        {
+            ProfesionalBE profesional = new ProfesionalBE();
+
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "select * from Profesionales where Matricula = '" + matricula + "'";
+                SqlCommand comand = new SqlCommand(query, conexion);
+                SqlDataReader reader = comand.ExecuteReader();
+                if (reader.Read())
+                {
+                    profesional.ID_Profesional = Convert.ToInt32(reader["ID_Profesional"].ToString());
+                    profesional.Matricula = reader["Matricula"].ToString();
+                    profesional.Nombre = reader["Nombre"].ToString();
+                    profesional.Apellido = reader["Apellido"].ToString();
+                    profesional.Telefono = reader["Telefono"].ToString();
+                    profesional.Email = reader["Email"].ToString();
+                    profesional.Activo = Convert.ToBoolean(reader["Activo"].ToString());
+                    profesional.CreatedAtUtc = reader.GetDateTime(7);
+                    if (!reader.IsDBNull(8))
+                    {
+                        profesional.UpdatedAtUtc = reader.GetDateTime(8);
+                    }
+                }
+                conexion.Close();
+            }
+            return profesional;
+        }
         public static List<ProfesionalBE> ObtenerProfesionales()
         {
             List<ProfesionalBE> profesionales = new List<ProfesionalBE>();
