@@ -16,5 +16,6 @@ namespace BLL
         List<ProfesionalBE> ObtenerProfesionales();
         List<ProfesionalBE> ObtenerProfesional(int idprofesional);
         List<EspecialidadBE> ListarEspecialidadesdelProfesional(int idprofesional);
+        List<ProfesionalBE> ListarProfesionalesDesdeEspecialidades(int idespecialidad);
     }
 }

@@ -12,7 +12,6 @@ namespace BLL
     {
         private readonly IEspecialidadRepository _repo;
         private static List<EspecialidadBE> listaespecialidades = new List<EspecialidadBE>();
-
         public EspecialidadService(IEspecialidadRepository repo)
         {
             _repo = repo;
@@ -64,11 +63,6 @@ namespace BLL
             listaespecialidades = _repo.ObtenerTodas();
             return _repo.ObtenerTodas();
         }
-        public List<string> ListarEspecialidadesNombres()
-        {
-            List<EspecialidadBE> especialidades = _repo.ObtenerTodas();
-            var nombres = especialidades.Select(e => e.Especialidad).ToList();
-            return nombres;
-        }
+
     }
 }

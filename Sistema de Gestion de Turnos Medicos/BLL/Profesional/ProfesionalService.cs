@@ -95,5 +95,25 @@ namespace BLL
             
            // return listaespecialidades;
         }
+        public List<ProfesionalBE> ListarProfesionalesDesdeEspecialidades(int idespecialidad)
+        {
+            var listaprofesionales_especialidades = _profesionales_EspecialidadesRepository.ObtenerTodos()
+                .Where(x => x.ID_Especialidad == idespecialidad)
+                .Select(x => x.ID_Profesional)
+                .ToList();
+            List<ProfesionalBE> listaprofesionales = _profesional.ListarProfesionales(true);
+
+            List<ProfesionalBE> listafinal = listaprofesionales
+                 .Where(todo => listaprofesionales_especialidades.Contains(todo.ID_Profesional))
+                 .OrderBy(todo => todo.Nombre)
+                 .ToList();
+
+            return listafinal;
+
+            //   listaespecialidades = _especialidadrepository.ObtenerTodas();
+
+            // return listaespecialidades;
+        }
+
     }
 }

@@ -10,8 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using BLL;
-using BE; // Agregamos para poder modificar las propiedades de los bordes
-          // de los paneles que estan detras de los DGV's
+using BE;
+using Sunny.UI.Win32; // Agregamos para poder modificar las propiedades de los bordes
+                      // de los paneles que estan detras de los DGV's
 
 namespace Sistema_de_Gestion_de_Turnos_Medicos
 {
@@ -22,6 +23,10 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
         // Creamos esto para poder poner todos los profesionales "ACTIVOS"
         private bool cual = true;
+
+        // Creamos algunas variables que necesitamos para cuando seleccionamos los DGV's
+        private static int idespecialidad;
+        private static int idprofesional;
 
         public Turnos(IProfesionalService profesionalservice,IEspecialidadService especialidadservice)
         {
@@ -86,7 +91,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         {
             try
             {
-
+                
             }
             catch (Exception ex)
             {
@@ -106,23 +111,39 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             }
         }
 
-        private void dgvprofesionales_SelectionChanged(object sender, EventArgs e)
+        private void Limpiar()
         {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al crear un nuevo turno: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dgvespecialidades.DataSource = _especialidadservice.ListarEspecialidades();
         }
-
         private void dgvespecialidades_SelectionChanged(object sender, EventArgs e)
         {
+            var grid = dgvespecialidades;
+
+            if (grid.Rows.Count == 0 || grid.CurrentRow == null || grid.CurrentCell == null || grid.CurrentRow.IsNewRow)
+            {
+                Limpiar();
+                return;
+            }
             try
             {
+                /* 
+                 La idea de este DGV es que cuando seleccione una entidad me muestren los profesionales que la tengan, y al reves tambien 
+                osea si quiero buscar un profesional porque me lo recomendaron demasiado lo selecciono y me dice la especialidad
+                 */
+                idespecialidad = Convert.ToInt32(dgvespecialidades.CurrentRow.Cells["ID_Especialidad"].Value.ToString());
 
+                // Aca tendria que ir la logica de cuando seleccionamos una entidad en este dgv se cambie el datasource de la otra 
+                if (idespecialidad > 0)
+                {
+                    List<ProfesionalBE> listaprofesionales = _profesionalservice.ListarProfesionalesDesdeEspecialidades(idespecialidad);
+                    dgvprofesionales.DataSource = listaprofesionales;
+                    return;
+                }
+                else
+                {
+                    dgvprofesionales.DataSource = _profesionalservice.ListarProfesionales(cual);
+                    return;
+                }
             }
             catch (Exception ex)
             {
