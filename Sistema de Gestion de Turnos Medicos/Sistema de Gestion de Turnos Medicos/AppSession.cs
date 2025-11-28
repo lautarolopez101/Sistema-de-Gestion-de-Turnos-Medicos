@@ -34,6 +34,8 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             ID_Paciente = idpaciente;
             ID_Profesional = idprofesional;
         }
+
+        // Para cerrar sesion necesitaremos limpiar todo para que podamos iniciar sesion con otro usuario
         public static void Logout()
         {
             ID_Usuario = 0;

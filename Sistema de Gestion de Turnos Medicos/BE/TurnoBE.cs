@@ -18,6 +18,9 @@ namespace BE
         public DateTime CreatedAtUtc { get; set; }
         public DateTime UpdateAtUtc { get; set; }
 
+        public string NombreProfesional { get; set; }
+        public string ApellidoProfesional { get; set; }
+
         public TurnoBE()
         {
             

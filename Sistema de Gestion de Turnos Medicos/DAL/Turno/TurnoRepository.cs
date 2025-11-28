@@ -25,5 +25,9 @@ namespace DAL
         {
             return TurnoDAL.ObtenerTodos();
         }
+        public List<TurnoBE> FiltrarPacienteHistorial(int idpaciente,string estado1,string estado2)
+        {
+            return TurnoDAL.FiltrarPacienteHistorial(idpaciente,estado1,estado2);
+        }
     }
 }

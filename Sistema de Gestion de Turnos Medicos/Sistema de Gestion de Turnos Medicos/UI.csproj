@@ -121,10 +121,10 @@
     <Compile Include="Complete.Designer.cs">
       <DependentUpon>Complete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Historial.cs">
+    <Compile Include="Vista Paciente\Historial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Historial.Designer.cs">
+    <Compile Include="Vista Paciente\Historial.Designer.cs">
       <DependentUpon>Historial.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGIN.cs">
@@ -158,10 +158,10 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Turnos.cs">
+    <Compile Include="Vista Paciente\Turnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Turnos.Designer.cs">
+    <Compile Include="Vista Paciente\Turnos.Designer.cs">
       <DependentUpon>Turnos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="ABM\FRMABMEspecialidades.resx">
@@ -182,7 +182,10 @@
     <EmbeddedResource Include="Complete.resx">
       <DependentUpon>Complete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Historial.resx">
+    <EmbeddedResource Include="MisTurnos.resx">
+      <DependentUpon>MisTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista Paciente\Historial.resx">
       <DependentUpon>Historial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LOGIN.resx">
@@ -199,7 +202,7 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Turnos.resx">
+    <EmbeddedResource Include="Vista Paciente\Turnos.resx">
       <DependentUpon>Turnos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -103,6 +103,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(182, 71);
             this.panel8.TabIndex = 9;
+            this.panel8.Click += new System.EventHandler(this.Logout_Click);
             // 
             // pictureBox7
             // 
@@ -115,6 +116,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 8;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.Logout_Click);
             // 
             // label7
             // 
@@ -125,9 +127,10 @@
             this.label7.Location = new System.Drawing.Point(63, 25);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 21);
+            this.label7.Size = new System.Drawing.Size(99, 17);
             this.label7.TabIndex = 3;
             this.label7.Text = "Cerrar Sesion";
+            this.label7.Click += new System.EventHandler(this.Logout_Click);
             // 
             // panel7
             // 
@@ -138,6 +141,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(182, 71);
             this.panel7.TabIndex = 11;
+            this.panel7.Click += new System.EventHandler(this.Perfil_Click);
             // 
             // pictureBox6
             // 
@@ -150,6 +154,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.Perfil_Click);
             // 
             // label6
             // 
@@ -160,9 +165,10 @@
             this.label6.Location = new System.Drawing.Point(63, 25);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 21);
+            this.label6.Size = new System.Drawing.Size(63, 17);
             this.label6.TabIndex = 3;
             this.label6.Text = "Mi Perfil";
+            this.label6.Click += new System.EventHandler(this.Perfil_Click);
             // 
             // panel6
             // 
@@ -173,6 +179,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(182, 71);
             this.panel6.TabIndex = 10;
+            this.panel6.Click += new System.EventHandler(this.CambiarPerfil_Click);
             // 
             // pictureBox3
             // 
@@ -185,6 +192,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.CambiarPerfil_Click);
             // 
             // label5
             // 
@@ -195,9 +203,10 @@
             this.label5.Location = new System.Drawing.Point(63, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 21);
+            this.label5.Size = new System.Drawing.Size(106, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "Cambiar Perfil";
+            this.label5.Click += new System.EventHandler(this.CambiarPerfil_Click);
             // 
             // panel5
             // 
@@ -208,6 +217,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(182, 71);
             this.panel5.TabIndex = 9;
+            this.panel5.Click += new System.EventHandler(this.MisTurnos_Click);
             // 
             // pictureBox2
             // 
@@ -220,6 +230,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.MisTurnos_Click);
             // 
             // label4
             // 
@@ -230,9 +241,10 @@
             this.label4.Location = new System.Drawing.Point(63, 25);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 21);
+            this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mis Turnos";
+            this.label4.Click += new System.EventHandler(this.MisTurnos_Click);
             // 
             // pictureBox1
             // 
@@ -255,7 +267,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(182, 71);
             this.panel3.TabIndex = 3;
-            this.panel3.Click += new System.EventHandler(this.panel3_Click);
+            this.panel3.Click += new System.EventHandler(this.Turnos_Click);
             // 
             // pictureBox4
             // 
@@ -268,7 +280,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.panel3_Click);
+            this.pictureBox4.Click += new System.EventHandler(this.Turnos_Click);
             // 
             // label3
             // 
@@ -279,10 +291,10 @@
             this.label3.Location = new System.Drawing.Point(63, 25);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 21);
+            this.label3.Size = new System.Drawing.Size(93, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nuevo Turno";
-            this.label3.Click += new System.EventHandler(this.panel3_Click);
+            this.label3.Click += new System.EventHandler(this.Turnos_Click);
             // 
             // panel4
             // 
@@ -293,6 +305,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(182, 71);
             this.panel4.TabIndex = 8;
+            this.panel4.Click += new System.EventHandler(this.Historial_Click);
             // 
             // label1
             // 
@@ -303,9 +316,10 @@
             this.label1.Location = new System.Drawing.Point(63, 25);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 21);
+            this.label1.Size = new System.Drawing.Size(63, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Historial";
+            this.label1.Click += new System.EventHandler(this.Historial_Click);
             // 
             // pictureBox5
             // 
@@ -318,6 +332,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.Historial_Click);
             // 
             // panel2
             // 
@@ -351,7 +366,7 @@
             this.lblusuario.Location = new System.Drawing.Point(116, 20);
             this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(124, 23);
+            this.lblusuario.Size = new System.Drawing.Size(97, 21);
             this.lblusuario.TabIndex = 4;
             this.lblusuario.Text = "MODIFICAR";
             // 
@@ -362,7 +377,7 @@
             this.label2.Location = new System.Drawing.Point(59, 20);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 23);
+            this.label2.Size = new System.Drawing.Size(50, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Hola,";
             // 
@@ -405,7 +420,7 @@
             // 
             // MAINPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(960, 567);
@@ -416,8 +431,10 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MAINPaciente";
+            this.Opacity = 0.97D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MAINPaciente";
+            this.Load += new System.EventHandler(this.MAINPaciente_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAINPaciente_MouseDown);
             this.panelmenu.ResumeLayout(false);
             this.panel8.ResumeLayout(false);

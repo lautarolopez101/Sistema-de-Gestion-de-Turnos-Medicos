@@ -89,5 +89,9 @@ namespace BLL
             var existe = listaturnos.Where(e => e.ID_Turno == idturno).ToList();
             return existe;
         }
+        public List<TurnoBE> FiltrarPacienteHistorial(int idpaciente,string estado1, string estado2 )
+        {
+            return _repo.FiltrarPacienteHistorial(idpaciente,estado1,estado2);
+        }
     }
 }

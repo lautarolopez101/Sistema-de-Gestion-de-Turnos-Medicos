@@ -86,3 +86,4 @@ C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de G
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.Historial.resources
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema de Gestion de Turnos Medicos.exe.config
 C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.Historial.resources
+C:\Users\Administrator\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.MisTurnos.resources

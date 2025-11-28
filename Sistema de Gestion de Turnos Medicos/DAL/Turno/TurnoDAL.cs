@@ -1,6 +1,7 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -55,14 +56,21 @@ namespace DAL
         }
         public static List<TurnoBE> ObtenerTodos()
         {
+            // Creo una lista de turnos para poder traerlos todo
            List<TurnoBE> listaturnos = new List<TurnoBE>();
+            // Abirmos la conexion 
             using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
+                // Creamos un query para poder pasarselo mas facil
                 string query = "select * from Turnos";
+                // Creamos el comando con el query en la conexion "TAL"
                 SqlCommand comand = new SqlCommand(query, conexion);
+                // Mandamos a leer todo el comando 
                 SqlDataReader reader = comand.ExecuteReader();
+                // Mientras tenga para leer entonces =>
                 while (reader.Read())
                 {
+                    // Creamos un turno y le damos la informacion a las variables del objeto
                     TurnoBE turno = new TurnoBE();
                     turno.ID_Turno = reader.GetInt32(0);
                     turno.ID_Paciente = reader.GetInt32(1);
@@ -90,11 +98,62 @@ namespace DAL
                     {
                         turno.UpdateAtUtc = DateTime.Today;
                     }
+                    // Agregamos el turno a la lista
                         listaturnos.Add(turno);
                 }
+                // Cerramos la conexion
                 conexion.Close();
             }
             return listaturnos;
+        }
+
+        public static List<TurnoBE> FiltrarPacienteHistorial( int idPaciente, string estado1, string estado2)
+        {
+            List<TurnoBE> lista = new List<TurnoBE>();
+
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query =
+                    "SELECT " +
+                    "t.ID_Turno, " +
+                    "t.ID_Paciente, " +
+                    "t.ID_Profesional, " +
+                    "t.Estado, " +
+                    "t.FechaHora, " +
+                    "t.Motivo, " +
+                    "t.Observaciones, " +
+                    "p.Nombre AS NombreProfesional, " +
+                    "p.Apellido AS ApellidoProfesional " +
+                    "FROM dbo.Turnos AS t " +
+                    "INNER JOIN dbo.Profesionales AS p " +
+                    "ON p.ID_Profesional = t.ID_Profesional " +
+                    "WHERE t.ID_Paciente = '" + idPaciente + "' " +
+                    "AND t.Estado IN ('" + estado1 + "', '" + estado2 + "') " +
+                    "ORDER BY t.FechaHora DESC";
+
+                SqlCommand comand = new SqlCommand(query, conexion);
+                SqlDataReader dr = comand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    TurnoBE turno = new TurnoBE();
+
+                    turno.ID_Turno = Convert.ToInt32(dr["ID_Turno"]);
+                    turno.ID_Paciente = Convert.ToInt32(dr["ID_Paciente"]);
+                    turno.ID_Profesional = Convert.ToInt32(dr["ID_Profesional"]);
+                    turno.Estado = dr["Estado"].ToString();
+                    turno.FechaHora = Convert.ToDateTime(dr["FechaHora"]);
+                    turno.Motivo = dr["Motivo"].ToString();
+                    turno.Observaciones = dr["Observaciones"].ToString();
+
+                    turno.NombreProfesional = dr["NombreProfesional"].ToString();
+                    turno.ApellidoProfesional = dr["ApellidoProfesional"].ToString();
+
+                    lista.Add(turno);
+                }
+            }
+
+            return lista;
         }
     }
 }

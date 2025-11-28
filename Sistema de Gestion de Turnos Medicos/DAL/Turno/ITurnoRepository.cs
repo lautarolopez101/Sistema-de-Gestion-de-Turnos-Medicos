@@ -13,5 +13,6 @@ namespace DAL
         int ModificarTurno(TurnoBE turno);
         int EliminarTurno(TurnoBE turno);
         List<TurnoBE> ObtenerTodos();
+        List<TurnoBE> FiltrarPacienteHistorial(int idpaciente,string estado1,string estado2);
     }
 }

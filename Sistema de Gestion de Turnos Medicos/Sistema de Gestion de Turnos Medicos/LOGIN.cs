@@ -123,6 +123,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                     }
                     // iremos directo dependiendo si es un paciente o un profesional a la vista main
                 }
+                txtPassword.Clear();
+                txtUsername.Clear();
+                txtUsername.Focus();
             }
             catch (Exception ex)
             {

@@ -17,5 +17,6 @@ namespace BLL
         List<TurnoBE> ObtenerTodos();
         List<TurnoBE> VerificoDuplicado(int idprofesional, int idpaciente);
         List<TurnoBE> Verifico(int idturno);
+        List<TurnoBE> FiltrarPacienteHistorial(int idpaciente, string estado1, string estado2);
     }
 }
