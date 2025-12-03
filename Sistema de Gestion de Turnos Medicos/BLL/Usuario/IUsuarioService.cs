@@ -16,5 +16,6 @@ namespace BLL
         bool BuscarEmail(string email);
         PacienteBE ObtenerPacienteEmail(string email);
         int AgregarIDPaciente(UsuarioBE usuario);
+        int Logout(UsuarioBE usuario);
     }
 }

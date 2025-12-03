@@ -1,15 +1,16 @@
-﻿using System;
+﻿using BE; // Libreria para poder arrastar con el mouse la ventana
+using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Runtime.InteropServices;
-using BLL;
-using BE; // Libreria para poder arrastar con el mouse la ventana
+using System.Windows.Forms; 
+using System.Drawing.Drawing2D; // Agregamoso la libreria para hacer los bordes redondos
 
 namespace Sistema_de_Gestion_de_Turnos_Medicos
 {
@@ -25,6 +26,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         public LOGIN(IUsuarioService usuario, IPacienteService paciente, IProfesionalService profesionalservice, IEspecialidadService especialidadService, ITurnoService turnoservice)
         {
             InitializeComponent();
+
+            RedondearPanel(panellogin, 20);
+
             _usuarioService = usuario;
             _paciente = paciente;
             _profesionalservice = profesionalservice;
@@ -89,6 +93,12 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
                 usuario = _usuarioService.ObtenerUsuario(username,password);
 
+                // Vemos si pudo pasar la verificacion de la password 
+                if(usuario == null)
+                {
+                    MessageBox.Show("No se pudo Iniciar Sesion con este Usuario","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+
                 // Validamos para tener acceso completo al usuario para vincularlo ya sea con el paciente o el profesional
                 _usuario = usuario;
 
@@ -117,8 +127,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                         // Lo que hacemos aca es poder permanecer logueado al usuario
                         AppSession.Login(usuario.ID, usuario.Username, usuario.ID_Paciente, usuario.ID_Profesional);
                         AppSession.Paciente = _usuarioService.GetByID(usuario.ID);
+                        AppSession.Usuario = usuario;
                         // FORM Paciente
-                        MAINPaciente formpaciente = new MAINPaciente(_profesionalservice,_especialidadService, _turnoservice);
+                        MAINPaciente formpaciente = new MAINPaciente(_profesionalservice,_especialidadService, _turnoservice,_usuarioService);
                         formpaciente.ShowDialog();
                     }
                     // iremos directo dependiendo si es un paciente o un profesional a la vista main
@@ -137,6 +148,29 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
 
         // DESIGN 
+
+
+        private void RedondearPanel(Panel pnl, int radio)
+        {
+            var rect = pnl.ClientRectangle;
+            rect.Inflate(-1, -1);
+
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                int d = radio * 2;
+
+                path.AddArc(rect.X, rect.Y, d, d, 180, 90);
+                path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
+                path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90);
+                path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90);
+                path.CloseFigure();
+
+                pnl.Region = new Region(path);
+            }
+        }
+
+
+
         bool movingUpUsername = false;
         bool movingDownUsername = false;
 

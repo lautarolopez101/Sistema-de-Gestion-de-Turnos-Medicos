@@ -13,9 +13,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         // Como la capa UI tiene acceso a la capa BLL, podemos guardar los datos del usuario logueado en esta clase estatica
         // Ahora vamos a definir que datos queremos guardar del usuario logueado
         // Obtenemos el paciente mediante el usuario logueado
-
+        
         public static PacienteBE Paciente { get; set; }
-
+        public static UsuarioBE Usuario { get; set; }
 
         // Datos minimos del Usuario
         public static int ID_Usuario { get; private set; }
@@ -38,6 +38,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         // Para cerrar sesion necesitaremos limpiar todo para que podamos iniciar sesion con otro usuario
         public static void Logout()
         {
+            Usuario.LastLogin = DateTime.Now;
+            Paciente = null;
+            Usuario = null;
             ID_Usuario = 0;
             Username = string.Empty;
             ID_Paciente = null;

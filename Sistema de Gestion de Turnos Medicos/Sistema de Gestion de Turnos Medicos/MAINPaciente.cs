@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,22 +19,26 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private readonly IProfesionalService _profesionalservice;
         private readonly IEspecialidadService _especialidadservice;
         private readonly ITurnoService _turnoservice;
-        public MAINPaciente(IProfesionalService profesionalservice, IEspecialidadService especialidadService, ITurnoService turnoservice)
+        private readonly IUsuarioService _usuarioService;
+        public MAINPaciente(IProfesionalService profesionalservice, IEspecialidadService especialidadService, ITurnoService turnoservice, IUsuarioService usuarioService)
         {
             InitializeComponent();
             _profesionalservice = profesionalservice;
             _especialidadservice = especialidadService;
-            lblusuario.Text = AppSession.Paciente.Nombre;
+            _usuarioService = usuarioService;
+
+            PacienteBE paciente = AppSession.Paciente;
+            lblusuario.Text = "Bienvenido, " + paciente.Nombre;
             _turnoservice = turnoservice;
         }
         private void MAINPaciente_Load(object sender, EventArgs e)
         {
-            RedondearPanel(panel3,15);
-            RedondearPanel(panel4,15);
-            RedondearPanel(panel5,15);
-            RedondearPanel(panel6,15);
-            RedondearPanel(panel7,15);
-            RedondearPanel(panel8,15);
+            RedondearPanel(panel3, 15);
+            RedondearPanel(panel4, 15);
+            RedondearPanel(panel5, 15);
+            RedondearPanel(panel6, 15);
+            RedondearPanel(panel7, 15);
+            RedondearPanel(panel8, 15);
 
         }
 
@@ -46,7 +51,10 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            AppSession.Usuario.LastLogin = DateTime.Now;
+            int retorna = _usuarioService.Logout(AppSession.Usuario);
+            AppSession.Logout();
+            Close();
         }
 
         // Eventos para mover la ventana
@@ -71,6 +79,34 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+
+        // Evento para el sidebar
+        private void imagenlogo_Click(object sender, EventArgs e)
+        {
+            sidebartransition.Start();
+        }
+        bool sidebarExpandido = true;
+        private void sidebartimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpandido)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == 59)
+                {
+                    sidebarExpandido = false;
+                    sidebartransition.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == 188)
+                {
+                    sidebarExpandido = true;
+                    sidebartransition.Stop();
+                }
+            }
+        }
 
 
         // Funcion para redondear los paneles
@@ -99,7 +135,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
         // Colores (ajustalos a tu paleta)
         private Color _colorNormal = Color.FromArgb(48, 74, 111);       // fondo menú normal
-        private Color _colorSeleccionado = Color.FromArgb(73,99,136); // fondo menú seleccionado en teoria tiene que ser mas claro que el original para que se identifique en cual esta
+        private Color _colorSeleccionado = Color.FromArgb(73, 99, 136); // fondo menú seleccionado en teoria tiene que ser mas claro que el original para que se identifique en cual esta
         private Color _textoNormal = Color.White;
         private Color _textoSeleccionado = Color.White;  // o un celestito si querés
 
@@ -202,7 +238,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
         private void Logout_Click(object sender, EventArgs e)
         {
-                AppSession.Logout();
+            AppSession.Usuario.LastLogin = DateTime.Now;
+            int retorna = _usuarioService.Logout(AppSession.Usuario);
+            AppSession.Logout();
             Close();
         }
 
@@ -213,9 +251,20 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
         private void Perfil_Click(object sender, EventArgs e)
         {
-
+            // Agrega un try...catch para que podamos ver cualquier error
+            try
+            {                // Aquí llamas a la función que te pasé
+                ActivarPanel(panel7);   // cambia color del menú
+                // Aquí llamas a la función que te pasé
+                CargarFormularioEnPanel(new Perfil());
+            }
+            catch (Exception ex)
+            {
+                // Si algo falla, ESTO nos dirá qué es
+                MessageBox.Show("¡ERROR! No se pudo cargar el formulario: \n\n" + ex.Message);
+            }
         }
 
-        
+       
     }
 }

@@ -54,7 +54,7 @@
             this.panelturnos.Location = new System.Drawing.Point(84, 8);
             this.panelturnos.Name = "panelturnos";
             this.panelturnos.Size = new System.Drawing.Size(596, 363);
-            this.panelturnos.TabIndex = 0;
+            this.panelturnos.TabIndex = 3;
             // 
             // dgvturnos
             // 
@@ -122,10 +122,10 @@
             this.panelcancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             this.panelcancelar.Controls.Add(this.btnCancelar);
             this.panelcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelcancelar.Location = new System.Drawing.Point(12, 399);
+            this.panelcancelar.Location = new System.Drawing.Point(263, 399);
             this.panelcancelar.Name = "panelcancelar";
             this.panelcancelar.Size = new System.Drawing.Size(233, 70);
-            this.panelcancelar.TabIndex = 2;
+            this.panelcancelar.TabIndex = 1;
             this.panelcancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // panelconfirmar
@@ -133,10 +133,10 @@
             this.panelconfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             this.panelconfirmar.Controls.Add(this.btnConfirmar);
             this.panelconfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelconfirmar.Location = new System.Drawing.Point(265, 399);
+            this.panelconfirmar.Location = new System.Drawing.Point(12, 399);
             this.panelconfirmar.Name = "panelconfirmar";
             this.panelconfirmar.Size = new System.Drawing.Size(233, 70);
-            this.panelconfirmar.TabIndex = 3;
+            this.panelconfirmar.TabIndex = 0;
             this.panelconfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnConfirmar
@@ -162,7 +162,7 @@
             this.panelmodificar.Location = new System.Drawing.Point(516, 399);
             this.panelmodificar.Name = "panelmodificar";
             this.panelmodificar.Size = new System.Drawing.Size(233, 70);
-            this.panelmodificar.TabIndex = 3;
+            this.panelmodificar.TabIndex = 2;
             this.panelmodificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnModificar
@@ -182,16 +182,16 @@
             // 
             // MisTurnos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(782, 487);
             this.Controls.Add(this.panelmodificar);
-            this.Controls.Add(this.panelconfirmar);
             this.Controls.Add(this.panelcancelar);
+            this.Controls.Add(this.panelconfirmar);
             this.Controls.Add(this.panelturnos);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MisTurnos";
             this.Text = "MisTurnos";
             this.Load += new System.EventHandler(this.MisTurnos_Load);

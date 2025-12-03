@@ -37,10 +37,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private void MisTurnos_Load(object sender, EventArgs e)
         {
             Recargamos();
-
         }
-
-
         private void Recargamos()
         {
             int idpaciente = AppSession.Paciente.ID_Paciente;
@@ -129,6 +126,34 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             try
             {
 
+                // Aca tendremos que poner algo para que verifique por si fue un error
+
+
+                int idpaciente = AppSession.Paciente.ID_Paciente;
+                string estado1 = "Confirmado";
+                string estado2 = "Pendiente";
+                List<TurnoBE> listaturnos = _turnoservice.FiltrarPacienteHistorial(idpaciente, estado1, estado2);
+
+                // listo ahora con la lista aca tenemos que de alguna forma buscar algunas similitudes con la lista que selecciona
+                // la forma mas facil seria igualarla con la fecha que es bastante complicado que sea a la misma hora el mismo dia
+                // y a su vez para darle un refuerzo a la igualdad con el motivo y listo
+
+                TurnoBE turno = listaturnos.FirstOrDefault(x => (x.Motivo == motivoturno) && (x.FechaHora == fechaturno));
+                // una vez ya con el turno seleccionado tendremos que ir a buscar el idturno para cambiarle el estado a cancelado
+
+                turno.Estado = "Confirmado";
+                int retorna = _turnoservice.ModificarTurno(turno.ID_Turno, turno.ID_Paciente, turno.ID_Profesional, turno.Estado, turno.FechaHora, turno.Motivo, turno.Observaciones);
+
+                if (retorna > 0)
+                {
+                    MessageBox.Show("Turno Confirmado con exito.");
+                    Recargamos();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo Confirmar el turno.");
+                }
+
             }
             catch (Exception ex)
             {
@@ -140,7 +165,59 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         {
             try
             {
+                // Aca tendremos que poder modificar solamente la fecha 
+                if (dgvturnos.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccioná un turno primero que este  en estado PENDIENTE.");
+                    return;
+                }
 
+                // Traemos la lista completa para poder manipular mejor los datos
+                int idpaciente = AppSession.Paciente.ID_Paciente;
+                string estado1 = "Confirmado";
+                string estado2 = "Pendiente";
+
+
+
+                // 1) Tomamos ID y fecha actual del turno seleccionado
+                DateTime fechaActual = Convert.ToDateTime(dgvturnos.CurrentRow.Cells["Fecha"].Value);
+
+                // 2
+                // }) Abrimos el mini-form para elegir nueva fecha
+                using (var frm = new FRMCambiarFechaTurno(fechaActual))
+                {
+                    var result = frm.ShowDialog(this);
+
+                    if (result != DialogResult.OK)
+                        return; // el usuario canceló
+
+
+                    // 3) Llamamos a la BLL para actualizar SOLO la fecha
+                    // Hay que traer el turno completo para poder poner los datos
+                    // O hacer un metodo aparte en la BLL que solo modifique la fecha
+                    //      1: Traeremos todos los turnos del paciente con los estados que tienen que aparecer en ester FORM
+                    List<TurnoBE> lista = _turnoservice.FiltrarPacienteHistorial(idpaciente, estado1, estado2);
+                    //      2: Ahora tenemos que buscar los datos que tienen para buscar primero que tenga el estado de pendiente
+                    //      porque hay que acordarnos que en el estado pendiente nos permite modificar
+                    List<TurnoBE> pendientes = lista
+                        .Where(x => x.Estado == estado2).ToList();
+                    //      3: Ahora buscamos el turno que coincida con la fecha y el motivo    
+                    TurnoBE turno = pendientes
+                        .FirstOrDefault(x => (x.Motivo == motivoturno) && (x.FechaHora == fechaturno));
+                    int idturno = turno.ID_Turno;
+                    DateTime nuevaFecha = frm.NuevaFecha;
+                    int filas = _turnoservice.FechaTurno(idturno, nuevaFecha);
+
+                    if (filas > 0)
+                    {
+                        MessageBox.Show("Fecha del turno modificada con éxito.");
+                        Recargamos(); // refrescás la grilla
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo modificar la fecha del turno.");
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -151,8 +228,22 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private void dgvturnos_SelectionChanged(object sender, EventArgs e)
         {
             // Seleccionamos y se la damos a las variables 
-            motivoturno = dgvturnos.CurrentRow.Cells["Motivo"].Value.ToString();
-            fechaturno = Convert.ToDateTime(dgvturnos.CurrentRow.Cells["Fecha"].Value.ToString());
+            string estado = dgvturnos.CurrentRow.Cells["Estado"].Value.ToString();
+            string confirmado = "Confirmado";
+
+
+            if (estado == confirmado)
+            {
+                panelmodificar.Visible = false;
+                panelconfirmar.Visible = false;
+            }
+            else
+            {
+                panelmodificar.Visible = true;
+                panelconfirmar.Visible = true;
+            }
+                motivoturno = dgvturnos.CurrentRow.Cells["Motivo"].Value.ToString();
+                fechaturno = Convert.ToDateTime(dgvturnos.CurrentRow.Cells["Fecha"].Value.ToString());
         }
     }
 }

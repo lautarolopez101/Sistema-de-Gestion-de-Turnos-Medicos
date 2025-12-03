@@ -52,6 +52,28 @@ namespace BLL
             turno.FechaHora = fecha;
             return _repo.ModificarTurno(turno);
         }
+
+        public int FechaTurno(int idturno,DateTime fecha)
+        {
+            // Lo que hacemos para este metodo de business es traer el turno y modificar lo que necesitamos
+            // 1: Traemos la lista para que sea mas facil y rapido
+            List<TurnoBE> lista = _repo.ObtenerTodos();
+            // 2: Creamos una entidad de turno para hacer un LINQ seleccionando el primero 
+            // que cumpla la condicion de que sean iguales los idturnos
+            TurnoBE turnoencontrado = lista
+                .FirstOrDefault(x => x.ID_Turno == idturno);
+
+            if (turnoencontrado == null)
+                throw new BusinessException("Turno no Encontrado.");
+
+            // Ya con el turno completo reemplazamos el dato que necesitamos modificar
+            turnoencontrado.FechaHora = fecha;
+            // Ahora con el turno modificado lo tenemos que modificar en la Base de Datos
+            int retorna = _repo.ModificarTurno(turnoencontrado);
+            return retorna;
+
+        }
+
         public int EliminarTurno(int idturno, int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones)
         {
             TurnoBE turno = new TurnoBE();

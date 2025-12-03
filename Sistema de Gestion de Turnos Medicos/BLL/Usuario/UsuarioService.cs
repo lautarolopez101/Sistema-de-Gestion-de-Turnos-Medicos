@@ -23,10 +23,13 @@ namespace BLL
             _pacienterepository = pacienteRepository;
         }
 
-       
-
         public int CrearUsuario(string username, string plainpassword, string email)
         {
+            // Vamos a lanzar algunas excepciones por si el usuario ya existe
+            
+
+
+
             // Aca tendriamos que hacer lo del hash para poder crear y guardar el usuario
             string passwordhash = _passwordService.HashPassword(plainpassword);
 
@@ -39,24 +42,23 @@ namespace BLL
             return retorna;
         }
 
+
         public UsuarioBE ObtenerUsuario(string user, string password)
         {
             UsuarioBE usuario = new UsuarioBE();   
             usuario = _usuariorepository.GetByUsername(user);
+            
+            if (usuario == null)
+                throw new BusinessException("Usuario no encontrado");
 
             string passwordhash = usuario.PasswordHash;
-            // Aca tendria que estar el metodo para verificar si la contrasenia es la misma 
-            bool verifica = _passwordService.VerifyPassword(password,passwordhash);
+            
+            bool verificamos = _passwordService.VerifyPassword(password,passwordhash);
 
-            if (verifica)
-            {
-                // Un mensaje?
-            }
-            else
-            {
-                // no coincide
-            }
-                return usuario;
+            if (!verificamos)
+                return null; // o throw BusinessException("Contraseña incorrecta");
+
+            return usuario;
         }
 
         // Aca seria que por ID usuario podamos buscar al respecitvo paciente
@@ -89,7 +91,10 @@ namespace BLL
             bool buscamosemail = lista.Exists(x => x.Email == email);
             return buscamosemail;
         }
-
+        public int Logout(UsuarioBE usuario)
+        {
+            return _usuariorepository.Logout(usuario);
+        }
         public PacienteBE ObtenerPacienteEmail(string email)
         {
             return _pacienterepository.ObtenerPacienteEmail(email);

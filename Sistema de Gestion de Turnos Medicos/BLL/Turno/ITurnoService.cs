@@ -13,6 +13,7 @@ namespace BLL
         int AgregarTurnoIncompleto(int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo);
 
         int ModificarTurno(int idturno,int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones);
+        int FechaTurno(int idturno, DateTime fecha);
         int EliminarTurno(int idturno,int idpaciente, int idprofesional, string estado, DateTime fecha, string motivo, string observaciones);
         List<TurnoBE> ObtenerTodos();
         List<TurnoBE> VerificoDuplicado(int idprofesional, int idpaciente);

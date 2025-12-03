@@ -111,6 +111,7 @@ namespace DAL.CRUD
             }
             return usuario;
         }
+        
 
         public static UsuarioBE ObtenterPorID(int idusuario)
         {
@@ -207,6 +208,21 @@ namespace DAL.CRUD
                 conexion.Close();
             }
             return lista;
+        }
+
+        public static int Logout(UsuarioBE usuario)
+        {
+            int retorna;
+            using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "Update Usuarios set LastLogin = @lastlogin Where ID_Usuario = @idusuario";
+                SqlCommand comand = new SqlCommand(query, conexion);
+                comand.Parameters.AddWithValue("@lastlogin", usuario.LastLogin);
+                comand.Parameters.AddWithValue("@idusuario", usuario.ID);
+                retorna = comand.ExecuteNonQuery();
+                conexion.Close();
+            }
+            return retorna;
         }
 
     }

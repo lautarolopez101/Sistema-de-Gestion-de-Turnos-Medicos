@@ -15,7 +15,7 @@ namespace DAL
             int retorna = UsuarioDAL.CrearUsuario(usuario);
             return retorna;
         }
-
+       
         public List<UsuarioBE> Buscar()
         {
             List<UsuarioBE> lista = new List<UsuarioBE>();
@@ -50,5 +50,10 @@ namespace DAL
             lista = UsuarioDAL.ListarPatentesDirectasDelUsuario(usuarioId);
             return lista;
         }
+        public int Logout(UsuarioBE usuario)
+        {
+            return UsuarioDAL.Logout(usuario);
+        }
+
     }
 }

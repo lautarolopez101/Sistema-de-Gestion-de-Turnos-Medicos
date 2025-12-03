@@ -95,7 +95,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                                 this.Close();
 
                                 // Mostramos la vista de paciente
-                                MAINPaciente paciente = new MAINPaciente(_profesionalservice,_especialidadservice, _turnoservice);
+                                MAINPaciente paciente = new MAINPaciente(_profesionalservice,_especialidadservice, _turnoservice,_usuarioservice);
                                 paciente.ShowDialog();
                             }
                             else
