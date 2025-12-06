@@ -108,6 +108,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
 
             FRMAtenderTurno fRMAtenderTurno = new FRMAtenderTurno(_idturno,_pacienteservice, _turnoservice);
             fRMAtenderTurno.ShowDialog();
+            Recargamos();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -146,7 +147,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             // Bien ahora con el idturno que tenemos podemos guardarlo en una variable estatica para usarlo en el form de atender turno
             if(turnoSeleccionado != null)
                 _idturno = turnoSeleccionado.ID_Turno;
-
+            
         }
 
         // Usamos este metodo para poder cambiar los colores del dgv dependiendo del estado del turno

@@ -148,6 +148,12 @@
     <Compile Include="FRMCambiarFechaTurno.Designer.cs">
       <DependentUpon>FRMCambiarFechaTurno.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistorialProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialProfesional.Designer.cs">
+      <DependentUpon>HistorialProfesional.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCambiarFechaTurno.resx">
       <DependentUpon>FRMCambiarFechaTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialProfesional.resx">
+      <DependentUpon>HistorialProfesional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainProfesional.resx">
       <DependentUpon>MainProfesional.cs</DependentUpon>

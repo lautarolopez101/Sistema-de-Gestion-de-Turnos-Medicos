@@ -88,7 +88,7 @@
             this.lblusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lblusername.Location = new System.Drawing.Point(56, 27);
             this.lblusername.Name = "lblusername";
-            this.lblusername.Size = new System.Drawing.Size(108, 23);
+            this.lblusername.Size = new System.Drawing.Size(88, 21);
             this.lblusername.TabIndex = 11;
             this.lblusername.Text = "Username";
             this.lblusername.Click += new System.EventHandler(this.lblusername_Click);
@@ -147,7 +147,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label1.Location = new System.Drawing.Point(531, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 49);
+            this.label1.Size = new System.Drawing.Size(120, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "LOGIN";
             // 
@@ -161,7 +161,7 @@
             this.btnForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
             this.btnForgotPassword.Location = new System.Drawing.Point(378, 378);
             this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(220, 30);
+            this.btnForgotPassword.Size = new System.Drawing.Size(172, 22);
             this.btnForgotPassword.TabIndex = 3;
             this.btnForgotPassword.TabStop = true;
             this.btnForgotPassword.Text = "Forgot password?";
@@ -173,7 +173,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label2.Location = new System.Drawing.Point(51, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(433, 20);
+            this.label2.Size = new System.Drawing.Size(326, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "_____________________________________________________";
             // 
@@ -183,7 +183,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.label3.Location = new System.Drawing.Point(53, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(433, 20);
+            this.label3.Size = new System.Drawing.Size(326, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "_____________________________________________________";
             // 
@@ -197,7 +197,7 @@
             this.btnRegister.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(255)))));
             this.btnRegister.Location = new System.Drawing.Point(603, 378);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(237, 30);
+            this.btnRegister.Size = new System.Drawing.Size(187, 22);
             this.btnRegister.TabIndex = 4;
             this.btnRegister.TabStop = true;
             this.btnRegister.Text = "Have an account?";
@@ -234,7 +234,7 @@
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             this.lblPassword.Location = new System.Drawing.Point(52, 25);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(103, 23);
+            this.lblPassword.Size = new System.Drawing.Size(82, 21);
             this.lblPassword.TabIndex = 12;
             this.lblPassword.Text = "Password";
             this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
@@ -252,6 +252,7 @@
             // btnCerrar
             // 
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_close;
             this.btnCerrar.Location = new System.Drawing.Point(868, 0);
             this.btnCerrar.Name = "btnCerrar";
@@ -264,6 +265,7 @@
             // btnMinimizar
             // 
             this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = global::Sistema_de_Gestion_de_Turnos_Medicos.Properties.Resources.window_minimize;
             this.btnMinimizar.Location = new System.Drawing.Point(810, 0);
             this.btnMinimizar.Name = "btnMinimizar";
@@ -285,7 +287,7 @@
             // 
             // LOGIN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(910, 432);
