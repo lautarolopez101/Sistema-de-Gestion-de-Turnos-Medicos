@@ -154,32 +154,62 @@ namespace DAL
             }
             return lista;
         }
-        public static int TurnosPorProfesional(int idprofesional)
+        public static List<TurnoBE> TurnosPorProfesional(int idprofesional)
         {
-            // La idea de esta funcion es que se pueda hacer desde un Usuario Paciente o un Usuario Recepcion, el Alta para un Admin no le veo mucho sentido
-            int retorna = 0;
+            List<TurnoBE> listaturno = new List<TurnoBE>();
             using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
             {
-                string query = " SELECT " +
-                    "t.ID_Turno," +
-                    "t.ID_Profesional," +
-                    ".ID_Paciente," +
-                    "p.DNI            AS DNIPaciente," +
-                    "p.Nombre         AS NombrePaciente," +
-                    "p.Apellido       AS ApellidoPaciente," +
-                    "t.Motivo," +
-                    "t.FechaHora," +
-                    "t.Estado" +
-                    "FROM Turnos t" +
-                    "JOIN Pacientes p" +
-                    "ON t.ID_Paciente = p.ID_Paciente" +
-                    "WHERE    t.ID_Profesional =" + idprofesional +
-                    "AND t.Estado IN ('Pendiente', 'Confirmado', 'Cancelado')" +
-                    "ORDER BY    t.FechaHora;";
+                string query = "SELECT " +
+                "t.ID_Turno, " +
+                "t.ID_Profesional, " +
+                "t.ID_Paciente, " +
+                "p.DNI AS DNIPaciente, " +
+                "p.Nombre AS NombrePaciente, " +
+                "p.Apellido AS ApellidoPaciente, " +
+                "p.Email AS EmailPaciente, " +
+                "p.Telefono AS TelefonoPaciente, " +
+                "p.FechaNacimiento AS FechaNacimientoPaciente, " +
+                "t.Motivo, " +
+                "t.FechaHora, " +
+                "t.Estado " +          // ← AGREGÁ ESTE ESPACIO
+                "FROM Turnos t " +
+                "JOIN Pacientes p ON t.ID_Paciente = p.ID_Paciente " +
+                "WHERE t.ID_Profesional = " + idprofesional + " " +
+                "AND t.Estado IN ('Pendiente', 'Confirmado','Cancelado') " +
+                "ORDER BY t.FechaHora;";
+
                 SqlCommand comand = new SqlCommand(query, conexion);
-                retorna = comand.ExecuteNonQuery();
+
+                using (SqlDataReader sr = comand.ExecuteReader())
+                {
+                    while (sr.Read())
+                    {
+                        // Creamos el turno
+                        var turno = new TurnoBE();
+                        turno.ID_Turno = Convert.ToInt32(sr["ID_Turno"]);
+                        turno.ID_Profesional = Convert.ToInt32(sr["ID_Profesional"]);
+                        turno.ID_Paciente = Convert.ToInt32(sr["ID_Paciente"]);
+                        turno.Motivo = sr["Motivo"].ToString();
+                        turno.FechaHora = Convert.ToDateTime(sr["FechaHora"]);
+                        turno.Estado = sr["Estado"].ToString();
+
+                        // Creamos el paciente embebido dentro del turno
+                        turno.Paciente = new PacienteBE
+                        {
+                            ID_Paciente = Convert.ToInt32(sr["ID_Paciente"]),
+                            DNI = sr["DNIPaciente"].ToString(),
+                            Nombre = sr["NombrePaciente"].ToString(),
+                            Apellido = sr["ApellidoPaciente"].ToString(),
+                            Email = sr["EmailPaciente"].ToString(),
+                            Telefono = sr["TelefonoPaciente"].ToString(),
+                            FechaNacimiento = Convert.ToDateTime(sr["FechaNacimientoPaciente"])
+                        };
+
+                        listaturno.Add(turno);
+                    }
+                }
             }
-            return retorna;
+                    return listaturno;
         }
     }
 }

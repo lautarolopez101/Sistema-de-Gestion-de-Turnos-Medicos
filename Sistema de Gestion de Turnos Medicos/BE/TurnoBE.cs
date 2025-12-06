@@ -21,6 +21,8 @@ namespace BE
         public string NombreProfesional { get; set; }
         public string ApellidoProfesional { get; set; }
 
+        public PacienteBE Paciente { get; set; }
+
         public TurnoBE()
         {
             

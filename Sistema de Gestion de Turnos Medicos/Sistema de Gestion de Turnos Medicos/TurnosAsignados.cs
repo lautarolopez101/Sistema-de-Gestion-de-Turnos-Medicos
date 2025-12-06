@@ -17,6 +17,8 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
     {
         private readonly ITurnoService _turnoservice;
         private readonly IPacienteService _pacienteservice;
+
+        private static int _idturno;
         public TurnosAsignados(ITurnoService turnoService, IPacienteService pacienteservice)
         {
             InitializeComponent();
@@ -41,20 +43,24 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             // Tendriamos que usar un BLL que nos muestre directamente la lista 
             // Traemos la funcion ya hecha
             int idprofesional = AppSession.Profesional.ID_Profesional;
-            var lista = _turnoservice.TurnosProfesional(idprofesional);
+
+            List<TurnoBE> lista = _turnoservice.TurnosPorProfesional(idprofesional);
 
 
-          
-            
 
-            var listafiltrada = from tun in lista
+            var listamostramos = from tun in lista
                                 select new
                                 {
+                                    Estado = tun.Estado,
+                                    Nombre = tun.Paciente.Nombre,
+                                    Apellido = tun.Paciente.Apellido,
+                                    DNI = tun.Paciente.DNI,
+                                    FechaHora = tun.FechaHora,
                                     Motivo = tun.Motivo
                                 };
-                                
 
-            dgvturnos.DataSource = lista;
+
+            dgvturnos.DataSource = listamostramos.ToList();
 
         }
 
@@ -100,6 +106,8 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         {
             // Aca tendriamos que obtener los datos que estan en el dgv para poder ir a otro form para atenderlo 
 
+            FRMAtenderTurno fRMAtenderTurno = new FRMAtenderTurno(_idturno,_pacienteservice, _turnoservice);
+            fRMAtenderTurno.ShowDialog();
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -107,10 +115,64 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             // Aca tenemos que tomar los datos necesarios para poder atender el turno seleccionado
             //  Tenemos que mostrar los siguentes datos => Nombre y Apellido del paciente, DNI, Fecha y Hora del turno, Motivo de consulta  
 
+            // Aca tenemos que obtener el ID del profesional para poder traer los turnos asignados a ese profesional
+            int idprofesional = AppSession.Profesional.ID_Profesional;
+            List<TurnoBE> lista = _turnoservice.TurnosPorProfesional(idprofesional);
 
+            // Entre los que igualamos podriamos hacer para obtener el idturno y luego poner al observacion y cambiar el estado a "Atendido"
+            // Tenemos que recordar que el profesional solamente pueda atender a los turnos que esten en estado "Confirmado" 
+
+            // La logica de esta funcion es que cuando seleccionemos un turno en el dgv
+            // los que solamente tengan el estado "Confirmado" se habilite el boton de "Atender"
+            if (dgvturnos.CurrentRow.Cells["Estado"].Value.ToString() == "Confirmado")
+                panelbtn.Show();
+            else
+                panelbtn.Hide();
+
+            // Ahora entre los que estan confirmado tenemos que buscar el turno seleccionado 
+            var confirmados = lista
+                .Where(x => x.Estado == "Confirmado").ToList();
+
+            // Lo buscamos con los datos que seleccionamos en cual coinciden
+            string nombre = dgvturnos.CurrentRow.Cells["Nombre"].Value.ToString();
+            string apellido = dgvturnos.CurrentRow.Cells["Apellido"].Value.ToString();
+            DateTime fechahora = Convert.ToDateTime(dgvturnos.CurrentRow.Cells["FechaHora"].Value);
+
+            TurnoBE turnoSeleccionado = confirmados
+                .FirstOrDefault(x => x.Paciente.Nombre == nombre &&
+                                     x.Paciente.Apellido == apellido &&
+                                     x.FechaHora == fechahora);
+
+            // Bien ahora con el idturno que tenemos podemos guardarlo en una variable estatica para usarlo en el form de atender turno
+            if(turnoSeleccionado != null)
+                _idturno = turnoSeleccionado.ID_Turno;
 
         }
 
-      
+        // Usamos este metodo para poder cambiar los colores del dgv dependiendo del estado del turno
+        private void dgvturnos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvturnos.Columns[e.ColumnIndex].Name == "Estado") // nombre EXACTO de la columna
+            {
+                string estado = e.Value?.ToString() ?? "";
+
+                if (estado == "Cancelado")
+                {
+                    dgvturnos.Rows[e.RowIndex].DefaultCellStyle.BackColor =
+                        Color.FromArgb(223, 154, 182);   // rojo médico suave
+
+                    dgvturnos.Rows[e.RowIndex].DefaultCellStyle.ForeColor =
+                        Color.White;
+                }
+                else if (estado == "Pendiente")
+                {
+                    dgvturnos.Rows[e.RowIndex].DefaultCellStyle.BackColor =
+                        Color.FromArgb(223, 228, 171); // naranja claro
+
+                    dgvturnos.Rows[e.RowIndex].DefaultCellStyle.ForeColor =
+                        Color.Black;
+                }
+            }
+        }
     }
 }

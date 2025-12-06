@@ -29,5 +29,9 @@ namespace DAL
         {
             return TurnoDAL.FiltrarPacienteHistorial(idpaciente,estado1,estado2);
         }
+        public List<TurnoBE> TurnosPorProfesional(int idprofesional)
+        {
+            return TurnoDAL.TurnosPorProfesional(idprofesional);
+        }
     }
 }

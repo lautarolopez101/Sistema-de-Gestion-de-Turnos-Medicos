@@ -172,7 +172,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             {                // Aquí llamas a la función que te pasé
                 ActivarPanel(panelturnos);   // cambia color del menú
                 // Aquí llamas a la función que te pasé
-                CargarFormularioEnPanel(new TurnosAsignados(_turnoservice));
+                CargarFormularioEnPanel(new TurnosAsignados(_turnoservice,_pacienteservice));
             }
             catch (Exception ex)
             {

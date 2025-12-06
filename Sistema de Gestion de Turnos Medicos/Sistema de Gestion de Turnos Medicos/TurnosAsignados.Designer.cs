@@ -57,8 +57,8 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(141)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvturnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvturnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -78,8 +78,10 @@
             this.dgvturnos.RowHeadersVisible = false;
             this.dgvturnos.RowHeadersWidth = 51;
             this.dgvturnos.RowTemplate.Height = 24;
-            this.dgvturnos.Size = new System.Drawing.Size(685, 300);
+            this.dgvturnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvturnos.Size = new System.Drawing.Size(668, 300);
             this.dgvturnos.TabIndex = 0;
+            this.dgvturnos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvturnos_CellFormatting);
             this.dgvturnos.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // panelbtn
@@ -87,9 +89,9 @@
             this.panelbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             this.panelbtn.Controls.Add(this.btnAtender);
             this.panelbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelbtn.Location = new System.Drawing.Point(265, 375);
+            this.panelbtn.Location = new System.Drawing.Point(245, 375);
             this.panelbtn.Name = "panelbtn";
-            this.panelbtn.Size = new System.Drawing.Size(200, 100);
+            this.panelbtn.Size = new System.Drawing.Size(282, 100);
             this.panelbtn.TabIndex = 1;
             this.panelbtn.Click += new System.EventHandler(this.panelbtn_Click);
             // 
@@ -98,10 +100,10 @@
             this.btnAtender.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtender.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             this.btnAtender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtender.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtender.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.btnAtender.Location = new System.Drawing.Point(26, 20);
             this.btnAtender.Name = "btnAtender";
-            this.btnAtender.Size = new System.Drawing.Size(155, 60);
+            this.btnAtender.Size = new System.Drawing.Size(237, 60);
             this.btnAtender.TabIndex = 0;
             this.btnAtender.Text = "Atender";
             this.btnAtender.UseVisualStyleBackColor = true;
@@ -111,9 +113,9 @@
             // 
             this.paneldgv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             this.paneldgv.Controls.Add(this.dgvturnos);
-            this.paneldgv.Location = new System.Drawing.Point(12, 12);
+            this.paneldgv.Location = new System.Drawing.Point(31, 12);
             this.paneldgv.Name = "paneldgv";
-            this.paneldgv.Size = new System.Drawing.Size(730, 345);
+            this.paneldgv.Size = new System.Drawing.Size(711, 345);
             this.paneldgv.TabIndex = 2;
             // 
             // TurnosAsignados

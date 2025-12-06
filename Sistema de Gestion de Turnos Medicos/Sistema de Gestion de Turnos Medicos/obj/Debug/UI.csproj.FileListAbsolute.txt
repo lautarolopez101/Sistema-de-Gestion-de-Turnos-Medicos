@@ -92,3 +92,4 @@ C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.FRMCambiarFechaTurno.resources
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.MainProfesional.resources
 C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.TurnosAsignados.resources
+C:\Users\Lautaro\Desktop\Sistema-de-Gestion-de-Turnos-Medicos\Sistema de Gestion de Turnos Medicos\Sistema de Gestion de Turnos Medicos\obj\Debug\Sistema_de_Gestion_de_Turnos_Medicos.FRMAtenderTurno.resources
