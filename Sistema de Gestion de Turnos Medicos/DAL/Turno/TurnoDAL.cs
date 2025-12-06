@@ -152,8 +152,34 @@ namespace DAL
                     lista.Add(turno);
                 }
             }
-
             return lista;
+        }
+        public static int TurnosPorProfesional(int idprofesional)
+        {
+            // La idea de esta funcion es que se pueda hacer desde un Usuario Paciente o un Usuario Recepcion, el Alta para un Admin no le veo mucho sentido
+            int retorna = 0;
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = " SELECT " +
+                    "t.ID_Turno," +
+                    "t.ID_Profesional," +
+                    ".ID_Paciente," +
+                    "p.DNI            AS DNIPaciente," +
+                    "p.Nombre         AS NombrePaciente," +
+                    "p.Apellido       AS ApellidoPaciente," +
+                    "t.Motivo," +
+                    "t.FechaHora," +
+                    "t.Estado" +
+                    "FROM Turnos t" +
+                    "JOIN Pacientes p" +
+                    "ON t.ID_Paciente = p.ID_Paciente" +
+                    "WHERE    t.ID_Profesional =" + idprofesional +
+                    "AND t.Estado IN ('Pendiente', 'Confirmado', 'Cancelado')" +
+                    "ORDER BY    t.FechaHora;";
+                SqlCommand comand = new SqlCommand(query, conexion);
+                retorna = comand.ExecuteNonQuery();
+            }
+            return retorna;
         }
     }
 }

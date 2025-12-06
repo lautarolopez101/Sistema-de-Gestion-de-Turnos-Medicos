@@ -33,9 +33,9 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.lblDni = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblmatricula = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblnacimiento = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -62,9 +62,9 @@
             this.panelinformacion.Controls.Add(this.lblTelefono);
             this.panelinformacion.Controls.Add(this.label10);
             this.panelinformacion.Controls.Add(this.lblDni);
-            this.panelinformacion.Controls.Add(this.label12);
+            this.panelinformacion.Controls.Add(this.lblmatricula);
             this.panelinformacion.Controls.Add(this.lblFecha);
-            this.panelinformacion.Controls.Add(this.label6);
+            this.panelinformacion.Controls.Add(this.lblnacimiento);
             this.panelinformacion.Controls.Add(this.lblApellido);
             this.panelinformacion.Controls.Add(this.label4);
             this.panelinformacion.Controls.Add(this.lblNombre);
@@ -80,9 +80,9 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(83, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 19);
+            this.label2.Size = new System.Drawing.Size(188, 19);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Informacion Paciente:";
+            this.label2.Text = "Informacion Personal:";
             // 
             // lblTelefono
             // 
@@ -114,15 +114,15 @@
             this.lblDni.TabIndex = 10;
             this.lblDni.Text = "label11";
             // 
-            // label12
+            // lblmatricula
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label12.Location = new System.Drawing.Point(25, 150);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(46, 21);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "DNI:";
+            this.lblmatricula.AutoSize = true;
+            this.lblmatricula.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblmatricula.Location = new System.Drawing.Point(25, 150);
+            this.lblmatricula.Name = "lblmatricula";
+            this.lblmatricula.Size = new System.Drawing.Size(46, 21);
+            this.lblmatricula.TabIndex = 9;
+            this.lblmatricula.Text = "DNI:";
             // 
             // lblFecha
             // 
@@ -134,15 +134,15 @@
             this.lblFecha.TabIndex = 8;
             this.lblFecha.Text = "label5";
             // 
-            // label6
+            // lblnacimiento
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label6.Location = new System.Drawing.Point(25, 231);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(196, 21);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Fecha de Nacimiento:";
+            this.lblnacimiento.AutoSize = true;
+            this.lblnacimiento.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.lblnacimiento.Location = new System.Drawing.Point(25, 231);
+            this.lblnacimiento.Name = "lblnacimiento";
+            this.lblnacimiento.Size = new System.Drawing.Size(196, 21);
+            this.lblnacimiento.TabIndex = 7;
+            this.lblnacimiento.Text = "Fecha de Nacimiento:";
             // 
             // lblApellido
             // 
@@ -326,9 +326,9 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblmatricula;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblnacimiento;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel paneleditar;
         private System.Windows.Forms.Button button1;

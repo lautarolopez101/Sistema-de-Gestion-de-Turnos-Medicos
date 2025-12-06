@@ -30,14 +30,14 @@
         {
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.panelconfirmar = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelcancelar = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.uiDatetimePicker1 = new Sunny.UI.UIDatetimePicker();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelfecha = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelconfirmar.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelcancelar.SuspendLayout();
+            this.panelfecha.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConfirmar
@@ -66,17 +66,17 @@
             this.panelconfirmar.TabIndex = 1;
             this.panelconfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
-            // panel1
+            // panelcancelar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(72, 237);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 0;
-            this.panel1.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.panelcancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
+            this.panelcancelar.Controls.Add(this.btnCancelar);
+            this.panelcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelcancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelcancelar.Location = new System.Drawing.Point(72, 237);
+            this.panelcancelar.Name = "panelcancelar";
+            this.panelcancelar.Size = new System.Drawing.Size(200, 100);
+            this.panelcancelar.TabIndex = 0;
+            this.panelcancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCancelar
             // 
@@ -119,16 +119,16 @@
             this.uiDatetimePicker1.Value = new System.DateTime(2025, 11, 12, 13, 17, 50, 892);
             this.uiDatetimePicker1.Watermark = "";
             // 
-            // panel2
+            // panelfecha
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
-            this.panel2.Controls.Add(this.uiDatetimePicker1);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(182, 72);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
-            this.panel2.TabIndex = 2;
+            this.panelfecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
+            this.panelfecha.Controls.Add(this.uiDatetimePicker1);
+            this.panelfecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelfecha.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelfecha.Location = new System.Drawing.Point(182, 72);
+            this.panelfecha.Name = "panelfecha";
+            this.panelfecha.Size = new System.Drawing.Size(200, 100);
+            this.panelfecha.TabIndex = 2;
             // 
             // label1
             // 
@@ -148,8 +148,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(602, 393);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelfecha);
+            this.Controls.Add(this.panelcancelar);
             this.Controls.Add(this.panelconfirmar);
             this.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -157,8 +157,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FRMCambiarFechaTurno";
             this.panelconfirmar.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panelcancelar.ResumeLayout(false);
+            this.panelfecha.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,10 +168,10 @@
 
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Panel panelconfirmar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelcancelar;
         private System.Windows.Forms.Button btnCancelar;
         private Sunny.UI.UIDatetimePicker uiDatetimePicker1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelfecha;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -111,6 +111,33 @@ namespace BLL
             var existe = listaturnos.Where(e => e.ID_Turno == idturno).ToList();
             return existe;
         }
+
+        public List<TurnoBE> TurnosProfesional(int idprofesional)
+        {
+            // Creamos la lista que tendran todos la lista de turnos
+            List<TurnoBE> listaturnos = new List<TurnoBE>();
+            // Llamamos a la funcion del repositorio para traer a todos
+            listaturnos = _repo.ObtenerTodos();
+            // Usamos unas variables con los metodos para tenerlos mas facil
+            string estado1 = "Cancelado";
+            string estado2 = "Confirmado";
+            string estado3 = "Pendiente";
+            // Ahora filtramos la lista con los que son de su turno en los estados "TALES"
+            List<TurnoBE> listaprofesional = listaturnos
+                .Where(x => (x.ID_Profesional == idprofesional) && ( (x.Estado == estado1) || (x.Estado == estado2) || (x.Estado == estado3) ))
+                .ToList();
+            // Ahora que tenemos todos los turnos del profesional en la SESION
+
+            List<PacienteBE> pacientes = _pacienterepository.ObtenerTodos();
+
+            // Tenemos que hacer 
+
+
+
+            // Y ahora tenemos que devolverlo para mostrarlo en la UI
+            return listaprofesional;
+        }
+
         public List<TurnoBE> FiltrarPacienteHistorial(int idpaciente,string estado1, string estado2 )
         {
             return _repo.FiltrarPacienteHistorial(idpaciente,estado1,estado2);

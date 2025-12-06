@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MAINPaciente));
             this.sidebar = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -79,6 +80,7 @@
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(74)))), ((int)(((byte)(111)))));
+            this.sidebar.Controls.Add(this.label2);
             this.sidebar.Controls.Add(this.panel8);
             this.sidebar.Controls.Add(this.panel7);
             this.sidebar.Controls.Add(this.panel6);
@@ -94,6 +96,19 @@
             this.sidebar.Size = new System.Drawing.Size(188, 567);
             this.sidebar.TabIndex = 0;
             this.sidebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(60, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "ClinicTime";
+            this.label2.Click += new System.EventHandler(this.imagenlogo_Click);
             // 
             // panel8
             // 
@@ -371,6 +386,7 @@
             this.lblusuario.Size = new System.Drawing.Size(124, 23);
             this.lblusuario.TabIndex = 4;
             this.lblusuario.Text = "MODIFICAR";
+            this.lblusuario.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAINPaciente_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -433,6 +449,7 @@
             this.Load += new System.EventHandler(this.MAINPaciente_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MAINPaciente_MouseDown);
             this.sidebar.ResumeLayout(false);
+            this.sidebar.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -490,5 +507,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer sidebartransition;
+        private System.Windows.Forms.Label label2;
     }
 }

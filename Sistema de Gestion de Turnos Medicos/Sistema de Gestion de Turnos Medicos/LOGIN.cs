@@ -17,7 +17,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
     public partial class LOGIN : Form
     {
         private readonly IUsuarioService _usuarioService;
-        private readonly IPacienteService _paciente;
+        private readonly IPacienteService _pacienteservice;
         private readonly IProfesionalService _profesionalservice;
         private readonly IEspecialidadService _especialidadService;
         private readonly ITurnoService _turnoservice;
@@ -30,7 +30,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             RedondearPanel(panellogin, 20);
 
             _usuarioService = usuario;
-            _paciente = paciente;
+            _pacienteservice = paciente;
             _profesionalservice = profesionalservice;
             _especialidadService = especialidadService;
             _turnoservice = turnoservice;
@@ -56,117 +56,49 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                Register win = new Register(_usuarioService);
-                win.ShowDialog();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Mensaje de Error: " + ex.Message);
-            }
-        }
-
-        private void btnForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                // un form especial para recuperar la contrasenia?
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Mensaje de Error: " + ex.Message);
-            }
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            try
-            {    
-                // mi idea seria que le ingresamos los datos y si coinciden entonces hago una validacion y ahi ingresamos al form de paciente o para completar
-                string username = txtUsername.Text;
-                string password = txtPassword.Text;
-
-                UsuarioBE usuario = new UsuarioBE();
-
-                usuario = _usuarioService.ObtenerUsuario(username,password);
-
-                // Vemos si pudo pasar la verificacion de la password 
-                if(usuario == null)
-                {
-                    MessageBox.Show("No se pudo Iniciar Sesion con este Usuario","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
-
-                // Validamos para tener acceso completo al usuario para vincularlo ya sea con el paciente o el profesional
-                _usuario = usuario;
-
-                // tendriamos que hacer una validacion para saber si tiene o no un vinculo con paciente o profesional
-                int paciente = usuario.ID_Paciente;
-                int profesional = usuario.ID_Profesional;
-
-                // Si los id's tienen  0, osea no existe entonces me salta para seguir completando y crear el paciente "TAL"
-                if(profesional == 0 && paciente == 0)
-                {
-                    // entonces nos abrira un form para poder completar los datos faltantes
-                    Complete completar = new Complete(_paciente,_usuarioService,_profesionalservice,_especialidadService,_turnoservice);
-                    completar.ShowDialog();
-                }
-                // y si ya tiene entonces me salta en el main
-                else if(profesional > 0 || paciente > 0)
-                {
-                    if(profesional > 0)
-                    {
-                        // Lo que hacemos aca es poder permanecer logueado al usuario
-                        AppSession.Login(usuario.ID, usuario.Username, usuario.ID_Paciente, usuario.ID_Profesional);
-                        // FORM Profesional
-                    }
-                    else if (paciente > 0)
-                    {
-                        // Lo que hacemos aca es poder permanecer logueado al usuario
-                        AppSession.Login(usuario.ID, usuario.Username, usuario.ID_Paciente, usuario.ID_Profesional);
-                        AppSession.Paciente = _usuarioService.GetByID(usuario.ID);
-                        AppSession.Usuario = usuario;
-                        // FORM Paciente
-                        MAINPaciente formpaciente = new MAINPaciente(_profesionalservice,_especialidadService, _turnoservice,_usuarioService);
-                        formpaciente.ShowDialog();
-                    }
-                    // iremos directo dependiendo si es un paciente o un profesional a la vista main
-                }
-                txtPassword.Clear();
-                txtUsername.Clear();
-                txtUsername.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Mensaje de Error: " + ex.Message);
-            }
-        }
-
+      
 
 
 
         // DESIGN 
 
 
+        // Funcion para redondear los paneles
+        // Para poder redondear los paneles necesitamos crear una funcion
+        //  le damos como parametros el panel que queremos redondear y el radio de redondeo
         private void RedondearPanel(Panel pnl, int radio)
         {
+            // Creamos una variable rectangulo que sera el area del panel
             var rect = pnl.ClientRectangle;
+            // Inflamos el rectangulo para que no se vean los bordes cortados
             rect.Inflate(-1, -1);
-
+            // Creamos un path para dibujar el panel redondeado
             using (GraphicsPath path = new GraphicsPath())
             {
+                // Calculamos el diametro del arco
                 int d = radio * 2;
-
+                // Esquina superior izquierda
                 path.AddArc(rect.X, rect.Y, d, d, 180, 90);
+                // Esquina superior derecha
                 path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
+                // Esquina inferior derecha
                 path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90);
+                // Esquina inferior izquierda
                 path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90);
+                // Cerramos el path
                 path.CloseFigure();
-
+                // Asignamos el path al region del panel
                 pnl.Region = new Region(path);
             }
+            /*
+             *  Lo que hicimos fue 
+             *  1: Calcular el rectangulo interno del panel
+             *  2: Lo achica un poco para que no se pegue a los bordes 
+             *  3: Dibuja una figura con 4 curvas (una en cada esquina)
+             *  4: Cierra esa figura
+             *  5: Usa esa figura como molde para recortar el panel
+             *  6: Resultado= el panel tiene esquinas redondeadas
+             */
         }
 
 
@@ -273,5 +205,101 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 Timer.Start();
             }
         }
+
+
+
+
+
+        private void btnRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Register win = new Register(_usuarioService);
+                win.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Mensaje de Error: " + ex.Message);
+            }
+        }
+
+        private void btnForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                // un form especial para recuperar la contrasenia?
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Mensaje de Error: " + ex.Message);
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // mi idea seria que le ingresamos los datos y si coinciden entonces hago una validacion y ahi ingresamos al form de paciente o para completar
+                string username = txtUsername.Text;
+                string password = txtPassword.Text;
+
+                UsuarioBE usuario = new UsuarioBE();
+
+                usuario = _usuarioService.ObtenerUsuario(username, password);
+
+                // Vemos si pudo pasar la verificacion de la password 
+                if (usuario == null)
+                    throw new ValidationException("No se pudo Ingresar con este Usuario.");
+               
+
+                // Validamos para tener acceso completo al usuario para vincularlo ya sea con el paciente o el profesional
+                _usuario = usuario;
+
+                // tendriamos que hacer una validacion para saber si tiene o no un vinculo con paciente o profesional
+                int paciente = usuario.ID_Paciente;
+                int profesional = usuario.ID_Profesional;
+
+                // Si los id's tienen  0, osea no existe entonces me salta para seguir completando y crear el paciente "TAL"
+                if (profesional == 0 && paciente == 0)
+                {
+                    // entonces nos abrira un form para poder completar los datos faltantes
+                    Complete completar = new Complete(_pacienteservice, _usuarioService, _profesionalservice, _especialidadService, _turnoservice);
+                    completar.ShowDialog();
+                }
+                // y si ya tiene entonces me salta en el main
+                else if (profesional > 0 || paciente > 0)
+                {
+                    if (profesional > 0)
+                    {
+                        // Lo que hacemos aca es poder permanecer logueado al usuario
+                        AppSession.Login(usuario.ID, usuario.Username, usuario.ID_Paciente, usuario.ID_Profesional);
+                        AppSession.Profesional = _usuarioService.GetByIDProfesional(usuario.ID);
+                        AppSession.Usuario = usuario;
+                        // FORM Profesional
+                        MainProfesional formprofesional = new MainProfesional(_usuarioService,_turnoservice,_pacienteservice);
+                        formprofesional.ShowDialog();
+                    }
+                    else if (paciente > 0)
+                    {
+                        // Lo que hacemos aca es poder permanecer logueado al usuario
+                        AppSession.Login(usuario.ID, usuario.Username, usuario.ID_Paciente, usuario.ID_Profesional);
+                        AppSession.Paciente = _usuarioService.GetByIDPaciente(usuario.ID);
+                        AppSession.Usuario = usuario;
+                        // FORM Paciente
+                        MAINPaciente formpaciente = new MAINPaciente(_profesionalservice, _especialidadService, _turnoservice, _usuarioService);
+                        formpaciente.ShowDialog();
+                    }
+                    // iremos directo dependiendo si es un paciente o un profesional a la vista main
+                }
+                txtPassword.Clear();
+                txtUsername.Clear();
+                txtUsername.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Mensaje de Error: " + ex.Message);
+            }
+        }
+
     }
 }

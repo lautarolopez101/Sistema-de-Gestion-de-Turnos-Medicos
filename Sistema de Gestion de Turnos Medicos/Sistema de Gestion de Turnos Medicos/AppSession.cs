@@ -15,6 +15,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         // Obtenemos el paciente mediante el usuario logueado
         
         public static PacienteBE Paciente { get; set; }
+        public static ProfesionalBE Profesional { get; set; }
         public static UsuarioBE Usuario { get; set; }
 
         // Datos minimos del Usuario
@@ -40,6 +41,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         {
             Usuario.LastLogin = DateTime.Now;
             Paciente = null;
+            Profesional = null;
             Usuario = null;
             ID_Usuario = 0;
             Username = string.Empty;

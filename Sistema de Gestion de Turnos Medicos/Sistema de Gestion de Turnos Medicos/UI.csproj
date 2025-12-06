@@ -154,6 +154,12 @@
     <Compile Include="Perfil.Designer.cs">
       <DependentUpon>Perfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="TurnosAsignados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TurnosAsignados.Designer.cs">
+      <DependentUpon>TurnosAsignados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista Paciente\Historial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TurnosAsignados.resx">
+      <DependentUpon>TurnosAsignados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista Paciente\MisTurnos.resx">
       <DependentUpon>MisTurnos.cs</DependentUpon>
@@ -340,6 +349,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Vista Profesional\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.3.0\build\MaterialDesignThemes.targets')" />

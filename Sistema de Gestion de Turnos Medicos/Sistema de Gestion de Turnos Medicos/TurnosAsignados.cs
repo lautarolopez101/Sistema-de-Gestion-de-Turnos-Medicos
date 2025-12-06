@@ -13,43 +13,48 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Gestion_de_Turnos_Medicos
 {
-    public partial class Historial : Form
+    public partial class TurnosAsignados : Form
     {
-        private readonly ITurnoService _turnoService;
-        public Historial(ITurnoService turnoService)
+        private readonly ITurnoService _turnoservice;
+        private readonly IPacienteService _pacienteservice;
+        public TurnosAsignados(ITurnoService turnoService, IPacienteService pacienteservice)
         {
             InitializeComponent();
-            _turnoService = turnoService;
+            // Redondeamos los paneles
+            RedondearPanel(panelbtn, 20);
+            RedondearPanel(paneldgv, 20);
+
+            // Declaramos las interfaces
+            _turnoservice = turnoService;
+            _pacienteservice = pacienteservice;
         }
-        private void Historial_Load(object sender, EventArgs e)
+
+        private void TurnosAsignados_Load(object sender, EventArgs e)
         {
-            RedondearPanel(panelHistorial,20);  // Redondeamos el panel del historial para que se vea mas lindo 
+            Recargamos();
+        }
+        private void Recargamos()
+        {
+            // Aca usariamos la funcion para poder llamarla para mostrar y recargar el dgv 
+            // La idea es mostrar los turnos en estado "Confirmado","Cancelado" y "Pendiente"
 
-            // La idea es mostrar solamente el historial de atendidos y cancelados del paciente que inicio sesion
-            // para ello primero tenemos que saber a que paciente tenemos que darle esas indicaciones, 
-            // por eso traeremos de la AppSession el ID_Paciente
-
-            int idpaciente = AppSession.Paciente.ID_Paciente;
-            string estado1 = "Atendido";
-            string estado2 = "Cancelado";
-
-            List<TurnoBE> listaturnos = _turnoService.FiltrarPacienteHistorial(idpaciente, estado1, estado2);
-
-            var turnosmostrar = from turn in listaturnos
-                                       select new
-                                       {
-                                           NombreProfesional = turn.NombreProfesional,
-                                           ApellidoProfesional = turn.ApellidoProfesional,
-                                           Estado = turn.Estado,
-                                           Motivo = turn.Motivo,
-                                           Observaciones = turn.Observaciones,
-                                           Fecha = turn.FechaHora
-                                       };
+            // Tendriamos que usar un BLL que nos muestre directamente la lista 
+            // Traemos la funcion ya hecha
+            int idprofesional = AppSession.Profesional.ID_Profesional;
+            var lista = _turnoservice.TurnosProfesional(idprofesional);
 
 
+          
+            
 
-            dgvHistorial.DataSource = turnosmostrar.ToList();
+            var listafiltrada = from tun in lista
+                                select new
+                                {
+                                    Motivo = tun.Motivo
+                                };
+                                
 
+            dgvturnos.DataSource = lista;
 
         }
 
@@ -91,6 +96,21 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
              */
         }
 
+        private void panelbtn_Click(object sender, EventArgs e)
+        {
+            // Aca tendriamos que obtener los datos que estan en el dgv para poder ir a otro form para atenderlo 
 
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Aca tenemos que tomar los datos necesarios para poder atender el turno seleccionado
+            //  Tenemos que mostrar los siguentes datos => Nombre y Apellido del paciente, DNI, Fecha y Hora del turno, Motivo de consulta  
+
+
+
+        }
+
+      
     }
 }

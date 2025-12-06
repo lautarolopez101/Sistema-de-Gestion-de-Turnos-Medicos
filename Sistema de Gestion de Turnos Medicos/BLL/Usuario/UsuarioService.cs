@@ -16,11 +16,13 @@ namespace BLL
         private readonly IUsuarioRepository _usuariorepository;
         private readonly IPasswordService _passwordService;
         private readonly IPacienteRepository _pacienterepository;
-        public UsuarioService(IUsuarioRepository repo, IPasswordService paswword, IPacienteRepository pacienteRepository)
+        private readonly IProfesionalRepository _profesionalrepository;
+        public UsuarioService(IUsuarioRepository repo, IPasswordService paswword, IPacienteRepository pacienteRepository, IProfesionalRepository profesionalRepository)
         {
             _passwordService = paswword;
             _usuariorepository = repo;            
             _pacienterepository = pacienteRepository;
+            _profesionalrepository = profesionalRepository;
         }
 
         public int CrearUsuario(string username, string plainpassword, string email)
@@ -62,7 +64,7 @@ namespace BLL
         }
 
         // Aca seria que por ID usuario podamos buscar al respecitvo paciente
-        public PacienteBE GetByID(int idusuario)
+        public PacienteBE GetByIDPaciente(int idusuario)
         {
             // Creamos al usuario y lo buscamos por el ID
             UsuarioBE usuario = _usuariorepository.GetByID(idusuario);
@@ -70,6 +72,15 @@ namespace BLL
             int idpaciente = usuario.ID_Paciente;
             // y ahora devolvemos al paciente entero buscandolo por su ID_Paciente
             return _pacienterepository.ObtenerPaciente(idpaciente);
+        }
+        public ProfesionalBE GetByIDProfesional(int idusuario)
+        {
+            // Creamos al usuario y lo buscamos por el ID
+            UsuarioBE usuario = _usuariorepository.GetByID(idusuario);
+            // ahora le damos al entero del id paciente el valor del ID paciente del usuario
+            int idprofesional = usuario.ID_Profesional;
+            // y ahora devolvemos al paciente entero buscandolo por su ID_Paciente
+            return _profesionalrepository.ObtenerProfesional(idprofesional);
         }
         public bool BuscarUsuario(string user)
         {

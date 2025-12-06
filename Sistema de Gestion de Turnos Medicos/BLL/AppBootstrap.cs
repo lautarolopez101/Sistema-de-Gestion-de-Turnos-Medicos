@@ -15,7 +15,8 @@ namespace BLL
             var repo = new UsuarioRepository();
             var password = new PasswordService();
             var paciente = new PacienteRepository();
-            var service = new UsuarioService(repo,password,paciente);
+            var profesional = new ProfesionalRepository();
+            var service = new UsuarioService(repo,password,paciente,profesional);
             return service;
         }
         public static ITurnoService BuildTurnoService()
