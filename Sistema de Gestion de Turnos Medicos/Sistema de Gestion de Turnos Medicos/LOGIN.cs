@@ -21,9 +21,10 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private readonly IProfesionalService _profesionalservice;
         private readonly IEspecialidadService _especialidadService;
         private readonly ITurnoService _turnoservice;
+        private readonly IProfesional_EspecialidadService _profesional_EspecialidadService;
 
         public static UsuarioBE _usuario = new UsuarioBE();
-        public LOGIN(IUsuarioService usuario, IPacienteService paciente, IProfesionalService profesionalservice, IEspecialidadService especialidadService, ITurnoService turnoservice)
+        public LOGIN(IUsuarioService usuario, IPacienteService paciente, IProfesionalService profesionalservice, IEspecialidadService especialidadService, ITurnoService turnoservice, IProfesional_EspecialidadService profesionalespecialidad)
         {
             InitializeComponent();
 
@@ -34,6 +35,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             _profesionalservice = profesionalservice;
             _especialidadService = especialidadService;
             _turnoservice = turnoservice;
+            _profesional_EspecialidadService = profesionalespecialidad;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -242,10 +244,21 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 // mi idea seria que le ingresamos los datos y si coinciden entonces hago una validacion y ahi ingresamos al form de paciente o para completar
                 string username = txtUsername.Text;
                 string password = txtPassword.Text;
+ 
 
-                UsuarioBE usuario = new UsuarioBE();
+                if(username == "admin" && password == "admin123")
+                {
+                    // FORM ADMIN
+                    MainAdmin formadmin = new MainAdmin(_usuarioService,_turnoservice,_pacienteservice,_especialidadService,_profesionalservice,_profesional_EspecialidadService);
+                    formadmin.ShowDialog();
+                    txtPassword.Clear();
+                    txtUsername.Clear();
+                    txtUsername.Focus();
+                    return;
+                }
 
-                usuario = _usuarioService.ObtenerUsuario(username, password);
+
+                UsuarioBE usuario = _usuarioService.ObtenerUsuario(username, password);
 
                 // Vemos si pudo pasar la verificacion de la password 
                 if (usuario == null)

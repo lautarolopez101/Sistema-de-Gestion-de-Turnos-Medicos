@@ -51,10 +51,10 @@
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.btnAgregar.Location = new System.Drawing.Point(181, 99);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(241, 89);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(88, 50);
+            this.btnAgregar.Size = new System.Drawing.Size(117, 62);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -65,10 +65,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(10, 128);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(13, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 17);
+            this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Especialidad";
             // 
@@ -91,6 +90,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGVEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGVEspecialidades.ColumnHeadersHeight = 29;
             this.DGVEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.DGVEspecialidades.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -103,8 +103,8 @@
             this.DGVEspecialidades.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVEspecialidades.EnableHeadersVisualStyles = false;
             this.DGVEspecialidades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.DGVEspecialidades.Location = new System.Drawing.Point(287, 10);
-            this.DGVEspecialidades.Margin = new System.Windows.Forms.Padding(2);
+            this.DGVEspecialidades.Location = new System.Drawing.Point(383, 12);
+            this.DGVEspecialidades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGVEspecialidades.Name = "DGVEspecialidades";
             this.DGVEspecialidades.ReadOnly = true;
             this.DGVEspecialidades.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -125,7 +125,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.DGVEspecialidades.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVEspecialidades.Size = new System.Drawing.Size(402, 444);
+            this.DGVEspecialidades.Size = new System.Drawing.Size(359, 463);
             this.DGVEspecialidades.TabIndex = 12;
             this.DGVEspecialidades.SelectionChanged += new System.EventHandler(this.DGVEspecialidades_SelectionChanged);
             // 
@@ -135,11 +135,11 @@
             this.txtEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEspecialidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.txtEspecialidad.Location = new System.Drawing.Point(14, 154);
-            this.txtEspecialidad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEspecialidad.Location = new System.Drawing.Point(19, 190);
+            this.txtEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEspecialidad.MaxLength = 100;
             this.txtEspecialidad.Name = "txtEspecialidad";
-            this.txtEspecialidad.Size = new System.Drawing.Size(113, 16);
+            this.txtEspecialidad.Size = new System.Drawing.Size(151, 20);
             this.txtEspecialidad.TabIndex = 0;
             // 
             // txtDescripcion
@@ -148,12 +148,12 @@
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 247);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Location = new System.Drawing.Point(16, 304);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.MaxLength = 200;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(132, 119);
+            this.txtDescripcion.Size = new System.Drawing.Size(176, 146);
             this.txtDescripcion.TabIndex = 1;
             // 
             // label2
@@ -161,10 +161,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(8, 221);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(11, 272);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Descripcion";
             // 
@@ -173,10 +172,10 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.btnModificar.Location = new System.Drawing.Point(181, 184);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Location = new System.Drawing.Point(241, 169);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(88, 50);
+            this.btnModificar.Size = new System.Drawing.Size(117, 62);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -187,10 +186,10 @@
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.btnEliminar.Location = new System.Drawing.Point(181, 278);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(241, 272);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 50);
+            this.btnEliminar.Size = new System.Drawing.Size(117, 62);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -201,10 +200,10 @@
             this.btnLimpiar_Campos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar_Campos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar_Campos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.btnLimpiar_Campos.Location = new System.Drawing.Point(181, 353);
-            this.btnLimpiar_Campos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar_Campos.Location = new System.Drawing.Point(241, 388);
+            this.btnLimpiar_Campos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLimpiar_Campos.Name = "btnLimpiar_Campos";
-            this.btnLimpiar_Campos.Size = new System.Drawing.Size(88, 50);
+            this.btnLimpiar_Campos.Size = new System.Drawing.Size(117, 62);
             this.btnLimpiar_Campos.TabIndex = 5;
             this.btnLimpiar_Campos.Text = "Limpiar Campos";
             this.btnLimpiar_Campos.UseVisualStyleBackColor = true;
@@ -215,10 +214,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(30, 72);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(40, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 17);
+            this.label4.Size = new System.Drawing.Size(38, 21);
             this.label4.TabIndex = 7;
             this.label4.Text = "ID=";
             // 
@@ -227,20 +225,19 @@
             this.lblid.AutoSize = true;
             this.lblid.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.lblid.Location = new System.Drawing.Point(67, 72);
-            this.lblid.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblid.Location = new System.Drawing.Point(89, 89);
             this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(80, 17);
+            this.lblid.Size = new System.Drawing.Size(110, 21);
             this.lblid.TabIndex = 8;
             this.lblid.Text = "MODIFICAR";
             // 
             // FRMABMEspecialidades
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(698, 463);
+            this.ClientSize = new System.Drawing.Size(754, 487);
             this.Controls.Add(this.lblid);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLimpiar_Campos);
@@ -253,7 +250,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FRMABMEspecialidades";
             this.Text = "Especialidades";
             this.Load += new System.EventHandler(this.FRMABMEspecialidades_Load);
