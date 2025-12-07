@@ -20,5 +20,6 @@ namespace BLL
         List<TurnoBE> Verifico(int idturno);
         List<TurnoBE> FiltrarPacienteHistorial(int idpaciente, string estado1, string estado2);
         List<TurnoBE> TurnosPorProfesional(int idprofesional);
+        List<TurnoBE> HistorialPorProfesional(int idprofesional);
     }
 }

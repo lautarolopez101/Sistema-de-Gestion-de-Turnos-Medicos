@@ -160,7 +160,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 if (estado == "Cancelado")
                 {
                     dgvturnos.Rows[e.RowIndex].DefaultCellStyle.BackColor =
-                        Color.FromArgb(223, 154, 182);   // rojo médico suave
+                        Color.FromArgb(223, 154, 182);   // rojo medico suave
 
                     dgvturnos.Rows[e.RowIndex].DefaultCellStyle.ForeColor =
                         Color.White;
@@ -168,7 +168,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 else if (estado == "Pendiente")
                 {
                     dgvturnos.Rows[e.RowIndex].DefaultCellStyle.BackColor =
-                        Color.FromArgb(223, 228, 171); // naranja claro
+                        Color.FromArgb(223, 228, 171); // amarillo claro
 
                     dgvturnos.Rows[e.RowIndex].DefaultCellStyle.ForeColor =
                         Color.Black;

@@ -95,10 +95,6 @@ namespace BLL
                 .ToList();
 
             return listafinal;
-
-         //   listaespecialidades = _especialidadrepository.ObtenerTodas();
-            
-           // return listaespecialidades;
         }
         public List<ProfesionalBE> ListarProfesionalesDesdeEspecialidades(int idespecialidad)
         {
@@ -114,11 +110,45 @@ namespace BLL
                  .ToList();
 
             return listafinal;
-
-            //   listaespecialidades = _especialidadrepository.ObtenerTodas();
-
-            // return listaespecialidades;
         }
 
+        public int AgregarEspecialidadAlProfesionalPorNombre(string nombre,int idprofesional)
+        {
+            // Primero traemos el objeto de especialidad por su nombre
+            EspecialidadBE especialidad = _especialidadrepository.BuscarPorNombre(nombre);
+            // Creamos el objeto de Profesionales_EspecialidadesBE
+            Profesionales_EspecialidadesBE profesional_Especialidades = new Profesionales_EspecialidadesBE();
+            // Asignamos los valores correspondientes al objeto creado
+            profesional_Especialidades.ID_Especialidad = especialidad.ID_Especialidad;
+            profesional_Especialidades.ID_Profesional = idprofesional;
+
+            // Ahora hacemos una validacion que si ya esta asignada la especialidad al profesional no se pueda agregar otra vez
+            List<Profesionales_EspecialidadesBE> lista = _profesionales_EspecialidadesRepository.ObtenerTodos();
+            Profesionales_EspecialidadesBE buscamos = lista
+                            .FirstOrDefault(x => x.ID_Especialidad == profesional_Especialidades.ID_Especialidad && x.ID_Profesional == profesional_Especialidades.ID_Profesional);
+            if(buscamos != null)
+                throw new ValidationException("La especialidad ya se encuentra asignada al profesional.");
+
+
+            // Ahora agregamos uno la relacion en la tabla de Profesionales_Especialidades
+            return _profesionales_EspecialidadesRepository.AgregarProfesionalesEspecialidades(profesional_Especialidades);
+
+
+        }
+        public int QuitarEspecialidadAlProfesionalPorNombre(string nombre, int idprofesional)
+        {
+            // Primero traemos el objeto de especialidad por su nombre
+            EspecialidadBE especialidad = _especialidadrepository.BuscarPorNombre(nombre);
+            // Creamos el objeto de Profesionales_EspecialidadesBE
+            Profesionales_EspecialidadesBE profesional_Especialidades = new Profesionales_EspecialidadesBE();
+            // Aca usamos una funcion que tenemos en el repositorio del objeto tal y le hacemos un LinQ que traiga al primero que coincida con el idespecialidad y el idprofesional
+            Profesionales_EspecialidadesBE objetoencontrado = _profesionales_EspecialidadesRepository
+                                                                .ObtenerTodos()
+                                                                .FirstOrDefault(x => x.ID_Especialidad == especialidad.ID_Especialidad && x.ID_Profesional == idprofesional);
+            // ahora usamos otra funcion y le damos el objeto entero
+            int retornamos = _profesionales_EspecialidadesRepository.EliminarProfesionalesEspecialidades(objetoencontrado);
+
+            return retornamos;
+        }
     }
 }

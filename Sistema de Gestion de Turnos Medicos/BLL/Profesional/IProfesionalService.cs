@@ -18,5 +18,7 @@ namespace BLL
         ProfesionalBE ObtenerProfesionalPorMatricula(string Matricula);
         List<EspecialidadBE> ListarEspecialidadesdelProfesional(int idprofesional);
         List<ProfesionalBE> ListarProfesionalesDesdeEspecialidades(int idespecialidad);
+        int AgregarEspecialidadAlProfesionalPorNombre(string nombre, int idprofesional);
+        int QuitarEspecialidadAlProfesionalPorNombre(string nombre, int idprofesional);
     }
 }

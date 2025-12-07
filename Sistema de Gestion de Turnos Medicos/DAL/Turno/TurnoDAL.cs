@@ -171,11 +171,11 @@ namespace DAL
                 "p.FechaNacimiento AS FechaNacimientoPaciente, " +
                 "t.Motivo, " +
                 "t.FechaHora, " +
+                "t.Observaciones, " +
                 "t.Estado " +          // ← AGREGÁ ESTE ESPACIO
                 "FROM Turnos t " +
                 "JOIN Pacientes p ON t.ID_Paciente = p.ID_Paciente " +
                 "WHERE t.ID_Profesional = " + idprofesional + " " +
-                "AND t.Estado IN ('Pendiente', 'Confirmado','Cancelado') " +
                 "ORDER BY t.FechaHora;";
 
                 SqlCommand comand = new SqlCommand(query, conexion);
@@ -192,6 +192,10 @@ namespace DAL
                         turno.Motivo = sr["Motivo"].ToString();
                         turno.FechaHora = Convert.ToDateTime(sr["FechaHora"]);
                         turno.Estado = sr["Estado"].ToString();
+                        ;
+                        turno.Observaciones = sr.IsDBNull(sr.GetOrdinal("Observaciones"))
+                                                 ? null
+                                                 : sr["Observaciones"].ToString();
 
                         // Creamos el paciente embebido dentro del turno
                         turno.Paciente = new PacienteBE

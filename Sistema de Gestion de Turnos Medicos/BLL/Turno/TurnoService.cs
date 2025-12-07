@@ -115,7 +115,19 @@ namespace BLL
         
         public List<TurnoBE> TurnosPorProfesional(int idprofesional)
         {
-            return _repo.TurnosPorProfesional(idprofesional);
+            List<TurnoBE> listaturnos =  _repo.TurnosPorProfesional(idprofesional);
+            List<TurnoBE> lista = listaturnos
+                .Where(x => x.Estado != "Atendido")
+                .ToList();
+            return lista;
+        }
+        public List<TurnoBE> HistorialPorProfesional(int idprofesional)
+        {
+            List<TurnoBE> listaturnos = _repo.TurnosPorProfesional(idprofesional);
+            List<TurnoBE> lista = listaturnos
+                .Where(x => x.Estado == "Atendido")
+                .ToList();
+            return lista;
         }
         public List<TurnoBE> FiltrarPacienteHistorial(int idpaciente,string estado1, string estado2 )
         {

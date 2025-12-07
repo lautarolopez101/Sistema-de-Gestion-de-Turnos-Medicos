@@ -46,8 +46,8 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(141)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvhistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvhistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -63,9 +63,13 @@
             this.dgvhistorial.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(228)))), ((int)(((byte)(249)))));
             this.dgvhistorial.Location = new System.Drawing.Point(23, 19);
             this.dgvhistorial.Name = "dgvhistorial";
+            this.dgvhistorial.ReadOnly = true;
             this.dgvhistorial.RowHeadersVisible = false;
+            this.dgvhistorial.RowHeadersWidth = 51;
+            this.dgvhistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvhistorial.Size = new System.Drawing.Size(691, 317);
             this.dgvhistorial.TabIndex = 0;
+            this.dgvhistorial.SelectionChanged += new System.EventHandler(this.dgvhistorial_SelectionChanged);
             // 
             // panelhistorial
             // 
@@ -87,6 +91,7 @@
             this.Name = "HistorialProfesional";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HistorialProfesional";
+            this.Load += new System.EventHandler(this.HistorialProfesional_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvhistorial)).EndInit();
             this.panelhistorial.ResumeLayout(false);
             this.ResumeLayout(false);

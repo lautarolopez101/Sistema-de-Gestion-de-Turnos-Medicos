@@ -276,7 +276,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                         AppSession.Profesional = _usuarioService.GetByIDProfesional(usuario.ID);
                         AppSession.Usuario = usuario;
                         // FORM Profesional
-                        MainProfesional formprofesional = new MainProfesional(_usuarioService,_turnoservice,_pacienteservice);
+                        MainProfesional formprofesional = new MainProfesional(_usuarioService,_turnoservice,_pacienteservice,_especialidadService,_profesionalservice);
                         formprofesional.ShowDialog();
                     }
                     else if (paciente > 0)

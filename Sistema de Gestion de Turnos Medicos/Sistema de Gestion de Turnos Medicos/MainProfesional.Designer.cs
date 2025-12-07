@@ -184,6 +184,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(182, 71);
             this.panel2.TabIndex = 9;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
             // 
             // pictureBox3
             // 
@@ -196,6 +197,7 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 8;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.panel2_Click);
             // 
             // label2
             // 
@@ -209,6 +211,7 @@
             this.label2.Size = new System.Drawing.Size(131, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Especialidades";
+            this.label2.Click += new System.EventHandler(this.panel2_Click);
             // 
             // panel1
             // 
@@ -219,6 +222,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(182, 71);
             this.panel1.TabIndex = 5;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // pictureBox2
             // 
@@ -231,6 +235,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.panel1_Click);
             // 
             // label1
             // 
@@ -244,6 +249,7 @@
             this.label1.Size = new System.Drawing.Size(73, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Historial";
+            this.label1.Click += new System.EventHandler(this.panel1_Click);
             // 
             // panelturnos
             // 

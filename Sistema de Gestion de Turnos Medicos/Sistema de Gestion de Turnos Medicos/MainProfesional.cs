@@ -19,13 +19,17 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private readonly IUsuarioService _usuarioservice;
         private readonly ITurnoService _turnoservice;
         private readonly IPacienteService _pacienteservice;
-        public MainProfesional(IUsuarioService usuarioService, ITurnoService turnoservice, IPacienteService pacienteservice)
+        private readonly IEspecialidadService _especialidadeservice;
+        private readonly IProfesionalService _profesionalService;
+        public MainProfesional(IUsuarioService usuarioService, ITurnoService turnoservice, IPacienteService pacienteservice, IEspecialidadService especialidadeservice, IProfesionalService profesionalService)
         {
             InitializeComponent();
             // Definimos las interface para poder usarlas dentro de la clase
             _usuarioservice = usuarioService;
             _turnoservice = turnoservice;
             _pacienteservice = pacienteservice;
+            _especialidadeservice = especialidadeservice;
+            _profesionalService = profesionalService;
 
             // Redondeamos los paneles
             RedondearPanel(panel1, 20);
@@ -197,6 +201,36 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             }
         }
 
-        
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            // Agrega un try...catch para que podamos ver cualquier error
+            try
+            {                // Aquí llamas a la función que te pasé
+                ActivarPanel(panel1);   // cambia color del menú
+                // Aquí llamas a la función que te pasé
+                CargarFormularioEnPanel(new HistorialProfesional(_turnoservice));
+            }
+            catch (Exception ex)
+            {
+                // Si algo falla, ESTO nos dirá qué es
+                MessageBox.Show("¡ERROR! No se pudo cargar el formulario: \n\n" + ex.Message);
+            }
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            // Agrega un try...catch para que podamos ver cualquier error
+            try
+            {                // Aquí llamas a la función que te pasé
+                ActivarPanel(panel2);   // cambia color del menú
+                // Aquí llamas a la función que te pasé
+                CargarFormularioEnPanel(new EspecialidadProfesional(_especialidadeservice,_profesionalService));
+            }
+            catch (Exception ex)
+            {
+                // Si algo falla, ESTO nos dirá qué es
+                MessageBox.Show("¡ERROR! No se pudo cargar el formulario: \n\n" + ex.Message);
+            }
+        }
     }
 }
