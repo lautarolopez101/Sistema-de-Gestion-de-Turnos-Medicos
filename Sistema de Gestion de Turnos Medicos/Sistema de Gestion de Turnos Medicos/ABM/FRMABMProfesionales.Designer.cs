@@ -77,10 +77,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(46, 121);
+            this.label1.Location = new System.Drawing.Point(30, 47);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 23);
+            this.label1.Size = new System.Drawing.Size(85, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Matricula";
             // 
@@ -89,7 +89,7 @@
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnAgregar.Location = new System.Drawing.Point(238, 151);
+            this.btnAgregar.Location = new System.Drawing.Point(215, 110);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(147, 63);
@@ -129,7 +129,7 @@
             this.DGVProfesionales.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVProfesionales.EnableHeadersVisualStyles = false;
             this.DGVProfesionales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.DGVProfesionales.Location = new System.Drawing.Point(648, 19);
+            this.DGVProfesionales.Location = new System.Drawing.Point(525, 19);
             this.DGVProfesionales.Margin = new System.Windows.Forms.Padding(4);
             this.DGVProfesionales.Name = "DGVProfesionales";
             this.DGVProfesionales.ReadOnly = true;
@@ -150,7 +150,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.DGVProfesionales.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVProfesionales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVProfesionales.Size = new System.Drawing.Size(621, 727);
+            this.DGVProfesionales.Size = new System.Drawing.Size(216, 461);
             this.DGVProfesionales.TabIndex = 13;
             this.DGVProfesionales.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DGVProfesionales_DataBindingComplete);
             this.DGVProfesionales.SelectionChanged += new System.EventHandler(this.DGVProfesionales_SelectionChanged);
@@ -161,10 +161,10 @@
             this.txtMatricula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatricula.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatricula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.txtMatricula.Location = new System.Drawing.Point(50, 151);
+            this.txtMatricula.Location = new System.Drawing.Point(34, 77);
             this.txtMatricula.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(116, 25);
+            this.txtMatricula.Size = new System.Drawing.Size(116, 20);
             this.txtMatricula.TabIndex = 0;
             // 
             // RBActivo
@@ -174,7 +174,7 @@
             this.RBActivo.Location = new System.Drawing.Point(18, 19);
             this.RBActivo.Margin = new System.Windows.Forms.Padding(4);
             this.RBActivo.Name = "RBActivo";
-            this.RBActivo.Size = new System.Drawing.Size(95, 27);
+            this.RBActivo.Size = new System.Drawing.Size(81, 25);
             this.RBActivo.TabIndex = 0;
             this.RBActivo.TabStop = true;
             this.RBActivo.Text = "Activo";
@@ -186,7 +186,7 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnModificar.Location = new System.Drawing.Point(238, 232);
+            this.btnModificar.Location = new System.Drawing.Point(215, 191);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(147, 63);
@@ -200,7 +200,7 @@
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnEliminar.Location = new System.Drawing.Point(238, 315);
+            this.btnEliminar.Location = new System.Drawing.Point(215, 274);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(147, 63);
@@ -214,7 +214,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(448, 315);
+            this.btnLimpiar.Location = new System.Drawing.Point(370, 274);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(147, 63);
@@ -229,20 +229,20 @@
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.txtNombre.Location = new System.Drawing.Point(50, 248);
+            this.txtNombre.Location = new System.Drawing.Point(34, 130);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(116, 25);
+            this.txtNombre.Size = new System.Drawing.Size(116, 20);
             this.txtNombre.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 219);
+            this.label2.Location = new System.Drawing.Point(30, 105);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 23);
+            this.label2.Size = new System.Drawing.Size(73, 21);
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre";
             // 
@@ -252,20 +252,20 @@
             this.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtApellido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.txtApellido.Location = new System.Drawing.Point(50, 329);
+            this.txtApellido.Location = new System.Drawing.Point(33, 182);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(116, 25);
+            this.txtApellido.Size = new System.Drawing.Size(116, 20);
             this.txtApellido.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 301);
+            this.label3.Location = new System.Drawing.Point(29, 154);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 23);
+            this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 10;
             this.label3.Text = "Apellido";
             // 
@@ -275,20 +275,20 @@
             this.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.txtTelefono.Location = new System.Drawing.Point(50, 433);
+            this.txtTelefono.Location = new System.Drawing.Point(22, 234);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(141, 25);
+            this.txtTelefono.Size = new System.Drawing.Size(141, 20);
             this.txtTelefono.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 405);
+            this.label4.Location = new System.Drawing.Point(18, 206);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 23);
+            this.label4.Size = new System.Drawing.Size(76, 21);
             this.label4.TabIndex = 12;
             this.label4.Text = "Telefono";
             // 
@@ -298,20 +298,20 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.txtEmail.Location = new System.Drawing.Point(50, 536);
+            this.txtEmail.Location = new System.Drawing.Point(14, 287);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(187, 25);
+            this.txtEmail.Size = new System.Drawing.Size(187, 20);
             this.txtEmail.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 507);
+            this.label5.Location = new System.Drawing.Point(10, 258);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 23);
+            this.label5.Size = new System.Drawing.Size(51, 21);
             this.label5.TabIndex = 14;
             this.label5.Text = "Email";
             // 
@@ -319,10 +319,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 73);
+            this.label6.Location = new System.Drawing.Point(13, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 23);
+            this.label6.Size = new System.Drawing.Size(143, 21);
             this.label6.TabIndex = 17;
             this.label6.Text = "ID Profesionales= ";
             // 
@@ -330,10 +330,10 @@
             // 
             this.lblIDProfesionales.AutoSize = true;
             this.lblIDProfesionales.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDProfesionales.Location = new System.Drawing.Point(154, 73);
+            this.lblIDProfesionales.Location = new System.Drawing.Point(151, 9);
             this.lblIDProfesionales.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIDProfesionales.Name = "lblIDProfesionales";
-            this.lblIDProfesionales.Size = new System.Drawing.Size(99, 23);
+            this.lblIDProfesionales.Size = new System.Drawing.Size(83, 21);
             this.lblIDProfesionales.TabIndex = 18;
             this.lblIDProfesionales.Text = "Modificar";
             // 
@@ -344,7 +344,7 @@
             this.RBDesactivo.Location = new System.Drawing.Point(107, 19);
             this.RBDesactivo.Margin = new System.Windows.Forms.Padding(4);
             this.RBDesactivo.Name = "RBDesactivo";
-            this.RBDesactivo.Size = new System.Drawing.Size(130, 27);
+            this.RBDesactivo.Size = new System.Drawing.Size(107, 25);
             this.RBDesactivo.TabIndex = 1;
             this.RBDesactivo.TabStop = true;
             this.RBDesactivo.Text = "Desactivo";
@@ -357,7 +357,7 @@
             this.panel1.Controls.Add(this.RBActivo);
             this.panel1.Controls.Add(this.RBDesactivo);
             this.panel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(308, 47);
+            this.panel1.Location = new System.Drawing.Point(229, 45);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(243, 52);
@@ -367,10 +367,10 @@
             // 
             this.RBEstadoActivo.AutoSize = true;
             this.RBEstadoActivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBEstadoActivo.Location = new System.Drawing.Point(59, 598);
+            this.RBEstadoActivo.Location = new System.Drawing.Point(44, 343);
             this.RBEstadoActivo.Margin = new System.Windows.Forms.Padding(4);
             this.RBEstadoActivo.Name = "RBEstadoActivo";
-            this.RBEstadoActivo.Size = new System.Drawing.Size(95, 27);
+            this.RBEstadoActivo.Size = new System.Drawing.Size(81, 25);
             this.RBEstadoActivo.TabIndex = 5;
             this.RBEstadoActivo.TabStop = true;
             this.RBEstadoActivo.Text = "Activo";
@@ -380,10 +380,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(348, 11);
+            this.label7.Location = new System.Drawing.Point(269, 9);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 23);
+            this.label7.Size = new System.Drawing.Size(73, 21);
             this.label7.TabIndex = 22;
             this.label7.Text = "Lista de:";
             // 
@@ -391,10 +391,10 @@
             // 
             this.RBEstadoDesactivo.AutoSize = true;
             this.RBEstadoDesactivo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RBEstadoDesactivo.Location = new System.Drawing.Point(59, 631);
+            this.RBEstadoDesactivo.Location = new System.Drawing.Point(44, 376);
             this.RBEstadoDesactivo.Margin = new System.Windows.Forms.Padding(4);
             this.RBEstadoDesactivo.Name = "RBEstadoDesactivo";
-            this.RBEstadoDesactivo.Size = new System.Drawing.Size(130, 27);
+            this.RBEstadoDesactivo.Size = new System.Drawing.Size(107, 25);
             this.RBEstadoDesactivo.TabIndex = 6;
             this.RBEstadoDesactivo.TabStop = true;
             this.RBEstadoDesactivo.Text = "Desactivo";
@@ -404,10 +404,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(54, 570);
+            this.label8.Location = new System.Drawing.Point(39, 315);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 23);
+            this.label8.Size = new System.Drawing.Size(64, 21);
             this.label8.TabIndex = 24;
             this.label8.Text = "Estado";
             // 
@@ -441,7 +441,7 @@
             this.DGVEspecialidades.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVEspecialidades.EnableHeadersVisualStyles = false;
             this.DGVEspecialidades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.DGVEspecialidades.Location = new System.Drawing.Point(273, 439);
+            this.DGVEspecialidades.Location = new System.Drawing.Point(273, 376);
             this.DGVEspecialidades.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DGVEspecialidades.Name = "DGVEspecialidades";
             this.DGVEspecialidades.ReadOnly = true;
@@ -463,7 +463,7 @@
             this.DGVEspecialidades.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVEspecialidades.RowTemplate.Height = 24;
             this.DGVEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVEspecialidades.Size = new System.Drawing.Size(369, 307);
+            this.DGVEspecialidades.Size = new System.Drawing.Size(213, 104);
             this.DGVEspecialidades.TabIndex = 12;
             this.DGVEspecialidades.SelectionChanged += new System.EventHandler(this.DGVEspecialidades_SelectionChanged);
             // 
@@ -471,10 +471,10 @@
             // 
             this.lblIDEspecialidades.AutoSize = true;
             this.lblIDEspecialidades.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDEspecialidades.Location = new System.Drawing.Point(170, 664);
+            this.lblIDEspecialidades.Location = new System.Drawing.Point(155, 409);
             this.lblIDEspecialidades.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIDEspecialidades.Name = "lblIDEspecialidades";
-            this.lblIDEspecialidades.Size = new System.Drawing.Size(99, 23);
+            this.lblIDEspecialidades.Size = new System.Drawing.Size(83, 21);
             this.lblIDEspecialidades.TabIndex = 27;
             this.lblIDEspecialidades.Text = "Modificar";
             // 
@@ -482,10 +482,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(16, 664);
+            this.label10.Location = new System.Drawing.Point(1, 409);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(201, 23);
+            this.label10.Size = new System.Drawing.Size(160, 21);
             this.label10.TabIndex = 26;
             this.label10.Text = "ID Especialidades= ";
             // 
@@ -493,10 +493,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(397, 405);
+            this.label9.Location = new System.Drawing.Point(322, 345);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(157, 23);
+            this.label9.Size = new System.Drawing.Size(125, 21);
             this.label9.TabIndex = 28;
             this.label9.Text = "Especialidades";
             // 
@@ -504,10 +504,10 @@
             // 
             this.lblespecialidad.AutoSize = true;
             this.lblespecialidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblespecialidad.Location = new System.Drawing.Point(154, 698);
+            this.lblespecialidad.Location = new System.Drawing.Point(139, 443);
             this.lblespecialidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblespecialidad.Name = "lblespecialidad";
-            this.lblespecialidad.Size = new System.Drawing.Size(99, 23);
+            this.lblespecialidad.Size = new System.Drawing.Size(83, 21);
             this.lblespecialidad.TabIndex = 30;
             this.lblespecialidad.Text = "Modificar";
             // 
@@ -515,10 +515,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 698);
+            this.label12.Location = new System.Drawing.Point(-2, 443);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(154, 23);
+            this.label12.Size = new System.Drawing.Size(123, 21);
             this.label12.TabIndex = 29;
             this.label12.Text = "Especialidad =";
             // 
@@ -527,7 +527,7 @@
             this.btnAgregarEspecialidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarEspecialidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(448, 151);
+            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(370, 110);
             this.btnAgregarEspecialidad.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarEspecialidad.Name = "btnAgregarEspecialidad";
             this.btnAgregarEspecialidad.Size = new System.Drawing.Size(147, 63);
@@ -541,7 +541,7 @@
             this.btnEliminarEspecialidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarEspecialidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnEliminarEspecialidad.Location = new System.Drawing.Point(448, 232);
+            this.btnEliminarEspecialidad.Location = new System.Drawing.Point(370, 191);
             this.btnEliminarEspecialidad.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarEspecialidad.Name = "btnEliminarEspecialidad";
             this.btnEliminarEspecialidad.Size = new System.Drawing.Size(147, 63);
@@ -552,11 +552,11 @@
             // 
             // FRMABMProfesionales
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1282, 753);
+            this.ClientSize = new System.Drawing.Size(754, 487);
             this.Controls.Add(this.btnEliminarEspecialidad);
             this.Controls.Add(this.btnAgregarEspecialidad);
             this.Controls.Add(this.lblespecialidad);
