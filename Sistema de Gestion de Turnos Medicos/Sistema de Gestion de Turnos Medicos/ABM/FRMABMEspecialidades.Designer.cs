@@ -41,8 +41,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar_Campos = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEspecialidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +63,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(13, 158);
+            this.label1.Location = new System.Drawing.Point(19, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 1;
@@ -135,7 +133,7 @@
             this.txtEspecialidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEspecialidad.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.txtEspecialidad.Location = new System.Drawing.Point(19, 190);
+            this.txtEspecialidad.Location = new System.Drawing.Point(25, 131);
             this.txtEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEspecialidad.MaxLength = 100;
             this.txtEspecialidad.Name = "txtEspecialidad";
@@ -148,7 +146,7 @@
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDescripcion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(16, 304);
+            this.txtDescripcion.Location = new System.Drawing.Point(22, 245);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.MaxLength = 200;
             this.txtDescripcion.Multiline = true;
@@ -161,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(11, 272);
+            this.label2.Location = new System.Drawing.Point(17, 213);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 21);
             this.label2.TabIndex = 4;
@@ -209,28 +207,6 @@
             this.btnLimpiar_Campos.UseVisualStyleBackColor = true;
             this.btnLimpiar_Campos.Click += new System.EventHandler(this.btnLimpiar_Campos_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(40, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 21);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ID=";
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(28)))), ((int)(((byte)(48)))));
-            this.lblid.Location = new System.Drawing.Point(89, 89);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(110, 21);
-            this.lblid.TabIndex = 8;
-            this.lblid.Text = "MODIFICAR";
-            // 
             // FRMABMEspecialidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -238,8 +214,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(208)))), ((int)(((byte)(239)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(754, 487);
-            this.Controls.Add(this.lblid);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnLimpiar_Campos);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -271,7 +245,5 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar_Campos;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblid;
     }
 }

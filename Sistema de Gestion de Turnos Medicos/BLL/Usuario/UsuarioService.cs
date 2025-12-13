@@ -25,12 +25,37 @@ namespace BLL
             _profesionalrepository = profesionalRepository;
         }
 
-        public int CrearUsuario(string username, string plainpassword, string email)
+        public List<UsuarioBE> ObtenerTodos()
+        {
+            return _usuariorepository.ObtenerTodos();
+        }
+
+        public List<UsuarioBE> ObtenerUsuariosProfesionales()
+        {
+            List<UsuarioBE> todos = new List<UsuarioBE>();
+            todos = _usuariorepository.ObtenerTodos();
+            List<UsuarioBE> usuariosprofesionales = todos.Where(x => x.ID_Profesional > 0 || (x.ID_Profesional == 0 && x.ID_Paciente ==0)).ToList();
+            return usuariosprofesionales;
+
+        }
+
+        public int CrearUsuarioProfesional(string username, string plainpassword, string email, int idprofesional)
         {
             // Vamos a lanzar algunas excepciones por si el usuario ya existe
-            
 
+            List<UsuarioBE> todos = _usuariorepository.ObtenerTodos();
 
+            bool existeusuario = todos.Exists(x => x.Username == username);
+            if (existeusuario)
+                throw new ValidationException("El nombre de usuario ya existe");
+
+            bool existeemail = todos.Exists(x => x.Email == email);
+            if(existeemail)
+                throw new ValidationException("El email ya existe");
+
+            bool esprofesionalvinculado = todos.Exists(x => x.ID_Profesional == idprofesional);
+            if(esprofesionalvinculado)
+                throw new ValidationException("El profesional ya tiene un usuario vinculado");
 
             // Aca tendriamos que hacer lo del hash para poder crear y guardar el usuario
             string passwordhash = _passwordService.HashPassword(plainpassword);
@@ -40,6 +65,24 @@ namespace BLL
             usuario.Username = username;
             usuario.Email = email;
             usuario.PasswordHash = passwordhash;
+            usuario.ID_Profesional = idprofesional;
+            int retorna = _usuariorepository.CrearUsuario(usuario);
+            return retorna;
+        }
+
+        public int CrearUsuario(string username, string plainpassword, string email)
+        {
+            // Vamos a lanzar algunas excepciones por si el usuario ya existe
+            
+            // Aca tendriamos que hacer lo del hash para poder crear y guardar el usuario
+            string passwordhash = _passwordService.HashPassword(plainpassword);
+
+            // Creamos una instancia de usuario para poder ponerle los atributos necesarios
+            UsuarioBE usuario = new UsuarioBE();
+            usuario.Username = username;
+            usuario.Email = email;
+            usuario.PasswordHash = passwordhash;
+            usuario.ID_Profesional = 0;
             int retorna = _usuariorepository.CrearUsuario(usuario);
             return retorna;
         }

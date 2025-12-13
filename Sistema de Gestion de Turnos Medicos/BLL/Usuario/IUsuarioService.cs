@@ -9,6 +9,9 @@ namespace BLL
 {
     public interface IUsuarioService
     {
+        List<UsuarioBE> ObtenerTodos();
+        List<UsuarioBE> ObtenerUsuariosProfesionales();
+        int CrearUsuarioProfesional(string username, string plainpassword, string email, int idprofesional);
         int CrearUsuario(string username, string password, string email);
         UsuarioBE ObtenerUsuario(string user,string password);
         PacienteBE GetByIDPaciente(int idusuario);

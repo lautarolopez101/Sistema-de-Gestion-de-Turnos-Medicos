@@ -9,6 +9,7 @@ namespace DAL
 {
     public interface IUsuarioRepository
     {
+        List<UsuarioBE> ObtenerTodos();
         int CrearUsuario(UsuarioBE usuario);
         List<UsuarioBE> Buscar();
         UsuarioBE GetByUsername(string username);

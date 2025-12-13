@@ -10,6 +10,12 @@ namespace DAL
 {
     public class UsuarioRepository : IUsuarioRepository
     {
+        public List<UsuarioBE> ObtenerTodos()
+        {
+            List<UsuarioBE> lista = new List<UsuarioBE>();
+            lista = UsuarioDAL.ObtenerTodos();
+            return lista;
+        }
         public int CrearUsuario(UsuarioBE usuario)
         {
             int retorna = UsuarioDAL.CrearUsuario(usuario);

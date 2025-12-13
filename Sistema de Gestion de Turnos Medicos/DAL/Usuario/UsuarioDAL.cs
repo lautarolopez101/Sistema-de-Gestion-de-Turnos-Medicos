@@ -10,14 +10,49 @@ namespace DAL.CRUD
 {
     public class UsuarioDAL
     {
-
+        public static List<UsuarioBE> ObtenerTodos()
+        {
+            List<UsuarioBE> lista = new List<UsuarioBE>();
+            using(SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "Select *From Usuarios";
+                SqlCommand comand = new SqlCommand(query, conexion);
+                SqlDataReader reader = comand.ExecuteReader();
+                while (reader.Read())
+                {
+                    UsuarioBE usuario = new UsuarioBE();
+                    usuario.ID = reader.GetInt32(0);
+                    usuario.Username = reader.GetString(1);
+                    usuario.PasswordHash = reader.GetString(2);
+                    usuario.Estado = reader.GetBoolean(3);
+                    usuario.LastLogin = reader.GetDateTime(4);
+                    usuario.Email = reader.GetString(5);
+                    if (!reader.IsDBNull(6))
+                    {
+                        usuario.ID_Paciente = reader.GetInt32(6);
+                    }
+                    if(!reader.IsDBNull(7))
+                    {
+                        usuario.ID_Profesional = reader.GetInt32(7);
+                    }
+                    usuario.CreatedAtUtc = reader.GetDateTime(8);
+                    if (!reader.IsDBNull(9))
+                    {
+                        usuario.UpdatedAtUtc = reader.GetDateTime(9);
+                    }
+                    lista.Add(usuario);
+                }
+                conexion.Close();
+            }
+            return lista;
+        }
         public static int CrearUsuario(UsuarioBE usuario)
         {
             int retorna;
             using(SqlConnection conexion= SqlConnectionFactory.ObtenerConexion())
             {
-                string query = "Insert into Usuarios (Username,PasswordHash,Email)"
-                    + "values ('" + usuario.Username + "','" + usuario.PasswordHash + "','" + usuario.Email + "')";
+                string query = "Insert into Usuarios (Username,PasswordHash,Email,ID_Paciente)"
+                    + "values ('" + usuario.Username + "','" + usuario.PasswordHash + "','" + usuario.Email + "','" + usuario.ID_Profesional +")";
                 SqlCommand comand = new SqlCommand(query, conexion);   
                 retorna = comand.ExecuteNonQuery();
                 conexion.Close();

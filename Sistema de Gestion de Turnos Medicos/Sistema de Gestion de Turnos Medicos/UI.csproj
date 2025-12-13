@@ -136,6 +136,12 @@
     <Compile Include="Complete.Designer.cs">
       <DependentUpon>Complete.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMABMUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMABMUsuarios.Designer.cs">
+      <DependentUpon>FRMABMUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Complete.resx">
       <DependentUpon>Complete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMABMUsuarios.resx">
+      <DependentUpon>FRMABMUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainAdmin.resx">
       <DependentUpon>MainAdmin.cs</DependentUpon>

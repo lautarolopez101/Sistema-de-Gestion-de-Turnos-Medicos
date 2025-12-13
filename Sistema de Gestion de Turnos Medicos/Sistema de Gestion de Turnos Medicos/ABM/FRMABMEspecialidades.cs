@@ -14,21 +14,21 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
     public partial class FRMABMEspecialidades : Form
     {
         private readonly IEspecialidadService _especialidadservice;
+
+        private int id;
         public FRMABMEspecialidades(IEspecialidadService especialidadService)
         {
             InitializeComponent();
             _especialidadservice = especialidadService;
 
             // Que no se vean los labels de id
-            lblid.Visible = true;
-            label4.Visible = true;
         }
 
         private void DGVEspecialidades_SelectionChanged(object sender, EventArgs e)
         {
             try
             {
-                lblid.Text = DGVEspecialidades.CurrentRow.Cells["ID_Especialidad"].Value.ToString();
+                id = Convert.ToInt16(DGVEspecialidades.CurrentRow.Cells["ID_Especialidad"].Value.ToString());
                 txtEspecialidad.Text = DGVEspecialidades.CurrentRow.Cells["Especialidad"].Value.ToString();
                 txtDescripcion.Text = DGVEspecialidades.CurrentRow.Cells["Descripcion"].Value.ToString();
             }
@@ -77,7 +77,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
         {
             try
             {
-                int id = int.Parse(lblid.Text); // Lo paso para ver si limpio los campos antes
                 string descripcion = txtDescripcion.Text;// Es necesario?
                 string especialidad = txtEspecialidad.Text;// SI ES NECESARIO
                 int retorna = _especialidadservice.ModificarEspecialidad(id,especialidad,descripcion);
@@ -101,7 +100,6 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
         {
             try
             {
-                int id = int.Parse(lblid.Text); // Lo paso para ver si limpio los campos antes
                 string descripcion = txtDescripcion.Text;// Es necesario?
                 string especialidad = txtEspecialidad.Text;// SI ES NECESARIO
 
@@ -127,7 +125,7 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos.ABM_s
         {
             try
             {
-                lblid.Text = null;
+                id = 0;
                 txtDescripcion.Clear();
                 txtEspecialidad.Clear();
                 txtEspecialidad.Focus();
