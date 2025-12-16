@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainAdmin));
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.panelturnos = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblturnos = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelcerrarsesion = new System.Windows.Forms.Panel();
             this.imagencerrarsesion = new System.Windows.Forms.PictureBox();
@@ -52,10 +55,12 @@
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.panelmain = new System.Windows.Forms.Panel();
-            this.panelturnos = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.lblturnos = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelmenu.SuspendLayout();
+            this.panelturnos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelcerrarsesion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagencerrarsesion)).BeginInit();
             this.panelperfil.SuspendLayout();
@@ -70,13 +75,14 @@
             this.paneltask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            this.panelturnos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(74)))), ((int)(((byte)(111)))));
+            this.panelmenu.Controls.Add(this.panel1);
             this.panelmenu.Controls.Add(this.panelturnos);
             this.panelmenu.Controls.Add(this.label3);
             this.panelmenu.Controls.Add(this.panelcerrarsesion);
@@ -93,6 +99,44 @@
             this.panelmenu.Size = new System.Drawing.Size(188, 567);
             this.panelmenu.TabIndex = 2;
             // 
+            // panelturnos
+            // 
+            this.panelturnos.Controls.Add(this.pictureBox4);
+            this.panelturnos.Controls.Add(this.lblturnos);
+            this.panelturnos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelturnos.Location = new System.Drawing.Point(4, 284);
+            this.panelturnos.Name = "panelturnos";
+            this.panelturnos.Size = new System.Drawing.Size(182, 71);
+            this.panelturnos.TabIndex = 14;
+            this.panelturnos.Click += new System.EventHandler(this.panelturnos_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(2, 16);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.panelturnos_Click);
+            // 
+            // lblturnos
+            // 
+            this.lblturnos.AutoSize = true;
+            this.lblturnos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblturnos.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblturnos.ForeColor = System.Drawing.Color.White;
+            this.lblturnos.Location = new System.Drawing.Point(50, 25);
+            this.lblturnos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblturnos.Name = "lblturnos";
+            this.lblturnos.Size = new System.Drawing.Size(50, 17);
+            this.lblturnos.TabIndex = 3;
+            this.lblturnos.Text = "Turnos";
+            this.lblturnos.Click += new System.EventHandler(this.panelturnos_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -101,7 +145,7 @@
             this.label3.Location = new System.Drawing.Point(58, 26);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 23);
+            this.label3.Size = new System.Drawing.Size(90, 21);
             this.label3.TabIndex = 13;
             this.label3.Text = "ClinicTime";
             // 
@@ -110,7 +154,7 @@
             this.panelcerrarsesion.Controls.Add(this.imagencerrarsesion);
             this.panelcerrarsesion.Controls.Add(this.lblcerrarsesion);
             this.panelcerrarsesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelcerrarsesion.Location = new System.Drawing.Point(3, 484);
+            this.panelcerrarsesion.Location = new System.Drawing.Point(3, 491);
             this.panelcerrarsesion.Name = "panelcerrarsesion";
             this.panelcerrarsesion.Size = new System.Drawing.Size(182, 71);
             this.panelcerrarsesion.TabIndex = 11;
@@ -138,7 +182,7 @@
             this.lblcerrarsesion.Location = new System.Drawing.Point(54, 25);
             this.lblcerrarsesion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblcerrarsesion.Name = "lblcerrarsesion";
-            this.lblcerrarsesion.Size = new System.Drawing.Size(117, 21);
+            this.lblcerrarsesion.Size = new System.Drawing.Size(99, 17);
             this.lblcerrarsesion.TabIndex = 3;
             this.lblcerrarsesion.Text = "Cerrar Sesion";
             this.lblcerrarsesion.Click += new System.EventHandler(this.panelcerrarsesion_Click);
@@ -148,7 +192,7 @@
             this.panelperfil.Controls.Add(this.imagenperfil);
             this.panelperfil.Controls.Add(this.lblperfil);
             this.panelperfil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelperfil.Location = new System.Drawing.Point(4, 407);
+            this.panelperfil.Location = new System.Drawing.Point(4, 416);
             this.panelperfil.Name = "panelperfil";
             this.panelperfil.Size = new System.Drawing.Size(182, 71);
             this.panelperfil.TabIndex = 10;
@@ -174,7 +218,7 @@
             this.lblperfil.Location = new System.Drawing.Point(54, 25);
             this.lblperfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblperfil.Name = "lblperfil";
-            this.lblperfil.Size = new System.Drawing.Size(73, 21);
+            this.lblperfil.Size = new System.Drawing.Size(63, 17);
             this.lblperfil.TabIndex = 3;
             this.lblperfil.Text = "Mi Perfil";
             // 
@@ -183,7 +227,7 @@
             this.panelpacientes.Controls.Add(this.pictureBox3);
             this.panelpacientes.Controls.Add(this.lblpaciente);
             this.panelpacientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelpacientes.Location = new System.Drawing.Point(4, 243);
+            this.panelpacientes.Location = new System.Drawing.Point(4, 211);
             this.panelpacientes.Name = "panelpacientes";
             this.panelpacientes.Size = new System.Drawing.Size(182, 71);
             this.panelpacientes.TabIndex = 9;
@@ -211,7 +255,7 @@
             this.lblpaciente.Location = new System.Drawing.Point(50, 25);
             this.lblpaciente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblpaciente.Name = "lblpaciente";
-            this.lblpaciente.Size = new System.Drawing.Size(90, 21);
+            this.lblpaciente.Size = new System.Drawing.Size(74, 17);
             this.lblpaciente.TabIndex = 3;
             this.lblpaciente.Text = "Pacientes";
             this.lblpaciente.Click += new System.EventHandler(this.panelpacientes_Click);
@@ -221,7 +265,7 @@
             this.panelespecialidad.Controls.Add(this.pictureBox2);
             this.panelespecialidad.Controls.Add(this.lblespecialidad);
             this.panelespecialidad.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelespecialidad.Location = new System.Drawing.Point(3, 166);
+            this.panelespecialidad.Location = new System.Drawing.Point(3, 138);
             this.panelespecialidad.Name = "panelespecialidad";
             this.panelespecialidad.Size = new System.Drawing.Size(182, 71);
             this.panelespecialidad.TabIndex = 5;
@@ -249,7 +293,7 @@
             this.lblespecialidad.Location = new System.Drawing.Point(52, 25);
             this.lblespecialidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblespecialidad.Name = "lblespecialidad";
-            this.lblespecialidad.Size = new System.Drawing.Size(131, 21);
+            this.lblespecialidad.Size = new System.Drawing.Size(111, 17);
             this.lblespecialidad.TabIndex = 3;
             this.lblespecialidad.Text = "Especialidades";
             this.lblespecialidad.Click += new System.EventHandler(this.panelespecialidad_Click);
@@ -259,7 +303,7 @@
             this.panelprofesionales.Controls.Add(this.imagenturnos);
             this.panelprofesionales.Controls.Add(this.lblprofesionales);
             this.panelprofesionales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelprofesionales.Location = new System.Drawing.Point(4, 89);
+            this.panelprofesionales.Location = new System.Drawing.Point(4, 65);
             this.panelprofesionales.Name = "panelprofesionales";
             this.panelprofesionales.Size = new System.Drawing.Size(182, 71);
             this.panelprofesionales.TabIndex = 4;
@@ -287,7 +331,7 @@
             this.lblprofesionales.Location = new System.Drawing.Point(50, 26);
             this.lblprofesionales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblprofesionales.Name = "lblprofesionales";
-            this.lblprofesionales.Size = new System.Drawing.Size(117, 21);
+            this.lblprofesionales.Size = new System.Drawing.Size(98, 17);
             this.lblprofesionales.TabIndex = 3;
             this.lblprofesionales.Text = "Profesionales";
             this.lblprofesionales.Click += new System.EventHandler(this.lblturnos_Click);
@@ -323,7 +367,7 @@
             this.lblusuario.Location = new System.Drawing.Point(114, 16);
             this.lblusuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblusuario.Name = "lblusuario";
-            this.lblusuario.Size = new System.Drawing.Size(124, 23);
+            this.lblusuario.Size = new System.Drawing.Size(97, 21);
             this.lblusuario.TabIndex = 12;
             this.lblusuario.Text = "MODIFICAR";
             // 
@@ -363,43 +407,43 @@
             this.panelmain.Size = new System.Drawing.Size(772, 511);
             this.panelmain.TabIndex = 4;
             // 
-            // panelturnos
+            // panel1
             // 
-            this.panelturnos.Controls.Add(this.pictureBox4);
-            this.panelturnos.Controls.Add(this.lblturnos);
-            this.panelturnos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelturnos.Location = new System.Drawing.Point(6, 320);
-            this.panelturnos.Name = "panelturnos";
-            this.panelturnos.Size = new System.Drawing.Size(182, 71);
-            this.panelturnos.TabIndex = 14;
-            this.panelturnos.Click += new System.EventHandler(this.panelturnos_Click);
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Location = new System.Drawing.Point(4, 357);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(182, 56);
+            this.panel1.TabIndex = 15;
+            this.panel1.Click += new System.EventHandler(this.Usuarios_Click);
             // 
-            // pictureBox4
+            // pictureBox5
             // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(2, 16);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 8;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.panelturnos_Click);
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(2, 7);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.Usuarios_Click);
             // 
-            // lblturnos
+            // label1
             // 
-            this.lblturnos.AutoSize = true;
-            this.lblturnos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblturnos.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblturnos.ForeColor = System.Drawing.Color.White;
-            this.lblturnos.Location = new System.Drawing.Point(50, 25);
-            this.lblturnos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblturnos.Name = "lblturnos";
-            this.lblturnos.Size = new System.Drawing.Size(60, 21);
-            this.lblturnos.TabIndex = 3;
-            this.lblturnos.Text = "Turnos";
-            this.lblturnos.Click += new System.EventHandler(this.panelturnos_Click);
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(50, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Usuarios";
+            this.label1.Click += new System.EventHandler(this.Usuarios_Click);
             // 
             // MainAdmin
             // 
@@ -417,6 +461,9 @@
             this.Text = "MainAdmin";
             this.panelmenu.ResumeLayout(false);
             this.panelmenu.PerformLayout();
+            this.panelturnos.ResumeLayout(false);
+            this.panelturnos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelcerrarsesion.ResumeLayout(false);
             this.panelcerrarsesion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagencerrarsesion)).EndInit();
@@ -437,9 +484,9 @@
             this.paneltask.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            this.panelturnos.ResumeLayout(false);
-            this.panelturnos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,5 +519,8 @@
         private System.Windows.Forms.Panel panelturnos;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblturnos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label1;
     }
 }

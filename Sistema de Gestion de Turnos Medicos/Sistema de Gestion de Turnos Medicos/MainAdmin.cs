@@ -31,6 +31,13 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             _especialidadeservice = especialidadeservice;
             _profesionalService = profesionalService;
             _profesionalespecialidadservice = profesionalespecialidadservice;
+
+            RedondearPanel(panelcerrarsesion,20);
+            RedondearPanel(panelespecialidad,20);
+            RedondearPanel(panelprofesionales,20);
+            RedondearPanel(panelpacientes,20);
+            RedondearPanel(panelturnos,20);
+            RedondearPanel(panel1,20);
         }
 
         private Panel _panelActivo;
@@ -145,9 +152,9 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
         private void panelcerrarsesion_Click(object sender, EventArgs e)
         {
 
-            AppSession.Usuario.LastLogin = DateTime.Now;
-            int retorna = _usuarioservice.Logout(AppSession.Usuario);
-            AppSession.Logout();
+           // AppSession.Usuario.LastLogin = DateTime.Now;
+           // int retorna = _usuarioservice.Logout(AppSession.Usuario);
+           // AppSession.Logout();
             Close();
         }
 
@@ -207,6 +214,22 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
                 ActivarPanel(panelturnos);   // cambia color del menú
                 // Aquí llamas a la función que te pasé
                 CargarFormularioEnPanel(new FRMABMTurnos(_turnoservice,_pacienteservice,_profesionalService));
+            }
+            catch (Exception ex)
+            {
+                // Si algo falla, ESTO nos dirá qué es
+                MessageBox.Show("¡ERROR! No se pudo cargar el formulario: \n\n" + ex.Message);
+            }
+        }
+
+        private void Usuarios_Click(object sender, EventArgs e)
+        {
+            // Agrega un try...catch para que podamos ver cualquier error
+            try
+            {                // Aquí llamas a la función que te pasé
+                ActivarPanel(panel1);   // cambia color del menú
+                // Aquí llamas a la función que te pasé
+                CargarFormularioEnPanel(new FRMABMUsuarios(_usuarioservice,_profesionalService));
             }
             catch (Exception ex)
             {

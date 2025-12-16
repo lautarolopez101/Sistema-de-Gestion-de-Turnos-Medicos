@@ -11,8 +11,8 @@ namespace BLL
     {
         List<UsuarioBE> ObtenerTodos();
         List<UsuarioBE> ObtenerUsuariosProfesionales();
-        int CrearUsuarioProfesional(string username, string plainpassword, string email, int idprofesional);
         int CrearUsuario(string username, string password, string email);
+        List<ProfesionalBE> ProfesionalesSinUsuarios();
         UsuarioBE ObtenerUsuario(string user,string password);
         PacienteBE GetByIDPaciente(int idusuario);
         ProfesionalBE GetByIDProfesional(int idusuario);
@@ -21,6 +21,7 @@ namespace BLL
         bool BuscarEmail(string email);
         PacienteBE ObtenerPacienteEmail(string email);
         int AgregarIDPaciente(UsuarioBE usuario);
+        int AgregarIDProfesional(int idusuario, int idprofesional);
         int Logout(UsuarioBE usuario);
     }
 }

@@ -1,0 +1,45 @@
+public static SqlConnection ObtenerConexion()
+ {
+     //  Esto NO usa ConfigurationManager todavía, así evitamos que
+     // el depurador culpe a GetHostName si el config está roto.
+
+     /* Lo que hace este DNS.GetHostName es obtener el nombre de la computadora, cuando estoy desde la laptop usa el 
+     Laptop-0NQ7LDJD y si estoy desde la pc usa 
+      
+      */
+     // Obtiene el dns de la maquina que tiene el programa
+     string equipo = Dns.GetHostName();
+     // y hace una verificacion si es igual a la dns de la laptop y sino 
+     string nombreCadena = equipo.Equals("LAPTOP-0NQ7LDJD", StringComparison.OrdinalIgnoreCase)
+                           ? "ConexionLaptop" : "ConexionPC";
+
+     string cadena;
+
+     try
+     {
+         // Fuerzo la carga del config para obtener error detallado si está mal
+         var cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+         //Verifica si la cadena de conexion existe y no esta vacia
+         var cs = ConfigurationManager.ConnectionStrings[nombreCadena];
+         // Lanza una excepcion clara si no la encuentra
+         if (cs == null || string.IsNullOrWhiteSpace(cs.ConnectionString))
+             throw new InvalidOperationException($"No encontré la cadena '{nombreCadena}' en App.config de la UI.");
+
+         // La tengo, la uso
+         cadena = cs.ConnectionString;
+     }
+     catch (ConfigurationErrorsException ex)
+     {
+         //  Diagnóstico claro (archivo y línea si aplica)
+         string archivo = ex.Filename ?? "(desconocido)";
+         throw new Exception($"App.config inválido: {ex.Message} Archivo: {archivo} Revisá que haya UNA sola sección <connectionStrings>.", ex);
+     }
+
+     var cn = new SqlConnection(cadena);
+
+     // Lo comentamos a la conexion abierta porque ultimamente me estaba tirando error de que la "ABRIA" dos veces, asi que prefiero abrirla en la dal para abrir y cerrar cuando haga una ejecucion
+
+     cn.Open();
+     return cn;
+ } 

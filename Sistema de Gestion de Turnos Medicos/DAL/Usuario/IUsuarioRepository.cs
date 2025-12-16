@@ -17,6 +17,7 @@ namespace DAL
         List<FamiliaBE> GetFamiliasByUsuarioId (int usuarioId); 
         List<PatenteBE> GetPatentesDirectasByUsuarioId(int usuarioId);
         int AgregarIDPaciente(UsuarioBE usuario);
+        int AgregarIDProfesional(UsuarioBE usuario);
         int Logout(UsuarioBE usuario);
     }
 }

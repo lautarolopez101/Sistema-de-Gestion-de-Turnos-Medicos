@@ -142,6 +142,12 @@
     <Compile Include="FRMABMUsuarios.Designer.cs">
       <DependentUpon>FRMABMUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMElegirProfesional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMElegirProfesional.Designer.cs">
+      <DependentUpon>FRMElegirProfesional.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,16 +160,16 @@
     <Compile Include="Vista Profesional\EspecialidadProfesional.Designer.cs">
       <DependentUpon>EspecialidadProfesional.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMAtenderTurno.cs">
+    <Compile Include="Vista Admin\FRMAtenderTurno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMAtenderTurno.Designer.cs">
+    <Compile Include="Vista Admin\FRMAtenderTurno.Designer.cs">
       <DependentUpon>FRMAtenderTurno.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMCambiarFechaTurno.cs">
+    <Compile Include="Vista Admin\FRMCambiarFechaTurno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMCambiarFechaTurno.Designer.cs">
+    <Compile Include="Vista Admin\FRMCambiarFechaTurno.Designer.cs">
       <DependentUpon>FRMCambiarFechaTurno.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista Profesional\HistorialProfesional.cs">
@@ -254,16 +260,19 @@
     <EmbeddedResource Include="FRMABMUsuarios.resx">
       <DependentUpon>FRMABMUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMElegirProfesional.resx">
+      <DependentUpon>FRMElegirProfesional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainAdmin.resx">
       <DependentUpon>MainAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista Profesional\EspecialidadProfesional.resx">
       <DependentUpon>EspecialidadProfesional.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMAtenderTurno.resx">
+    <EmbeddedResource Include="Vista Admin\FRMAtenderTurno.resx">
       <DependentUpon>FRMAtenderTurno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMCambiarFechaTurno.resx">
+    <EmbeddedResource Include="Vista Admin\FRMCambiarFechaTurno.resx">
       <DependentUpon>FRMCambiarFechaTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista Profesional\HistorialProfesional.resx">

@@ -32,6 +32,10 @@ namespace DAL
         {
             return UsuarioDAL.AgregarIDPaciente(usuario);
         }
+        public int AgregarIDProfesional(UsuarioBE usuario)
+        {
+            return UsuarioDAL.AgregarIDProfesional(usuario);
+        }
         public UsuarioBE GetByUsername(string username)
         {
             UsuarioBE usuario = new UsuarioBE();

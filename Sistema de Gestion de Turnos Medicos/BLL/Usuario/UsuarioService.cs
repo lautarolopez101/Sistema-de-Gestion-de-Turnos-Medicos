@@ -34,46 +34,44 @@ namespace BLL
         {
             List<UsuarioBE> todos = new List<UsuarioBE>();
             todos = _usuariorepository.ObtenerTodos();
-            List<UsuarioBE> usuariosprofesionales = todos.Where(x => x.ID_Profesional > 0 || (x.ID_Profesional == 0 && x.ID_Paciente ==0)).ToList();
-            return usuariosprofesionales;
+            //List<UsuarioBE> usuariosprofesionales = todos.Where(x => x.ID_Profesional == 0 && x.ID_Paciente == 0).ToList();
 
+            return todos;
         }
 
-        public int CrearUsuarioProfesional(string username, string plainpassword, string email, int idprofesional)
+        
+        public List<ProfesionalBE> ProfesionalesSinUsuarios()
         {
-            // Vamos a lanzar algunas excepciones por si el usuario ya existe
+            // Traemos a todos los profesionales
+            List<ProfesionalBE> profesionales = new List<ProfesionalBE>();
+            profesionales = _profesionalrepository.ListarProfesionales(true);
 
-            List<UsuarioBE> todos = _usuariorepository.ObtenerTodos();
+            // Traemos a todos los usuarios que estan vinculados a los profesionales
+            List<UsuarioBE> usuariosvinculados = new List<UsuarioBE>();
+            usuariosvinculados = _usuariorepository.ObtenerTodos()
+                .Where(x => x.ID_Profesional > 0)
+                .ToList();
+            // Trame
+            List<UsuarioBE> usuarios = new List<UsuarioBE>();
+            usuarios = _usuariorepository.ObtenerTodos()
+                .Where(x => x.ID_Profesional == 0 && x.ID_Paciente == 0)
+                .ToList();
+            return profesionales;
 
-            bool existeusuario = todos.Exists(x => x.Username == username);
-            if (existeusuario)
-                throw new ValidationException("El nombre de usuario ya existe");
 
-            bool existeemail = todos.Exists(x => x.Email == email);
-            if(existeemail)
-                throw new ValidationException("El email ya existe");
 
-            bool esprofesionalvinculado = todos.Exists(x => x.ID_Profesional == idprofesional);
-            if(esprofesionalvinculado)
-                throw new ValidationException("El profesional ya tiene un usuario vinculado");
-
-            // Aca tendriamos que hacer lo del hash para poder crear y guardar el usuario
-            string passwordhash = _passwordService.HashPassword(plainpassword);
-
-            // Creamos una instancia de usuario para poder ponerle los atributos necesarios
-            UsuarioBE usuario = new UsuarioBE();
-            usuario.Username = username;
-            usuario.Email = email;
-            usuario.PasswordHash = passwordhash;
-            usuario.ID_Profesional = idprofesional;
-            int retorna = _usuariorepository.CrearUsuario(usuario);
-            return retorna;
         }
-
         public int CrearUsuario(string username, string plainpassword, string email)
         {
             // Vamos a lanzar algunas excepciones por si el usuario ya existe
-            
+            bool existeusuario = _usuariorepository.ObtenerTodos().Exists(x => x.Username == username);
+            if (existeusuario)
+                throw new ValidationException("Ya existe un usuario con el mismo nombre.");
+
+            bool existeemail = _usuariorepository.ObtenerTodos().Exists(x => x.Email == email);
+            if (existeemail)
+                throw new ValidationException("Ya existe hay un usuario con el email ingresado.");
+
             // Aca tendriamos que hacer lo del hash para poder crear y guardar el usuario
             string passwordhash = _passwordService.HashPassword(plainpassword);
 
@@ -82,7 +80,6 @@ namespace BLL
             usuario.Username = username;
             usuario.Email = email;
             usuario.PasswordHash = passwordhash;
-            usuario.ID_Profesional = 0;
             int retorna = _usuariorepository.CrearUsuario(usuario);
             return retorna;
         }
@@ -136,6 +133,27 @@ namespace BLL
         public int AgregarIDPaciente(UsuarioBE usuario)
         {
             return _usuariorepository.AgregarIDPaciente(usuario);
+        }
+        public int AgregarIDProfesional(int idusuario, int idprofesional)
+        {
+            List<UsuarioBE> lista = _usuariorepository.ObtenerTodos();
+            UsuarioBE usuario = lista.FirstOrDefault(x => x.ID == idusuario);
+
+            // Hay que ver si el usuario ya esta vinculado con algun paciente o profesional
+            if (usuario.ID_Profesional > 0  || usuario.ID_Paciente > 0)
+                throw new ValidationException("El Usuario ya esta vinculado con algun profesional.");
+
+            // Ahora hay que ver si el profesional esta vinculado con algun usuario, ya que mostramos a todos los profesionales
+            List<ProfesionalBE> profesionales = _profesionalrepository.ObtenerProfesionales();
+            ProfesionalBE profesional = profesionales.FirstOrDefault(x => x.ID_Profesional == idprofesional);
+            UsuarioBE encontramos = lista.FirstOrDefault(x=> x.ID_Profesional==idprofesional);
+            if (encontramos != null)
+                throw new ValidationException($"El profesional {profesional.Nombre}, ya tiene un usuario.");
+
+            usuario.ID_Profesional = idprofesional;
+            profesional.Email = usuario.Email;
+            
+            return _usuariorepository.AgregarIDProfesional(usuario);
         }
         public bool BuscarEmail(string email)
         {

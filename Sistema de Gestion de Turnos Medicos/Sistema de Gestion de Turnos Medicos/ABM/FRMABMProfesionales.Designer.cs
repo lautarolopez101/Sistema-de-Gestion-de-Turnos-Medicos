@@ -89,10 +89,10 @@
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnAgregar.Location = new System.Drawing.Point(215, 110);
+            this.btnAgregar.Location = new System.Drawing.Point(191, 110);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(147, 63);
+            this.btnAgregar.Size = new System.Drawing.Size(103, 40);
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -129,7 +129,7 @@
             this.DGVProfesionales.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVProfesionales.EnableHeadersVisualStyles = false;
             this.DGVProfesionales.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.DGVProfesionales.Location = new System.Drawing.Point(525, 19);
+            this.DGVProfesionales.Location = new System.Drawing.Point(451, 19);
             this.DGVProfesionales.Margin = new System.Windows.Forms.Padding(4);
             this.DGVProfesionales.Name = "DGVProfesionales";
             this.DGVProfesionales.ReadOnly = true;
@@ -150,7 +150,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.DGVProfesionales.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DGVProfesionales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVProfesionales.Size = new System.Drawing.Size(216, 461);
+            this.DGVProfesionales.Size = new System.Drawing.Size(290, 461);
             this.DGVProfesionales.TabIndex = 13;
             this.DGVProfesionales.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.DGVProfesionales_DataBindingComplete);
             this.DGVProfesionales.SelectionChanged += new System.EventHandler(this.DGVProfesionales_SelectionChanged);
@@ -186,10 +186,10 @@
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnModificar.Location = new System.Drawing.Point(215, 191);
+            this.btnModificar.Location = new System.Drawing.Point(191, 158);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(147, 63);
+            this.btnModificar.Size = new System.Drawing.Size(103, 36);
             this.btnModificar.TabIndex = 8;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -200,10 +200,10 @@
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnEliminar.Location = new System.Drawing.Point(215, 274);
+            this.btnEliminar.Location = new System.Drawing.Point(191, 200);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(147, 63);
+            this.btnEliminar.Size = new System.Drawing.Size(103, 33);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -214,10 +214,10 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnLimpiar.Location = new System.Drawing.Point(370, 274);
+            this.btnLimpiar.Location = new System.Drawing.Point(314, 229);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(147, 63);
+            this.btnLimpiar.Size = new System.Drawing.Size(117, 50);
             this.btnLimpiar.TabIndex = 11;
             this.btnLimpiar.Text = "Limpiar Campos";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -360,7 +360,7 @@
             this.panel1.Location = new System.Drawing.Point(229, 45);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(243, 52);
+            this.panel1.Size = new System.Drawing.Size(214, 52);
             this.panel1.TabIndex = 14;
             // 
             // RBEstadoActivo
@@ -441,7 +441,7 @@
             this.DGVEspecialidades.DefaultCellStyle = dataGridViewCellStyle6;
             this.DGVEspecialidades.EnableHeadersVisualStyles = false;
             this.DGVEspecialidades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.DGVEspecialidades.Location = new System.Drawing.Point(273, 376);
+            this.DGVEspecialidades.Location = new System.Drawing.Point(228, 315);
             this.DGVEspecialidades.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.DGVEspecialidades.Name = "DGVEspecialidades";
             this.DGVEspecialidades.ReadOnly = true;
@@ -463,7 +463,7 @@
             this.DGVEspecialidades.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DGVEspecialidades.RowTemplate.Height = 24;
             this.DGVEspecialidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGVEspecialidades.Size = new System.Drawing.Size(213, 104);
+            this.DGVEspecialidades.Size = new System.Drawing.Size(215, 165);
             this.DGVEspecialidades.TabIndex = 12;
             this.DGVEspecialidades.SelectionChanged += new System.EventHandler(this.DGVEspecialidades_SelectionChanged);
             // 
@@ -471,7 +471,7 @@
             // 
             this.lblIDEspecialidades.AutoSize = true;
             this.lblIDEspecialidades.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDEspecialidades.Location = new System.Drawing.Point(155, 409);
+            this.lblIDEspecialidades.Location = new System.Drawing.Point(143, 409);
             this.lblIDEspecialidades.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIDEspecialidades.Name = "lblIDEspecialidades";
             this.lblIDEspecialidades.Size = new System.Drawing.Size(83, 21);
@@ -482,7 +482,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1, 409);
+            this.label10.Location = new System.Drawing.Point(-7, 409);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(160, 21);
@@ -493,7 +493,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(322, 345);
+            this.label9.Location = new System.Drawing.Point(294, 287);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 21);
@@ -527,10 +527,10 @@
             this.btnAgregarEspecialidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarEspecialidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(370, 110);
+            this.btnAgregarEspecialidad.Location = new System.Drawing.Point(314, 110);
             this.btnAgregarEspecialidad.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregarEspecialidad.Name = "btnAgregarEspecialidad";
-            this.btnAgregarEspecialidad.Size = new System.Drawing.Size(147, 63);
+            this.btnAgregarEspecialidad.Size = new System.Drawing.Size(117, 52);
             this.btnAgregarEspecialidad.TabIndex = 10;
             this.btnAgregarEspecialidad.Text = "Agregar Especialidad";
             this.btnAgregarEspecialidad.UseVisualStyleBackColor = true;
@@ -541,10 +541,10 @@
             this.btnEliminarEspecialidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminarEspecialidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarEspecialidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(29)))), ((int)(((byte)(48)))));
-            this.btnEliminarEspecialidad.Location = new System.Drawing.Point(370, 191);
+            this.btnEliminarEspecialidad.Location = new System.Drawing.Point(314, 170);
             this.btnEliminarEspecialidad.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarEspecialidad.Name = "btnEliminarEspecialidad";
-            this.btnEliminarEspecialidad.Size = new System.Drawing.Size(147, 63);
+            this.btnEliminarEspecialidad.Size = new System.Drawing.Size(117, 51);
             this.btnEliminarEspecialidad.TabIndex = 31;
             this.btnEliminarEspecialidad.Text = "Eliminar Especialidad";
             this.btnEliminarEspecialidad.UseVisualStyleBackColor = true;

@@ -51,8 +51,8 @@ namespace DAL.CRUD
             int retorna;
             using(SqlConnection conexion= SqlConnectionFactory.ObtenerConexion())
             {
-                string query = "Insert into Usuarios (Username,PasswordHash,Email,ID_Paciente)"
-                    + "values ('" + usuario.Username + "','" + usuario.PasswordHash + "','" + usuario.Email + "','" + usuario.ID_Profesional +")";
+                string query = "Insert into Usuarios (Username,PasswordHash,Email)"
+                    + "values ('" + usuario.Username + "','" + usuario.PasswordHash + "','" + usuario.Email +"')";
                 SqlCommand comand = new SqlCommand(query, conexion);   
                 retorna = comand.ExecuteNonQuery();
                 conexion.Close();
@@ -72,7 +72,19 @@ namespace DAL.CRUD
             }
             return retorna;
         }
-        
+        public static int AgregarIDProfesional(UsuarioBE usuario)
+        {
+            int retorna;
+            using (SqlConnection conexion = SqlConnectionFactory.ObtenerConexion())
+            {
+                string query = "Update dbo.Usuarios set ID_Profesional = '" + usuario.ID_Profesional + "' Where ID_Usuario =" + usuario.ID;
+                SqlCommand comand = new SqlCommand(query, conexion);
+                retorna = comand.ExecuteNonQuery();
+                conexion.Close();
+            }
+            return retorna;
+        }
+
         public static List<UsuarioBE> Buscar()
         {
             List<UsuarioBE> lista = new List<UsuarioBE>();
