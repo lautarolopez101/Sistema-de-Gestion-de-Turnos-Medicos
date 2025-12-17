@@ -136,16 +136,16 @@
     <Compile Include="Complete.Designer.cs">
       <DependentUpon>Complete.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMABMUsuarios.cs">
+    <Compile Include="Vista Admin\FRMABMUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMABMUsuarios.Designer.cs">
+    <Compile Include="Vista Admin\FRMABMUsuarios.Designer.cs">
       <DependentUpon>FRMABMUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMElegirProfesional.cs">
+    <Compile Include="Vista Admin\FRMElegirProfesional.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMElegirProfesional.Designer.cs">
+    <Compile Include="Vista Admin\FRMElegirProfesional.Designer.cs">
       <DependentUpon>FRMElegirProfesional.cs</DependentUpon>
     </Compile>
     <Compile Include="MainAdmin.cs">
@@ -257,10 +257,10 @@
     <EmbeddedResource Include="Complete.resx">
       <DependentUpon>Complete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMABMUsuarios.resx">
+    <EmbeddedResource Include="Vista Admin\FRMABMUsuarios.resx">
       <DependentUpon>FRMABMUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMElegirProfesional.resx">
+    <EmbeddedResource Include="Vista Admin\FRMElegirProfesional.resx">
       <DependentUpon>FRMElegirProfesional.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainAdmin.resx">

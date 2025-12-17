@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\dal\\backupdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|solutionrelative:dal\\backupdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\dal\\turno\\turnodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|solutionrelative:dal\\turno\\turnodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|c:\\users\\administrator\\desktop\\sistema-de-gestion-de-turnos-medicos\\sistema de gestion de turnos medicos\\dal\\sqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A98C4D4B-260C-4C08-8787-5B51DB6B58D9}|DAL\\DAL.csproj|solutionrelative:dal\\sqlconnectionfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\sistema de gestion de turnos medicos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E050A75B-2B2F-405F-AEE9-9E9A5D5D9945}|Sistema de Gestion de Turnos Medicos\\UI.csproj|solutionrelative:sistema de gestion de turnos medicos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\Sistema de Gestion de Turnos Medicos\\Program.cs",
               "RelativeDocumentMoniker": "Sistema de Gestion de Turnos Medicos\\Program.cs",
@@ -31,12 +43,11 @@
               "ViewState": "AgIAAAcAAAAAAAAAAAAAwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-28T03:43:21.228Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AppBootstrap.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\BLL\\AppBootstrap.cs",
               "RelativeDocumentMoniker": "BLL\\AppBootstrap.cs",
@@ -46,6 +57,45 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-07T07:50:53.38Z",
               "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TurnoDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\Turno\\TurnoDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\Turno\\TurnoDAL.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\Turno\\TurnoDAL.cs",
+              "RelativeToolTip": "DAL\\Turno\\TurnoDAL.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-17T00:20:21.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SqlConnectionFactory.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\SqlConnectionFactory.cs",
+              "RelativeDocumentMoniker": "DAL\\SqlConnectionFactory.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\SqlConnectionFactory.cs",
+              "RelativeToolTip": "DAL\\SqlConnectionFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T21:07:51.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BackupDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\BackupDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\BackupDAL.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Sistema-de-Gestion-de-Turnos-Medicos\\Sistema de Gestion de Turnos Medicos\\DAL\\BackupDAL.cs",
+              "RelativeToolTip": "DAL\\BackupDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T21:04:13.764Z",
+              "EditorCaption": ""
             }
           ]
         }

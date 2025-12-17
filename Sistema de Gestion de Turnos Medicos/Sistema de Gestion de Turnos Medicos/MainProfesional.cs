@@ -149,6 +149,16 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             AppSession.Usuario.LastLogin = DateTime.Now;
             int retorna = _usuarioservice.Logout(AppSession.Usuario);
             AppSession.Logout();
+            // Carpeta simple y con permisos (evitá Program Files)
+            string carpeta = @"D:\SQLBackups";
+
+            bool hizo = BLL.BackupService.AsegurarBackupDiario(
+                "Sistema de Gestion de Turnos Medicos",
+                carpeta
+            );
+
+            if (hizo)
+                MessageBox.Show("✅ Backup diario generado.");
             Close();
         }
 
@@ -166,6 +176,16 @@ namespace Sistema_de_Gestion_de_Turnos_Medicos
             AppSession.Usuario.LastLogin = DateTime.Now;
             int retorna = _usuarioservice.Logout(AppSession.Usuario);
             AppSession.Logout();
+            // Carpeta simple y con permisos (evitá Program Files)
+            string carpeta = @"D:\SQLBackups";
+
+            bool hizo = BLL.BackupService.AsegurarBackupDiario(
+                "Sistema de Gestion de Turnos Medicos",
+                carpeta
+            );
+
+            if (hizo)
+                MessageBox.Show("✅ Backup diario generado.");
             Close();
         }
 

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AppBootstrap.cs" />
     <Compile Include="AuthService.cs" />
+    <Compile Include="BackupService.cs" />
     <Compile Include="BusinessException.cs" />
     <Compile Include="Especialidad\EspecialidadService.cs" />
     <Compile Include="Especialidad\IEspecialidadService.cs" />
